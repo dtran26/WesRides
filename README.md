@@ -20,13 +20,18 @@
 ### App Design
 
 #### Objective
-[explain the goal of the app]
+The goal of the app is to provide college students with ride sharing platform
 
 #### Audience
-[who is this app targeting?]
+College students
 
 #### Experience
-[how will your users interact with this app?]
+Users will be able to:
+ - Create new rides
+ - View existing created rides
+ - View their own rides
+ - Chat with other users 
+ - View Google Map (?)
 
 [Back to top ^](#)
 
@@ -35,10 +40,17 @@
 ### Technical
 
 #### Screens
-* [list the different screens used in the app]
+  * Login Screen
+  * Home Screen (Create/View Rides)
+  * Rides timeline 
+  * View ride from timeline
+  * Create a new ride
+  * Chat with other users
+  * View user past and upcoming rides
+  * About page
 
 #### External services
-* [list which APIs or external services will your app use?]
+* Firebase (to handle user info, authentication, data storage, and chat)
 
 #### Views, View Controllers, and other Classes
 * Views
@@ -49,7 +61,8 @@
   * [list any other classes you will need]
 
 #### Data models
-* [list all Parse data models your app will need]
+* User
+* Post
 
 [Back to top ^](#)
 
