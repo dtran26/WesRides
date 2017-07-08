@@ -95,23 +95,23 @@ MONDAY and TUESDAY:
  * User Authentication with Firebase (2 HRS)
 
 WEDNESDAY:
-	*	Username View Controller Setup	(3 HRS)
-	*	Refactoring User class	(3 HRS)
-   * Include Username
-   * Reset Users on Firebase
+ * Username View Controller Setup	(3 HRS)
+ * Refactoring User class	(3 HRS)
+    * Include Username
+    * Reset Users on Firebase
    
 THURSDAY:
-		* Basic Sidebar Controller Setup	(3 HRS)
-		* User Login Persistence	(3 HRS)
-	FRIDAY:
-		* Basic Sidebar Controller Setup	(6 HRS)
+ * Basic Sidebar Controller Setup (3 HRS)
+ * User Login Persistence (3 HRS)
+FRIDAY:
+ * Basic Sidebar Controller Setup (6 HRS)
 #### Week 2
 MONDAY:
  * Create Rides (3 HRS)
  * Set Up Basic Table View Controller (3 HRS)
  
 TUESDAY:
- * Create Rides cell (3 HRS)
+ * Create Rides cell (6 HRS)
  * Display Rides (3 HRS)
  
 WEDNESDAY:
@@ -132,14 +132,33 @@ TUESDAY:
  * Research and work on chat feature (6 HRS)
  
 WEDNESDAY:
-
+ * Think about design of the app (3 HRS)
+ * Work on UX/UI (3 HRS)
 
 THURSDAY:
+ * Keep working on UX/UI (6 HRS)
 
 FRIDAY:
+ * User testing (3 HRS)
+ * Review results (3 HRS)
 
 #### Week 4
-* [goals for the week]
+MONDAY:
+ * Review Project (3 HRS)
+ * If progress is good, work on implementing google maps - extra (3 HRS)
+ 
+TUESDAY:
+ * Work on google maps or previous tasks (6 HRS)
+ 
+WEDNESDAY:
+ * Work on google maps or previous tasks (6 HRS)
+
+THURSDAY:
+ * Go back and try and refactor previous code (6 HRS)
+
+FRIDAY:
+ * Review progress (6 HRS)
+
 
 #### Week 5
 MONDAY:
