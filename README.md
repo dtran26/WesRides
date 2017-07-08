@@ -143,23 +143,23 @@ FRIDAY:
 
 #### Week 5
 MONDAY:
-	* Read through the App Store Guidelines (2 HRS)
-	* Check the app if that follows the guidelines (1 HR)
-	* Get Apple developer account (3 HRS)
+ * Read through the App Store Guidelines (2 HRS)
+ * Check the app if that follows the guidelines (1 HR)
+ * Get Apple developer account (3 HRS)
  
- TUESDAY:
-	*	Remove anything that does not follow the guideline if needed (0.5 HR)
-	*	App Icon (3 HRS)
-	*	App Keywords & Description (3 HRS)
+TUESDAY:
+ * Remove anything that does not follow the guideline if needed (0.5 HR)
+ * App Icon (3 HRS)
+ * App Keywords & Description (3 HRS)
  
-	WEDNESDAY:
-	*	App Screenshots (3 HRS)
-	*	App Keywords, Icon, Description Revisited (3 HRS)
+WEDNESDAY:
+ * App Screenshots (3 HRS)
+ * App Keywords, Icon, Description Revisited (3 HRS)
  
-	THURSDAY:
-	* Submit to App Store (6 HRS)
+THURSDAY:
+ * Submit to App Store (6 HRS)
  
-	FRIDAY:
-		* Submit to App Store (6 HRS)
+FRIDAY:
+ * Submit to App Store (6 HRS)
   
 [Back to top ^](#)
