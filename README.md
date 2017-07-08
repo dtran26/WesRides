@@ -103,6 +103,7 @@ WEDNESDAY:
 THURSDAY:
  * Basic Sidebar Controller Setup (3 HRS)
  * User Login Persistence (3 HRS)
+ 
 FRIDAY:
  * Basic Sidebar Controller Setup (6 HRS)
 #### Week 2
