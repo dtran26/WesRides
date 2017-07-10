@@ -20,7 +20,7 @@
 ### App Design
 
 #### Objective
-The goal of the app is to provide college students with ride sharing platform
+The goal of the app is to provide college students with ride sharing platform via bulletin like application. WesRides will only help coordinating carpooling together and will not act as actual ride platform.
 
 #### Audience
 College students
@@ -52,6 +52,7 @@ Users will be able to:
 #### External services
 * Firebase (to handle user info, authentication, data storage, and chat)
 * SideMenu CocoaPod (for sidebar navigation)
+* Google Map API 
 
 #### Views, View Controllers, and other Classes
 * Views
@@ -100,10 +101,12 @@ Users will be able to:
 [The overall milestones of first usable build, core features, and polish are just suggestions, plan to finish earlier if possible. The last 20% of work tends to take about as much time as the first 80% so do not slack off on your milestones!]
 
 #### Week 1
-MONDAY and TUESDAY: 
- * Create Wireframe	(1.5 DAYS)
+MONDAY:
  * Work on ADD (3 HRS)
  * Basic Xcode, Cocoa Pods, & Firebase Set Up. (1 HRS)
+ * Work on app prototyping. (2-3 HRS)
+ 
+TUESDAY:
  * Create Folder & Project Structure for Xcode project			(.5 HRS)
  * Basic Login & User Setup	(3 HRS)	
  * Create Login View Controller (1 HRS)
@@ -116,8 +119,8 @@ WEDNESDAY:
     * Reset Users on Firebase
    
 THURSDAY:
- * Research & Basic Sidebar Controller Setup (5 HRS) THIS IS GOING TO TAKE MORE THAN 3HRS
- * User Login Persistence (singleton set up) (1 HRS) WILL BE LESS THAN THIS
+ * Research & Basic Sidebar Controller Setup (5 HRS) 
+ * User Login Persistence (singleton set up) (1 HRS) 
  
 FRIDAY:
  * Advanced Sidebar Controller Setup (6 HRS) THIS IS GOOD BECAUSE YOU CAN GO BACK AND FIX STUFF
@@ -132,11 +135,15 @@ TUESDAY:
  * Display Rides (Populate the Cell) (1 HRS) 
  
 WEDNESDAY:
- * Create Detailed Ride View Controller. Add Contact service to detailed view controller. Work on design of the view. (6 HRS) 
+ * Create Detailed Ride View Controller. (2HRS)
+ * Add Contact service to detailed view controller. (2HRS)
+ * Work on design of the view. (2 HRS) 
 
 THURSDAY:
  * Create and fill some static info in About ViewController and put feedback form in there (2 HRS) 
- * Create Detailed User View Controller. Create forms to allow user to modificate some info in the database. (i.e. phone number, email) (4 HRS)
+ * Create Detailed User View Controller. (2 HRS)
+ * Create forms to allow user to modificate some info in the database. (i.e. phone number, email) (2 HRS)
+ 
 FRIDAY:
 * Revisit Sidebar View Controller, update code if necessary. (3 HRS) 
 * Review weekly progress (3 HRS)
@@ -151,10 +158,10 @@ TUESDAY:
  
 WEDNESDAY:
  * Think about design of the app (3 HRS)
- * Work on UX/UI (3 HRS)
+ * Work on UX/UI (i.e. research on-line about best practices) (3 HRS)
 
 THURSDAY:
- * Keep working on UX/UI (6 HRS)
+ * Keep working on UX/UI, implement ideas in the storyboard (6 HRS)
 
 FRIDAY:
  * User testing (3 HRS)
@@ -171,34 +178,34 @@ TUESDAY:
  * Work on google maps or previous tasks (6 HRS)
  
 WEDNESDAY:
- * Work on google maps or previous tasks (6 HRS)
-
-THURSDAY:
  * Go back and try and refactor previous code (6 HRS)
 
-FRIDAY:
- * Review progress (6 HRS)
+THURSDAY:
+ * By now I for sure should have MVP. Conduct User Testing again (3 HRS)
+ * Review results (2 HRS)
 
+FRIDAY:
+ * Review progress made so far. (6 HRS)
 
 #### Week 5
 MONDAY:
  * Read through the App Store Guidelines (2 HRS)
  * Check the app if that follows the guidelines (1 HR)
- * Get Apple developer account (3 HRS)
+ * Remove anything that does not follow the guideline if needed (0.5 HR)
+ * Get Apple developer account (1 HRS)
  
 TUESDAY:
- * Remove anything that does not follow the guideline if needed (0.5 HR)
  * App Icon (3 HRS)
  * App Keywords & Description (3 HRS)
  
 WEDNESDAY:
- * App Screenshots (3 HRS)
- * App Keywords, Icon, Description Revisited (3 HRS)
+ * App Screenshots (2 HRS)
+ * App Keywords, Icon, Description Revisited (2 HRS)
+ * Submit to App Store (2 HRS)
  
 THURSDAY:
  * Submit to App Store (6 HRS)
- 
 FRIDAY:
- * Submit to App Store (6 HRS)
+ * Practice Pitching (6 HRS)
   
 [Back to top ^](#)
