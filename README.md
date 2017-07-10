@@ -127,7 +127,8 @@ FRIDAY:
 
 #### Week 2
 MONDAY:
- * Create Rides in DB + Create Service Class for Rides + Ride Structure (4.5 HRS) 
+ * Create Rides in DB + Post Service (2 HRS)
+ * Create Service Class for Rides + Ride Structure (2 HRS) 
  * Set Up Basic Timeline Table View Controller (1.5 HRS) 
  
 TUESDAY:
@@ -178,7 +179,7 @@ TUESDAY:
  * Work on google maps or previous tasks (6 HRS)
  
 WEDNESDAY:
- * Go back and try and refactor previous code (6 HRS)
+ * If time permits, research about 3D touch and try to implement it (6 HRS)
 
 THURSDAY:
  * By now I for sure should have MVP. Conduct User Testing again (3 HRS)
@@ -205,6 +206,7 @@ WEDNESDAY:
  
 THURSDAY:
  * Submit to App Store (6 HRS)
+ 
 FRIDAY:
  * Practice Pitching (6 HRS)
   
