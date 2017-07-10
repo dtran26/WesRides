@@ -46,10 +46,12 @@ Users will be able to:
   * Create a new ride
   * Chat with other users
   * View user past and upcoming rides
+  * User profile screen
   * About page
 
 #### External services
 * Firebase (to handle user info, authentication, data storage, and chat)
+* SideMenu CocoaPod (for sidebar navigation)
 
 #### Views, View Controllers, and other Classes
 * Views
@@ -67,16 +69,29 @@ Users will be able to:
   5. Sidebar View Controller
      * handles navigation logic
   6. Chat View Controller
-  7. About View Controller
-* Other Classes
-  * Firebase Helper Classes
+     * handles websocket with firebase
+  7. About View Controller 
+     * static stuff like credits, acknowledgements etc
+  8. User Detailed View Controller
+     * lets user change information like phone and email
+  
+* Service Classes 
+  1. User Service
+     * Create a user, obtain a user, obtain users excluding the current user, post posts, get followers, get timeline and observe user            profile
+  2. Post Service
+     * Create post and get post
+  3. Contact service
+     * Call / message driver
 
-#### Data models
+#### Data models 
 * User
+  - Used to store username, uid (key), phone number, email address of every user
 * Post
-
-#### Helpers
+  - Used to store time, from location, to location, amount of riders, payment if any
+  
+#### Helpers 
 * Date Picker Helper
+* Firebase Helper Classes
 [Back to top ^](#)
 
 ---
@@ -101,36 +116,38 @@ WEDNESDAY:
     * Reset Users on Firebase
    
 THURSDAY:
- * Basic Sidebar Controller Setup (3 HRS)
- * User Login Persistence (3 HRS)
+ * Research & Basic Sidebar Controller Setup (5 HRS) THIS IS GOING TO TAKE MORE THAN 3HRS
+ * User Login Persistence (singleton set up) (1 HRS) WILL BE LESS THAN THIS
  
 FRIDAY:
- * Basic Sidebar Controller Setup (6 HRS)
+ * Advanced Sidebar Controller Setup (6 HRS) THIS IS GOOD BECAUSE YOU CAN GO BACK AND FIX STUFF
+
 #### Week 2
 MONDAY:
- * Create Rides (3 HRS)
- * Set Up Basic Table View Controller (3 HRS)
+ * Create Rides in DB + Create Service Class for Rides + Ride Structure (4.5 HRS) 
+ * Set Up Basic Timeline Table View Controller (1.5 HRS) 
  
 TUESDAY:
- * Create Rides cell (6 HRS)
- * Display Rides (3 HRS)
+ * Create Rides cell (5 HRS)
+ * Display Rides (Populate the Cell) (1 HRS) 
  
 WEDNESDAY:
- * Detailed Ride ViewController (6 HRS)
+ * Create Detailed Ride View Controller. Add Contact service to detailed view controller. Work on design of the view. (6 HRS) 
 
 THURSDAY:
- * About ViewController (5 HRS)
-
+ * Create and fill some static info in About ViewController and put feedback form in there (2 HRS) 
+ * Create Detailed User View Controller. Create forms to allow user to modificate some info in the database. (i.e. phone number, email) (4 HRS)
 FRIDAY:
-* Revisit Sidebar View Controller (3 HRS)
+* Revisit Sidebar View Controller, update code if necessary. (3 HRS) 
+* Review weekly progress (3 HRS)
 
 #### Week 3
 MONDAY:
  * Rescope Project (3 HRS)
- * Start working on chat feature (3 HRS)
+ * Start working on chat feature - read and research about websocket chat (3 HRS)
  
 TUESDAY:
- * Research and work on chat feature (6 HRS)
+ * Research and keep working on chat feature. If websocket seems too hard, switch to RESTful chat service. (6 HRS)
  
 WEDNESDAY:
  * Think about design of the app (3 HRS)
@@ -141,7 +158,9 @@ THURSDAY:
 
 FRIDAY:
  * User testing (3 HRS)
- * Review results (3 HRS)
+ * Review results MVP (3 HRS)
+ 
+----------- HAVE A MVP BY THEN ----------- 
 
 #### Week 4
 MONDAY:
