@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		B7A6C9B31F10956B00FF66B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9B21F10956B00FF66B6 /* AppDelegate.swift */; };
 		B7A6C9BA1F10956B00FF66B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9B91F10956B00FF66B6 /* Assets.xcassets */; };
-		B7A6C9C51F14227B00FF66B6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9C41F14227B00FF66B6 /* Info.plist */; };
 		B7A6C9C71F14228000FF66B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9C61F14228000FF66B6 /* Main.storyboard */; };
 		B7A6C9C91F14228300FF66B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9C81F14228300FF66B6 /* LaunchScreen.storyboard */; };
 		B7A6C9CB1F14228B00FF66B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9CA1F14228B00FF66B6 /* ViewController.swift */; };
 		B7A6C9D11F14237A00FF66B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9D01F14237A00FF66B6 /* GoogleService-Info.plist */; };
+		B7A6C9D31F142C7E00FF66B6 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9D21F142C7E00FF66B6 /* Login.storyboard */; };
+		B7A6C9D61F142CEC00FF66B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9D51F142CEC00FF66B6 /* LoginViewController.swift */; };
 		EC625D12BFAE69A1CE1ADB05 /* Pods_WesRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,8 @@
 		B7A6C9C81F14228300FF66B6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7A6C9CA1F14228B00FF66B6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
 		B7A6C9D01F14237A00FF66B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Supporting/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B7A6C9D21F142C7E00FF66B6 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Storyboards/Login.storyboard; sourceTree = "<group>"; };
+		B7A6C9D51F142CEC00FF66B6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
 		D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WesRides.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -65,7 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				B7A6C9CC1F1422A600FF66B6 /* Controllers */,
-				B7A6C9C61F14228000FF66B6 /* Main.storyboard */,
+				B7A6C9D41F142C8C00FF66B6 /* Storyboards */,
 				B7A6C9CD1F1422FB00FF66B6 /* Supporting Files */,
 				B7A6C9B21F10956B00FF66B6 /* AppDelegate.swift */,
 				B7A6C9B91F10956B00FF66B6 /* Assets.xcassets */,
@@ -77,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				B7A6C9CA1F14228B00FF66B6 /* ViewController.swift */,
+				B7A6C9D51F142CEC00FF66B6 /* LoginViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -89,6 +93,15 @@
 				B7A6C9C41F14227B00FF66B6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B7A6C9D41F142C8C00FF66B6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B7A6C9C61F14228000FF66B6 /* Main.storyboard */,
+				B7A6C9D21F142C7E00FF66B6 /* Login.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		E539A09C57B6F06E05F02706 /* Frameworks */ = {
@@ -173,8 +186,8 @@
 			files = (
 				B7A6C9C71F14228000FF66B6 /* Main.storyboard in Resources */,
 				B7A6C9C91F14228300FF66B6 /* LaunchScreen.storyboard in Resources */,
+				B7A6C9D31F142C7E00FF66B6 /* Login.storyboard in Resources */,
 				B7A6C9D11F14237A00FF66B6 /* GoogleService-Info.plist in Resources */,
-				B7A6C9C51F14227B00FF66B6 /* Info.plist in Resources */,
 				B7A6C9BA1F10956B00FF66B6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7A6C9D61F142CEC00FF66B6 /* LoginViewController.swift in Sources */,
 				B7A6C9CB1F14228B00FF66B6 /* ViewController.swift in Sources */,
 				B7A6C9B31F10956B00FF66B6 /* AppDelegate.swift in Sources */,
 			);
