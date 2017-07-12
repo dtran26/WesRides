@@ -29,17 +29,28 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3jL-e0-Asc" customClass="GIDSignInButton">
-                                <rect key="frame" x="125" y="315" width="75" height="37"/>
+                                <rect key="frame" x="150" y="295" width="75" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <segue destination="Zib-xb-agO" kind="presentation" identifier="login" id="Ndh-hV-K2E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psL-j3-4vT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="108" y="-39.130434782608695"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="gtU-o4-0ud">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="Zib-xb-agO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K6C-4f-ncG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="889" y="-80"/>
         </scene>
     </scenes>
 </document>

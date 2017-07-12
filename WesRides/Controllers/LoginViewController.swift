@@ -17,7 +17,20 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // IF THE USER IS ALREADY SIGNED IN SWITCH TO MAIN LAB ROOM
+        
+//        Auth.auth().addStateDidChangeListener() { auth, user in
+//            if user != nil {
+//                self.switchStoryboard()
+//            }
+//        }
+        
+        
         GIDSignIn.sharedInstance().uiDelegate = self
+        
+        //NotificationCenter.default.addObserver(self, selector: #selector(segueToMain), name: NSNotification.Name(rawValue: "signIn"), object: nil)
+        //NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "signIn"), object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,8 +40,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
 
     
-    
-    
+
     
     
     
@@ -42,5 +54,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func segueToMain() {
+        self.performSegue(withIdentifier: "login", sender: nil)
+    }
 
 }

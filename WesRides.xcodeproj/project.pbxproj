@@ -15,6 +15,8 @@
 		B7A6C9D11F14237A00FF66B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9D01F14237A00FF66B6 /* GoogleService-Info.plist */; };
 		B7A6C9D31F142C7E00FF66B6 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9D21F142C7E00FF66B6 /* Login.storyboard */; };
 		B7A6C9D61F142CEC00FF66B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9D51F142CEC00FF66B6 /* LoginViewController.swift */; };
+		B7A6C9D81F156D8C00FF66B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9D71F156D8C00FF66B6 /* User.swift */; };
+		B7A6C9DB1F169C5200FF66B6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9DA1F169C5200FF66B6 /* UserService.swift */; };
 		EC625D12BFAE69A1CE1ADB05 /* Pods_WesRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,8 @@
 		B7A6C9D01F14237A00FF66B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Supporting/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B7A6C9D21F142C7E00FF66B6 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Storyboards/Login.storyboard; sourceTree = "<group>"; };
 		B7A6C9D51F142CEC00FF66B6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		B7A6C9D71F156D8C00FF66B6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		B7A6C9DA1F169C5200FF66B6 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = Services/UserService.swift; sourceTree = "<group>"; };
 		D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WesRides.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,6 +76,8 @@
 				B7A6C9CD1F1422FB00FF66B6 /* Supporting Files */,
 				B7A6C9B21F10956B00FF66B6 /* AppDelegate.swift */,
 				B7A6C9B91F10956B00FF66B6 /* Assets.xcassets */,
+				B7A6C9D91F156DA500FF66B6 /* Models */,
+				B7A6C9DC1F169C5700FF66B6 /* Services */,
 			);
 			path = WesRides;
 			sourceTree = "<group>";
@@ -102,6 +108,22 @@
 				B7A6C9D21F142C7E00FF66B6 /* Login.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		B7A6C9D91F156DA500FF66B6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B7A6C9D71F156D8C00FF66B6 /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B7A6C9DC1F169C5700FF66B6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B7A6C9DA1F169C5200FF66B6 /* UserService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		E539A09C57B6F06E05F02706 /* Frameworks */ = {
@@ -247,6 +269,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7A6C9D81F156D8C00FF66B6 /* User.swift in Sources */,
+				B7A6C9DB1F169C5200FF66B6 /* UserService.swift in Sources */,
 				B7A6C9D61F142CEC00FF66B6 /* LoginViewController.swift in Sources */,
 				B7A6C9CB1F14228B00FF66B6 /* ViewController.swift in Sources */,
 				B7A6C9B31F10956B00FF66B6 /* AppDelegate.swift in Sources */,
