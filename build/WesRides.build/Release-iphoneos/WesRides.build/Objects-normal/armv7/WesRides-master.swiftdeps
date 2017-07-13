@@ -1,0 +1,10 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
+options: "9d61f8775cbf0d9aecea8e7b9b7ef08c"
+build_time: [553237977, 631192000]
+inputs:
+  "/Users/Tran/Documents/MakeSchool/WesRides/WesRides/Models/User.swift": [9223372036854775807, 0]
+  "/Users/Tran/Documents/MakeSchool/WesRides/WesRides/Services/UserService.swift": [9223372036854775807, 0]
+  "/Users/Tran/Documents/MakeSchool/WesRides/WesRides/Controllers/LoginViewController.swift": [9223372036854775807, 0]
+  "/Users/Tran/Documents/MakeSchool/WesRides/WesRides/Controllers/MenuViewController.swift": [9223372036854775807, 0]
+  "/Users/Tran/Documents/MakeSchool/WesRides/WesRides/Controllers/HomeViewController.swift": [9223372036854775807, 0]
+  "/Users/Tran/Documents/MakeSchool/WesRides/WesRides/AppDelegate.swift": [9223372036854775807, 0]

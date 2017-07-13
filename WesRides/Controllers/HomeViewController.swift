@@ -7,14 +7,19 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 import GoogleSignIn
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
+    
+    @IBOutlet weak var openMenu: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        openMenu.target = self.revealViewController()
+        openMenu.action = #selector(SWRevealViewController.revealToggle(_:))
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +27,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+
+    
+    
+    
+    
     @IBAction func signOut(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {

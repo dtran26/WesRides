@@ -18,26 +18,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         FirebaseApp.configure()
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
         
-                let storyboard = UIStoryboard(name: "Login", bundle: .main)
+        //Set initial screen to LoginViewController
+        let storyboard = UIStoryboard(name: "Login", bundle: .main)
+        if let initialViewController = storyboard.instantiateInitialViewController() {
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
         
-                if let initialViewController = storyboard.instantiateInitialViewController() {
-                    window?.rootViewController = initialViewController
-                    window?.makeKeyAndVisible()
-        
-                }
-        
+        //User persistence
         Auth.auth().addStateDidChangeListener() { auth, user in
             if let user = user {
                 print(user.uid)
                 let storyboard = UIStoryboard(name: "Main", bundle: .main)
-                let vc = storyboard.instantiateViewController(withIdentifier: "Main")
-                self.window?.rootViewController = vc
+                let viewController = storyboard.instantiateViewController(withIdentifier: "Main")
+                self.window?.rootViewController = viewController
                 self.window?.makeKeyAndVisible()
             }
         }

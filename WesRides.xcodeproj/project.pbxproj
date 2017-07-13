@@ -11,12 +11,14 @@
 		B7A6C9BA1F10956B00FF66B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9B91F10956B00FF66B6 /* Assets.xcassets */; };
 		B7A6C9C71F14228000FF66B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9C61F14228000FF66B6 /* Main.storyboard */; };
 		B7A6C9C91F14228300FF66B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9C81F14228300FF66B6 /* LaunchScreen.storyboard */; };
-		B7A6C9CB1F14228B00FF66B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9CA1F14228B00FF66B6 /* ViewController.swift */; };
+		B7A6C9CB1F14228B00FF66B6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9CA1F14228B00FF66B6 /* HomeViewController.swift */; };
 		B7A6C9D11F14237A00FF66B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9D01F14237A00FF66B6 /* GoogleService-Info.plist */; };
 		B7A6C9D31F142C7E00FF66B6 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9D21F142C7E00FF66B6 /* Login.storyboard */; };
 		B7A6C9D61F142CEC00FF66B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9D51F142CEC00FF66B6 /* LoginViewController.swift */; };
 		B7A6C9D81F156D8C00FF66B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9D71F156D8C00FF66B6 /* User.swift */; };
 		B7A6C9DB1F169C5200FF66B6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9DA1F169C5200FF66B6 /* UserService.swift */; };
+		B7A6C9E01F16E96D00FF66B6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9DF1F16E96D00FF66B6 /* SWRevealViewController.m */; };
+		B7A6C9E31F17372D00FF66B6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9E21F17372D00FF66B6 /* MenuViewController.swift */; };
 		EC625D12BFAE69A1CE1ADB05 /* Pods_WesRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,12 +31,16 @@
 		B7A6C9C41F14227B00FF66B6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Supporting/Info.plist; sourceTree = "<group>"; };
 		B7A6C9C61F14228000FF66B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
 		B7A6C9C81F14228300FF66B6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B7A6C9CA1F14228B00FF66B6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
+		B7A6C9CA1F14228B00FF66B6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Controllers/HomeViewController.swift; sourceTree = "<group>"; };
 		B7A6C9D01F14237A00FF66B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Supporting/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B7A6C9D21F142C7E00FF66B6 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Storyboards/Login.storyboard; sourceTree = "<group>"; };
 		B7A6C9D51F142CEC00FF66B6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
 		B7A6C9D71F156D8C00FF66B6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		B7A6C9DA1F169C5200FF66B6 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = Services/UserService.swift; sourceTree = "<group>"; };
+		B7A6C9DD1F16E96D00FF66B6 /* WesRides-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WesRides-Bridging-Header.h"; sourceTree = "<group>"; };
+		B7A6C9DE1F16E96D00FF66B6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = Extensions/SWRevealViewController.h; sourceTree = "<group>"; };
+		B7A6C9DF1F16E96D00FF66B6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = Extensions/SWRevealViewController.m; sourceTree = "<group>"; };
+		B7A6C9E21F17372D00FF66B6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Controllers/MenuViewController.swift; sourceTree = "<group>"; };
 		D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WesRides.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +77,7 @@
 		B7A6C9B11F10956B00FF66B6 /* WesRides */ = {
 			isa = PBXGroup;
 			children = (
+				B7A6C9E11F16E97500FF66B6 /* SideMenu */,
 				B7A6C9CC1F1422A600FF66B6 /* Controllers */,
 				B7A6C9D41F142C8C00FF66B6 /* Storyboards */,
 				B7A6C9CD1F1422FB00FF66B6 /* Supporting Files */,
@@ -85,8 +92,9 @@
 		B7A6C9CC1F1422A600FF66B6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B7A6C9CA1F14228B00FF66B6 /* ViewController.swift */,
 				B7A6C9D51F142CEC00FF66B6 /* LoginViewController.swift */,
+				B7A6C9CA1F14228B00FF66B6 /* HomeViewController.swift */,
+				B7A6C9E21F17372D00FF66B6 /* MenuViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -124,6 +132,16 @@
 				B7A6C9DA1F169C5200FF66B6 /* UserService.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		B7A6C9E11F16E97500FF66B6 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B7A6C9DE1F16E96D00FF66B6 /* SWRevealViewController.h */,
+				B7A6C9DF1F16E96D00FF66B6 /* SWRevealViewController.m */,
+				B7A6C9DD1F16E96D00FF66B6 /* WesRides-Bridging-Header.h */,
+			);
+			name = SideMenu;
 			sourceTree = "<group>";
 		};
 		E539A09C57B6F06E05F02706 /* Frameworks */ = {
@@ -179,6 +197,7 @@
 					B7A6C9AE1F10956B00FF66B6 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = J4TG8MKMG2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -272,8 +291,10 @@
 				B7A6C9D81F156D8C00FF66B6 /* User.swift in Sources */,
 				B7A6C9DB1F169C5200FF66B6 /* UserService.swift in Sources */,
 				B7A6C9D61F142CEC00FF66B6 /* LoginViewController.swift in Sources */,
-				B7A6C9CB1F14228B00FF66B6 /* ViewController.swift in Sources */,
+				B7A6C9E31F17372D00FF66B6 /* MenuViewController.swift in Sources */,
+				B7A6C9CB1F14228B00FF66B6 /* HomeViewController.swift in Sources */,
 				B7A6C9B31F10956B00FF66B6 /* AppDelegate.swift in Sources */,
+				B7A6C9E01F16E96D00FF66B6 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,11 +399,14 @@
 			baseConfigurationReference = 733806590FCFE4FB122C42C9 /* Pods-WesRides.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = J4TG8MKMG2;
 				INFOPLIST_FILE = "$(SRCROOT)/WesRides/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dtran.WesRides;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WesRides/WesRides-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -392,11 +416,13 @@
 			baseConfigurationReference = 110105C692F75629D7968A1E /* Pods-WesRides.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = J4TG8MKMG2;
 				INFOPLIST_FILE = "$(SRCROOT)/WesRides/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dtran.WesRides;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WesRides/WesRides-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
