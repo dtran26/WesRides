@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import FirebaseAuth
+import GoogleSignIn
 
 class MenuViewController: UITableViewController {
 
-    var menuArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,6 @@ class MenuViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        menuArray = ["Home", "Hello", "Sign Out"]
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,24 +29,23 @@ class MenuViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
+    @IBAction func signOut(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            GIDSignIn.sharedInstance().signOut()
+            print("sign out successful")
+            
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        performSegue(withIdentifier: "logOut", sender: self)
+    }
+    
+    
     // MARK: - Table view data source
-
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return menuArray.count
-    }
-
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath)
-
-        // Configure the cell...
-
-        cell.textLabel?.text = menuArray[indexPath.row]
-        
-        return cell
-    }
 
 
     /*
@@ -84,14 +83,17 @@ class MenuViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        
+        
     }
-    */
+    
 
 }

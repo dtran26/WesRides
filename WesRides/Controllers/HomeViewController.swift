@@ -17,9 +17,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        openMenu.target = self.revealViewController()
-        openMenu.action = #selector(SWRevealViewController.revealToggle(_:))
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        sideMenu()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,24 +26,13 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
+    func sideMenu() {
+        openMenu.target = self.revealViewController()
+        openMenu.action = #selector(SWRevealViewController.revealToggle(_:))
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    }
 
     
-    
-    
-    
-    @IBAction func signOut(_ sender: Any) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-            GIDSignIn.sharedInstance().signOut()
-            print("sign out successful")
-            
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-        
-    }
 
 }
 

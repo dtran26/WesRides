@@ -19,6 +19,7 @@
 		B7A6C9DB1F169C5200FF66B6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9DA1F169C5200FF66B6 /* UserService.swift */; };
 		B7A6C9E01F16E96D00FF66B6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9DF1F16E96D00FF66B6 /* SWRevealViewController.m */; };
 		B7A6C9E31F17372D00FF66B6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9E21F17372D00FF66B6 /* MenuViewController.swift */; };
+		B7A6C9E51F17DF8500FF66B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9E41F17DF8500FF66B6 /* ViewController.swift */; };
 		EC625D12BFAE69A1CE1ADB05 /* Pods_WesRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		B7A6C9DE1F16E96D00FF66B6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = Extensions/SWRevealViewController.h; sourceTree = "<group>"; };
 		B7A6C9DF1F16E96D00FF66B6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = Extensions/SWRevealViewController.m; sourceTree = "<group>"; };
 		B7A6C9E21F17372D00FF66B6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Controllers/MenuViewController.swift; sourceTree = "<group>"; };
+		B7A6C9E41F17DF8500FF66B6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
 		D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WesRides.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 		B7A6C9CC1F1422A600FF66B6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B7A6C9E41F17DF8500FF66B6 /* ViewController.swift */,
 				B7A6C9D51F142CEC00FF66B6 /* LoginViewController.swift */,
 				B7A6C9CA1F14228B00FF66B6 /* HomeViewController.swift */,
 				B7A6C9E21F17372D00FF66B6 /* MenuViewController.swift */,
@@ -294,6 +297,7 @@
 				B7A6C9E31F17372D00FF66B6 /* MenuViewController.swift in Sources */,
 				B7A6C9CB1F14228B00FF66B6 /* HomeViewController.swift in Sources */,
 				B7A6C9B31F10956B00FF66B6 /* AppDelegate.swift in Sources */,
+				B7A6C9E51F17DF8500FF66B6 /* ViewController.swift in Sources */,
 				B7A6C9E01F16E96D00FF66B6 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
