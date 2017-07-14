@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AboutViewController: UIViewController {
 
     @IBOutlet weak var openMenu: UIBarButtonItem!
     

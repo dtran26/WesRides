@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,12 +27,18 @@
                         <barButtonItem key="leftBarButtonItem" image="icons8-Menu Filled-50" id="Xfh-fu-gQc">
                             <inset key="imageInsets" minX="0.0" minY="12" maxX="22" maxY="10"/>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kWv-J3-Ez2">
+                            <connections>
+                                <action selector="newRideTapped:" destination="BYZ-38-t0r" id="MTb-7c-sX1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="openMenu" destination="Xfh-fu-gQc" id="Qhs-nz-gyo"/>
+                        <segue destination="81F-Hx-MfT" kind="show" identifier="newRideSegue" id="j7a-fO-ZYx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -219,10 +226,10 @@
             </objects>
             <point key="canvasLocation" x="1588" y="-663.41829085457277"/>
         </scene>
-        <!--View Controller-->
+        <!--About View Controller-->
         <scene sceneID="cZ8-ZA-8PU">
             <objects>
-                <viewController id="wC4-01-oQR" customClass="ViewController" customModule="WesRides" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wC4-01-oQR" customClass="AboutViewController" customModule="WesRides" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GOF-gl-gBp"/>
                         <viewControllerLayoutGuide type="bottom" id="A0t-Uo-THa"/>
@@ -244,6 +251,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Xb-Nd-SP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3632.8000000000002" y="-681.40929535232385"/>
+        </scene>
+        <!--New Ride View Controller-->
+        <scene sceneID="alD-SU-lyf">
+            <objects>
+                <viewController id="81F-Hx-MfT" customClass="NewRideViewController" customModule="WesRides" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6kv-jo-4bW"/>
+                        <viewControllerLayoutGuide type="bottom" id="zna-nv-vTE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gjF-92-ypN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Ride" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AwF-75-dnO">
+                                <rect key="frame" x="16" y="72" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="AwF-75-dnO" secondAttribute="trailing" id="7Bz-AX-6jO"/>
+                            <constraint firstItem="AwF-75-dnO" firstAttribute="leading" secondItem="gjF-92-ypN" secondAttribute="leadingMargin" id="SgS-zQ-1zI"/>
+                            <constraint firstItem="AwF-75-dnO" firstAttribute="top" secondItem="6kv-jo-4bW" secondAttribute="bottom" constant="8" id="bCB-zd-pHt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4nF-3y-Hmk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2853.5999999999999" y="476.31184407796104"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="jFS-fj-XZ2">

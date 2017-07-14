@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import Firebase
-//import FirebaseDatabase.FIRDataSnapshot
+import FirebaseDatabase.FIRDataSnapshot
 
 class User{
     

@@ -32,6 +32,11 @@ class HomeViewController: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
 
+    @IBAction func newRideTapped(_ sender: Any) {
+        performSegue(withIdentifier: "newRideSegue", sender: self)
+        
+    }
+    
     
 
 }

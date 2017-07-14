@@ -12,4 +12,6 @@ target 'WesRides' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'GoogleSignIn'
+  pod 'FoldingCell', '~> 2.0.3' 
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
 end
