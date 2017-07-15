@@ -270,6 +270,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose Start Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sY2-ML-PFB">
+                                <rect key="frame" x="105" y="138" width="165" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="startLocationTapped:" destination="81F-Hx-MfT" eventType="touchDown" id="Moc-uc-kc3"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chooose End Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nta-i9-VU9">
+                                <rect key="frame" x="105" y="186" width="165" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="endLocationTapped:" destination="81F-Hx-MfT" eventType="touchDown" id="XJd-CL-bXj"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose Time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mdv-3a-rgT">
+                                <rect key="frame" x="105" y="237" width="165" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="timeTapped:" destination="81F-Hx-MfT" eventType="touchDown" id="KkO-ya-avU"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -278,6 +308,11 @@
                             <constraint firstItem="AwF-75-dnO" firstAttribute="top" secondItem="6kv-jo-4bW" secondAttribute="bottom" constant="8" id="bCB-zd-pHt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="endLocationOutlet" destination="nta-i9-VU9" id="Ex9-hM-RvG"/>
+                        <outlet property="startLocationOutlet" destination="sY2-ML-PFB" id="yrF-Io-hSo"/>
+                        <outlet property="timeOutlet" destination="Mdv-3a-rgT" id="wge-Sc-e9G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nF-3y-Hmk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

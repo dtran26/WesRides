@@ -26,11 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         
         //Set initial screen to LoginViewController
-        let storyboard = UIStoryboard(name: "Login", bundle: .main)
-        if let initialViewController = storyboard.instantiateInitialViewController() {
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
-        }
+//        let storyboard = UIStoryboard(name: "Login", bundle: .main)
+//        if let initialViewController = storyboard.instantiateInitialViewController() {
+//            self.window?.rootViewController = initialViewController
+//            self.window?.makeKeyAndVisible()
+//        }
         
         //User persistence
         Auth.auth().addStateDidChangeListener() { auth, user in
@@ -40,6 +40,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 let viewController = storyboard.instantiateViewController(withIdentifier: "Main")
                 self.window?.rootViewController = viewController
                 self.window?.makeKeyAndVisible()
+            } else {
+                let storyboard = UIStoryboard(name: "Login", bundle: .main)
+                if let initialViewController = storyboard.instantiateInitialViewController() {
+                    self.window?.rootViewController = initialViewController
+                    self.window?.makeKeyAndVisible()
+                }
             }
         }
         

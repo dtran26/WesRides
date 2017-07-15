@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ActionSheetPicker-3.0.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FirebaseUI-FirebaseAuthUI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,7 +39,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SkyFloatingLabelTextField.xcscheme</key>
+		<key>SwiftDate.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,7 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5C88261AB8B9AC5E2F3F4378DD537E92</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>965699190112DDBD9B7864D091660DBC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9EEDF4C7F3FB24C85DA2FC2328B0146D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -63,16 +83,6 @@
 			<true/>
 		</dict>
 		<key>B626E472969D6F87698AF0041EAAFC38</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C1B6064CFD27968EBE35D20CC31B7BE0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D2EE4864141A2F9809A9FB55DB4C4E84</key>
 		<dict>
 			<key>primary</key>
 			<true/>

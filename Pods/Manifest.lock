@@ -1,4 +1,5 @@
 PODS:
+  - ActionSheetPicker-3.0 (2.2.0)
   - Firebase/Auth (4.0.3):
     - Firebase/Core
     - FirebaseAuth (= 4.0.0)
@@ -54,9 +55,10 @@ PODS:
   - GTMSessionFetcher/Core (1.1.10)
   - GTMSessionFetcher/Full (1.1.10):
     - GTMSessionFetcher/Core (= 1.1.10)
-  - SkyFloatingLabelTextField (3.1.0)
+  - SwiftDate (4.1.2)
 
 DEPENDENCIES:
+  - ActionSheetPicker-3.0
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -64,9 +66,10 @@ DEPENDENCIES:
   - FirebaseUI/Auth
   - FoldingCell (~> 2.0.3)
   - GoogleSignIn
-  - SkyFloatingLabelTextField (~> 3.0)
+  - SwiftDate (~> 4.0)
 
 SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   Firebase: 9e33fdfbca37cab635c693883caa90a4475b842b
   FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
   FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
@@ -80,8 +83,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
-  SkyFloatingLabelTextField: 26a92ad407044dd5a7c3e4e348738ff0991514fe
+  SwiftDate: 2dfdebd4f67ae71c9c3e2413ee3c56947f302858
 
-PODFILE CHECKSUM: 3e190dd42935b50e296c908f4a855bd9d3d7968c
+PODFILE CHECKSUM: 6736cc2234dccfe9d9d50a7f44b2a92ce31d1717
 
 COCOAPODS: 1.2.1
