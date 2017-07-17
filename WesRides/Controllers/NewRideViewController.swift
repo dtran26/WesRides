@@ -9,8 +9,9 @@
 import UIKit
 import ActionSheetPicker_3_0
 import SwiftDate
+import FirebaseAuth
 
-class NewRideViewController: UIViewController, UITextFieldDelegate{
+class NewRideViewController: UIViewController{
 
     let locations = ["Wesleyan", "Bradley", "New Haven", "Boston", "New York City"]
     
@@ -30,12 +31,10 @@ class NewRideViewController: UIViewController, UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.startLocationOutlet.delegate = self
-        self.endLocationOutlet.delegate = self
-        self.timeOutlet.delegate = self
-        stepper.wraps = true
-        stepper.autorepeat = true
-        stepper.maximumValue = 7
+        setTextFieldDelegates()
+        stepperSetUp()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(NewRideViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
 
     }
 
@@ -44,8 +43,23 @@ class NewRideViewController: UIViewController, UITextFieldDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        return false
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    func setTextFieldDelegates(){
+        self.startLocationOutlet.delegate = self
+        self.endLocationOutlet.delegate = self
+        self.timeOutlet.delegate = self
+    }
+    
+    func stepperSetUp(){
+        stepper.wraps = true
+        stepper.autorepeat = true
+        stepper.maximumValue = 7
     }
 
     @IBAction func startLocationTapped(_ sender: UITextField) {
@@ -78,7 +92,6 @@ class NewRideViewController: UIViewController, UITextFieldDelegate{
             
             return
         }, cancel: { ActionStringCancelBlock in return }, origin: sender.superview!)
-        //  let secondsInWeek: TimeInterval = 7 * 24 * 60 * 60;
         datePicker?.minimumDate = Date(timeInterval: 0, since: Date())
         datePicker?.minuteInterval = 20
         datePicker?.show()
@@ -92,20 +105,35 @@ class NewRideViewController: UIViewController, UITextFieldDelegate{
     
     
     @IBAction func saveNewRide(_ sender: UIBarButtonItem) {
-        
-        
+        PostService.create(from: startLocationOutlet.text!, to: endLocationOutlet.text!, capacity: capacity.text!, time: chosenTime, notes: notes.text!)
+
+        performSegue(withIdentifier: "unwindToHome", sender: self)
         
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+
+extension NewRideViewController : UITextFieldDelegate {
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true
+    }
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return false
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
+    }
+
+}
+

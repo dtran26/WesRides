@@ -11,39 +11,34 @@ import Foundation
 
 class Ride {
     
-    var key: String?
-    var rider: User?
-    var fullname : String
     var email = ""
     var from = ""
     var destination = ""
-    var pickUpTime = ""
+    var pickUpTime = Date()
     var notes = ""
-    var postedTime = ""
     var capacity = ""
-    var riders:[User]?
-    var postId = ""
+    let creationDate: Date
     
-    init(rider:User, from:String, destination:String, pickUpTime: String, notes:String, postedTime: String, capacity: String, startingCapacity:String, postId:String)
+    init(from:String, destination:String, pickUpTime: Date, notes:String, capacity: String)
     {
-        self.rider = rider
-        self.fullname = rider.fullName
-        self.email = rider.email
         self.from = from
         self.destination = destination
-        self.postedTime = postedTime
         self.pickUpTime = pickUpTime
         self.capacity = capacity
         self.notes = notes
-        self.postId = postId
-        
-    }
-    
-    func addRider(_ rider: User){
-        self.riders?.append(rider)
+        self.creationDate = Date()
     }
 
-    
-    
+    var dictValue: [String : Any] {
+        let createdAgo = creationDate.timeIntervalSince1970
+        let time = pickUpTime.timeIntervalSince1970
+        
+        return ["startLocation" : from,
+                "endLocation" : destination,
+                "createdAt" : createdAgo,
+                "pickUptime" : time,
+                "capacity" : capacity,
+                "notes" : notes]
+    }
     
 }

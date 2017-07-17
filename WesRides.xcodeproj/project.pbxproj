@@ -87,12 +87,12 @@
 			children = (
 				B7A6C9B21F10956B00FF66B6 /* AppDelegate.swift */,
 				B7A6C9CC1F1422A600FF66B6 /* Controllers */,
-				B7A6C9E11F16E97500FF66B6 /* SideMenu */,
 				B7A6C9D41F142C8C00FF66B6 /* Storyboards */,
 				B7A6C9CD1F1422FB00FF66B6 /* Supporting Files */,
 				B7A6C9B91F10956B00FF66B6 /* Assets.xcassets */,
 				B7A6C9D91F156DA500FF66B6 /* Models */,
 				B7A6C9DC1F169C5700FF66B6 /* Services */,
+				B7A6C9E11F16E97500FF66B6 /* SideMenu */,
 			);
 			path = WesRides;
 			sourceTree = "<group>";

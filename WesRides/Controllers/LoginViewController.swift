@@ -20,9 +20,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signInSilently()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(segueToMain), name: NSNotification.Name(rawValue: "signIn"), object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "signIn"), object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,7 +56,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
             userRef.observeSingleEvent(of: .value, with: { (snapshot) in
                 if let user = User(snapshot: snapshot){
                     print ("User already exists \(user.username).")
-                    NotificationCenter.default.post(name: Notification.Name(rawValue: "signIn"), object: self)
                 }
                 else{
                     
@@ -73,9 +69,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
                     print(user.uid)
                     print(userFullName!)
                     print(user.photoURL!)
-                    print ("New user!")
-                    NotificationCenter.default.post(name: Notification.Name(rawValue: "signIn"), object: self)
-                    
+                    print ("New user!")       
                 }
             })
         }
@@ -87,9 +81,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         // ...
     }
 
-    func segueToMain() {
-        self.performSegue(withIdentifier: "login", sender: nil)
-    }
 
     
     @IBAction func unwindToLoginVC(segue: UIStoryboardSegue) {
