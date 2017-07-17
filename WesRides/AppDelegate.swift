@@ -12,24 +12,21 @@ import GoogleSignIn
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate{
     
     var window: UIWindow?
     
-    
+   // [START configure]
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
-        
-        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().shouldFetchBasicProfile = true
-        
-        //User persistence
+
+        // [START user persistence]
         Auth.auth().addStateDidChangeListener() { auth, user in
             if let user = user {
                 print(user.uid)
+                print("AAAAAAAAAAAAAAAAAAA")
                 let storyboard = UIStoryboard(name: "Main", bundle: .main)
                 let viewController = storyboard.instantiateViewController(withIdentifier: "Main")
                 self.window?.rootViewController = viewController
@@ -42,10 +39,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 }
             }
         }
-        
+        // [END user persistence]
         
         return true
     }
+    
+    // [END configure]
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -78,61 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                                                      annotation: [:])
     }
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        // Error
-        if let error = error {
-            print ("Failed to log in Google: ", error)
-            return
-        }
         
-        print("Successfully logged into Google", user)
-        guard let authentication = user.authentication else { return }
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-        
-        Auth.auth().signIn(with: credential) { (user, error) in
-            if let error = error {
-                // Error
-                print("Failed to create a Firebase user with Google account:", error)
-                return
-            }
-            // User is signed in
-            guard let user = user
-                else { return }
-            
-            
-            let userRef = Database.database().reference().child("users").child(user.uid)
-            
-            userRef.observeSingleEvent(of: .value, with: { (snapshot) in
-                if let user = User(snapshot: snapshot){
-                    print ("User already exists \(user.username).")
-                    NotificationCenter.default.post(name: Notification.Name(rawValue: "signIn"), object: self)
-                }
-                else{
-                    
-                    let userEmail = user.email!
-                    let userFullName = user.displayName
-                    let username =  userEmail.components(separatedBy: "@")[0]
-                    let riderAttrs = ["username": username, "userEmail": userEmail, "fullName": userFullName]
-                    userRef.setValue(riderAttrs)
-                    print(userEmail)
-                    print(username)
-                    print(user.uid)
-                    print(userFullName!)
-                    print(user.photoURL!)
-                    print ("New user!")
-                    NotificationCenter.default.post(name: Notification.Name(rawValue: "signIn"), object: self)
-                    
-                }
-            })
-        }
-    }
-    
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        // Perform any operations when the user disconnects from app here.
-        // ...
-    }
-    
     
     
     

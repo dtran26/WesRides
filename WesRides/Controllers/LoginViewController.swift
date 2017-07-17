@@ -9,17 +9,17 @@
 import UIKit
 import Firebase
 import GoogleSignIn
-typealias FIRUser = FirebaseAuth.User
 
-class LoginViewController: UIViewController, GIDSignInUIDelegate {
+class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
-        
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signInSilently()
         
         NotificationCenter.default.addObserver(self, selector: #selector(segueToMain), name: NSNotification.Name(rawValue: "signIn"), object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "signIn"), object: nil)
@@ -30,18 +30,69 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        print("hello")
+        // Error
+        if let error = error {
+            print ("Failed to log in Google: ", error)
+            return
+        }
+        
+        print("Successfully logged into Google", user)
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+        
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                // Error
+                print("Failed to create a Firebase user with Google account:", error)
+                return
+            }
+            // User is signed in
+            guard let user = user
+                else { return }
+            
+            
+            let userRef = Database.database().reference().child("users").child(user.uid)
+            
+            userRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                if let user = User(snapshot: snapshot){
+                    print ("User already exists \(user.username).")
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: "signIn"), object: self)
+                }
+                else{
+                    
+                    let userEmail = user.email!
+                    let userFullName = user.displayName
+                    let username =  userEmail.components(separatedBy: "@")[0]
+                    let riderAttrs = ["username": username, "userEmail": userEmail, "fullName": userFullName]
+                    userRef.setValue(riderAttrs)
+                    print(userEmail)
+                    print(username)
+                    print(user.uid)
+                    print(userFullName!)
+                    print(user.photoURL!)
+                    print ("New user!")
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: "signIn"), object: self)
+                    
+                }
+            })
+        }
+    }
+    
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
+    }
+
     func segueToMain() {
         self.performSegue(withIdentifier: "login", sender: nil)
     }
 
+    
+    @IBAction func unwindToLoginVC(segue: UIStoryboardSegue) {
+        GIDSignIn.sharedInstance().delegate = self
+    }
 }

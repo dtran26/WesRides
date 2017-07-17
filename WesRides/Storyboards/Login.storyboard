@@ -37,7 +37,7 @@
                         <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <segue destination="Zib-xb-agO" kind="presentation" identifier="login" id="Ndh-hV-K2E"/>
+                        <segue destination="Zib-xb-agO" kind="show" identifier="login" id="Ndh-hV-K2E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psL-j3-4vT" userLabel="First Responder" sceneMemberID="firstResponder"/>

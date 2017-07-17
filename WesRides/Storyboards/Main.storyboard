@@ -44,14 +44,6 @@
             </objects>
             <point key="canvasLocation" x="1942" y="478"/>
         </scene>
-        <!--Login-->
-        <scene sceneID="T8M-FQ-kdC">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Login" id="56I-aW-jzA" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qTw-zR-XAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2122" y="-1344"/>
-        </scene>
         <!--Menu View Controller-->
         <scene sceneID="3XD-kW-cDR">
             <objects>
@@ -109,16 +101,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CeG-dc-j6I" id="OTr-ix-63F">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPa-ks-Nxz">
-                                                    <rect key="frame" x="20" y="8" width="60" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Sign Out"/>
-                                                    <connections>
-                                                        <action selector="signOut:" destination="qDG-32-XIr" eventType="touchUpInside" id="B85-QR-bDT"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JjN-r6-0No">
@@ -159,7 +141,20 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bu5-J3-uI4" id="3oO-X5-e0P">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVI-S9-xvR">
+                                                    <rect key="frame" x="16" y="11" width="67" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="LDw-Jh-kxw" appends="YES" id="S5C-HX-Fke"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="O0R-Pj-nAT">
                                         <rect key="frame" x="0.0" y="352" width="375" height="44"/>
@@ -218,10 +213,16 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="56I-aW-jzA" kind="presentation" identifier="logOut" id="Txy-Sr-hBp"/>
+                        <segue destination="cvF-8o-eNE" kind="unwind" identifier="logOut" unwindAction="unwindToLoginVCWithSegue:" id="qV4-jQ-1rk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xME-51-24e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="cvF-8o-eNE" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="LDw-Jh-kxw">
+                    <connections>
+                        <action selector="logout:" destination="qDG-32-XIr" id="Ow7-3x-neB"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1588" y="-663.41829085457277"/>
         </scene>
@@ -369,7 +370,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vgp-s8-Db3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="z3P-1O-0sU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z3P-1O-0sU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -391,7 +392,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nGm-Rf-7ka" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="q2C-Pl-vy2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q2C-Pl-vy2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

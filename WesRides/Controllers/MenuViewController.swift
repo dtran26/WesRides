@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import GoogleSignIn
 
-class MenuViewController: UITableViewController {
+class MenuViewController: UITableViewController{
 
     
     override func viewDidLoad() {
@@ -29,19 +29,16 @@ class MenuViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
-    
-    @IBAction func signOut(_ sender: Any) {
+    @IBAction func logout(_ sender: UITapGestureRecognizer) {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
             GIDSignIn.sharedInstance().signOut()
-            print("sign out successful")
-            
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
         performSegue(withIdentifier: "logOut", sender: self)
+        
     }
     
     
@@ -87,13 +84,9 @@ class MenuViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        
-        
-    }
-    
+        // }
 
 }
