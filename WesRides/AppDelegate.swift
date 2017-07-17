@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
@@ -23,14 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
-        
-        
-        //Set initial screen to LoginViewController
-//        let storyboard = UIStoryboard(name: "Login", bundle: .main)
-//        if let initialViewController = storyboard.instantiateInitialViewController() {
-//            self.window?.rootViewController = initialViewController
-//            self.window?.makeKeyAndVisible()
-//        }
+        GIDSignIn.sharedInstance().shouldFetchBasicProfile = true
         
         //User persistence
         Auth.auth().addStateDidChangeListener() { auth, user in
@@ -111,22 +105,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             userRef.observeSingleEvent(of: .value, with: { (snapshot) in
                 if let user = User(snapshot: snapshot){
                     print ("User already exists \(user.username).")
-                    print("321")
                     NotificationCenter.default.post(name: Notification.Name(rawValue: "signIn"), object: self)
                 }
                 else{
                     
                     let userEmail = user.email!
+                    let userFullName = user.displayName
                     let username =  userEmail.components(separatedBy: "@")[0]
-                    let riderAttrs = ["username": username, "userEmail": userEmail]
+                    let riderAttrs = ["username": username, "userEmail": userEmail, "fullName": userFullName]
                     userRef.setValue(riderAttrs)
                     print(userEmail)
                     print(username)
                     print(user.uid)
+                    print(userFullName!)
+                    print(user.photoURL!)
                     print ("New user!")
-                    print("123")
                     NotificationCenter.default.post(name: Notification.Name(rawValue: "signIn"), object: self)
-                    
                     
                 }
             })

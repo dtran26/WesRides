@@ -20,7 +20,7 @@
 		B7A6C9E01F16E96D00FF66B6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9DF1F16E96D00FF66B6 /* SWRevealViewController.m */; };
 		B7A6C9E31F17372D00FF66B6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9E21F17372D00FF66B6 /* MenuViewController.swift */; };
 		B7A6C9E51F17DF8500FF66B6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9E41F17DF8500FF66B6 /* AboutViewController.swift */; };
-		B7A6C9E91F18153600FF66B6 /* Rides.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9E81F18153600FF66B6 /* Rides.swift */; };
+		B7A6C9E91F18153600FF66B6 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9E81F18153600FF66B6 /* Ride.swift */; };
 		B7A6C9EB1F1824B300FF66B6 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9EA1F1824B300FF66B6 /* PostService.swift */; };
 		B7A6C9ED1F1835F700FF66B6 /* NewRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9EC1F1835F700FF66B6 /* NewRideViewController.swift */; };
 		EC625D12BFAE69A1CE1ADB05 /* Pods_WesRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */; };
@@ -46,7 +46,7 @@
 		B7A6C9DF1F16E96D00FF66B6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = Extensions/SWRevealViewController.m; sourceTree = "<group>"; };
 		B7A6C9E21F17372D00FF66B6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Controllers/MenuViewController.swift; sourceTree = "<group>"; };
 		B7A6C9E41F17DF8500FF66B6 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = Controllers/AboutViewController.swift; sourceTree = "<group>"; };
-		B7A6C9E81F18153600FF66B6 /* Rides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rides.swift; path = Models/Rides.swift; sourceTree = "<group>"; };
+		B7A6C9E81F18153600FF66B6 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ride.swift; path = Models/Ride.swift; sourceTree = "<group>"; };
 		B7A6C9EA1F1824B300FF66B6 /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostService.swift; path = Services/PostService.swift; sourceTree = "<group>"; };
 		B7A6C9EC1F1835F700FF66B6 /* NewRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewRideViewController.swift; path = Controllers/NewRideViewController.swift; sourceTree = "<group>"; };
 		D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WesRides.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				B7A6C9D71F156D8C00FF66B6 /* User.swift */,
-				B7A6C9E81F18153600FF66B6 /* Rides.swift */,
+				B7A6C9E81F18153600FF66B6 /* Ride.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -310,7 +310,7 @@
 				B7A6C9B31F10956B00FF66B6 /* AppDelegate.swift in Sources */,
 				B7A6C9E51F17DF8500FF66B6 /* AboutViewController.swift in Sources */,
 				B7A6C9E01F16E96D00FF66B6 /* SWRevealViewController.m in Sources */,
-				B7A6C9E91F18153600FF66B6 /* Rides.swift in Sources */,
+				B7A6C9E91F18153600FF66B6 /* Ride.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
