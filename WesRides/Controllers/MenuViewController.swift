@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import GoogleSignIn
 
-class MenuViewController: UITableViewController{
+class MenuViewController: UITableViewController {
 
     
     override func viewDidLoad() {

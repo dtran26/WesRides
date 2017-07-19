@@ -23,6 +23,7 @@
 		B7A6C9E91F18153600FF66B6 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9E81F18153600FF66B6 /* Ride.swift */; };
 		B7A6C9EB1F1824B300FF66B6 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9EA1F1824B300FF66B6 /* PostService.swift */; };
 		B7A6C9ED1F1835F700FF66B6 /* NewRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9EC1F1835F700FF66B6 /* NewRideViewController.swift */; };
+		B7CD51921F1EA6EC00E4EE3A /* RideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD51911F1EA6EC00E4EE3A /* RideCell.swift */; };
 		EC625D12BFAE69A1CE1ADB05 /* Pods_WesRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		B7A6C9E81F18153600FF66B6 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ride.swift; path = Models/Ride.swift; sourceTree = "<group>"; };
 		B7A6C9EA1F1824B300FF66B6 /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostService.swift; path = Services/PostService.swift; sourceTree = "<group>"; };
 		B7A6C9EC1F1835F700FF66B6 /* NewRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewRideViewController.swift; path = Controllers/NewRideViewController.swift; sourceTree = "<group>"; };
+		B7CD51911F1EA6EC00E4EE3A /* RideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RideCell.swift; path = Views/RideCell.swift; sourceTree = "<group>"; };
 		D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WesRides.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 				B7A6C9D41F142C8C00FF66B6 /* Storyboards */,
 				B7A6C9CD1F1422FB00FF66B6 /* Supporting Files */,
 				B7A6C9B91F10956B00FF66B6 /* Assets.xcassets */,
+				B7CD51931F1EA6FC00E4EE3A /* Views */,
 				B7A6C9D91F156DA500FF66B6 /* Models */,
 				B7A6C9DC1F169C5700FF66B6 /* Services */,
 				B7A6C9E11F16E97500FF66B6 /* SideMenu */,
@@ -154,6 +157,14 @@
 				B7A6C9DD1F16E96D00FF66B6 /* WesRides-Bridging-Header.h */,
 			);
 			name = SideMenu;
+			sourceTree = "<group>";
+		};
+		B7CD51931F1EA6FC00E4EE3A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B7CD51911F1EA6EC00E4EE3A /* RideCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		E539A09C57B6F06E05F02706 /* Frameworks */ = {
@@ -301,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7A6C9D81F156D8C00FF66B6 /* User.swift in Sources */,
+				B7CD51921F1EA6EC00E4EE3A /* RideCell.swift in Sources */,
 				B7A6C9DB1F169C5200FF66B6 /* UserService.swift in Sources */,
 				B7A6C9ED1F1835F700FF66B6 /* NewRideViewController.swift in Sources */,
 				B7A6C9D61F142CEC00FF66B6 /* LoginViewController.swift in Sources */,

@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 
 class Ride {
     
+    var key : String?
     var email = ""
     var from = ""
     var destination = ""
@@ -27,6 +29,21 @@ class Ride {
         self.capacity = capacity
         self.notes = notes
         self.creationDate = Date()
+    }
+    
+    init?(snapshot: DataSnapshot) {
+        guard let dict = snapshot.value as? [String : Any],
+            let from = dict["startLocation"] as? String,
+            let destination = dict["endLocation"] as? String,
+            let pickUpTime = dict["pickUptime"] as? TimeInterval,
+            let creationDate = dict["createdAt"] as? TimeInterval
+            else { return nil }
+        
+        self.key = snapshot.key
+        self.from = from
+        self.destination = destination
+        self.creationDate = Date(timeIntervalSince1970: creationDate)
+        self.pickUpTime = Date(timeIntervalSince1970: pickUpTime)
     }
 
     var dictValue: [String : Any] {

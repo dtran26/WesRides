@@ -10,21 +10,35 @@ import UIKit
 import FirebaseAuth
 import GoogleSignIn
 
-class HomeViewController: UIViewController {
+
+class HomeViewController: UIViewController{
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var openMenu: UIBarButtonItem!
 
+    var rides = [Ride]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         sideMenu()
-        tableView.delegate = self
-        tableView.dataSource = self
+        
+        configureTableView()
+        
+        UserService.posts(completion: { (posts) in
+            self.rides = posts
+            self.tableView.reloadData()
+        })
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTimeline), name: NSNotification.Name(rawValue: "upload"), object: nil)
     }
 
     func sideMenu() {
@@ -32,6 +46,20 @@ class HomeViewController: UIViewController {
         openMenu.action = #selector(SWRevealViewController.revealToggle(_:))
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
+    
+    func reloadTimeline() {
+        UserService.posts(completion: { (posts) in
+            self.rides = posts
+            self.tableView.reloadData()
+        })
+    }
+    
+    let timestampFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        
+        return dateFormatter
+    }()
 
     @IBAction func newRideTapped(_ sender: Any) {
         performSegue(withIdentifier: "newRideSegue", sender: self)
@@ -42,41 +70,36 @@ class HomeViewController: UIViewController {
     }
     
 
+    func configureTableView() {
+        // remove separators for empty cells
+        tableView.tableFooterView = UIView()
+        // remove separators from cells
+        tableView.separatorStyle = .none
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return rides.count
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let post = posts[indexPath.section]
+        let post = rides[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RideCell", for: indexPath) as! RideCell
         
-        switch indexPath.row {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PostHeaderCell") as! PostHeaderCell
-            cell.usernameLabel.text = User.current.username
-            
-            return cell
-            
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PostImageCell") as! PostImageCell
-            let imageURL = URL(string: post.imageURL)
-            cell.postImageView.kf.setImage(with: imageURL)
-            
-            return cell
-            
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PostActionCell") as! PostActionCell
-            
-            return cell
-            
-        default:
-            fatalError("Error: unexpected indexPath.")
-        }
+        cell.destinationLabel.text = post.destination
+        cell.fromLabel.text = post.from
+        cell.timeLabel.text = timestampFormatter.string(from: post.pickUpTime)
+        
+        return cell
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return posts.count
-    }
-    
+}
 
-
+extension HomeViewController: UITableViewDelegate {
+    
+    
+    
+    
+    
+    
 }

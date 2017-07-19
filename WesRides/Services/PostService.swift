@@ -21,7 +21,11 @@ class PostService{
         
         let postRef = Database.database().reference().child("posts").child(currentUser.uid).childByAutoId()
         
-        postRef.updateChildValues(dict)
+        postRef.updateChildValues(dict) { (error, ref) in
+            if error == nil {
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "upload"), object: self)
+            }
+        }
         
     }
     

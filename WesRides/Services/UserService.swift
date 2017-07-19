@@ -11,20 +11,32 @@ import Firebase
 
 struct UserService {
     
-    static func create(_ firUser: User, username: String, userEmail: String, completion: @escaping (User?) -> Void) {
-        let riderAttrs = ["username": username, "userEmail": userEmail]
+    static func posts(completion: @escaping ([Ride]) -> Void) {
+
+        let currentUser = (Auth.auth().currentUser)!
+        let ref = Database.database().reference().child("posts").child(currentUser.uid)
         
-        let ref = Database.database().reference().child("users").child(firUser.uid)
-        ref.setValue(riderAttrs) { (error, ref) in
-            if let error = error {
-                assertionFailure(error.localizedDescription)
-                return completion(nil)
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
+                return completion([])
             }
             
-            ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                let user = User(snapshot: snapshot)
-                completion(user)
+            var posts = snapshot.flatMap(Ride.init)
+            posts = posts.sorted(by: { (Ride1, Ride2) -> Bool in
+                Ride1.pickUpTime < Ride2.pickUpTime
             })
-        }
+            
+            completion(posts)
+            
+        })
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
