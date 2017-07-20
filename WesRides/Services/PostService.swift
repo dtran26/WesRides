@@ -15,11 +15,11 @@ class PostService{
         // create new post in database
         let currentUser = (Auth.auth().currentUser)!
         
-        let post = Ride(from: startLocation, destination: endLocation, pickUpTime: time, notes: notes, capacity: capacity)
+        let post = Ride(from: startLocation, destination: endLocation, pickUpTime: time, notes: notes, capacity: capacity, creatorUID: currentUser.uid)
         
         let dict = post.dictValue
         
-        let postRef = Database.database().reference().child("posts").child(currentUser.uid).childByAutoId()
+        let postRef = Database.database().reference().child("posts").childByAutoId()
         
         postRef.updateChildValues(dict) { (error, ref) in
             if error == nil {

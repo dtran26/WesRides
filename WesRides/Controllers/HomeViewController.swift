@@ -54,12 +54,7 @@ class HomeViewController: UIViewController{
         })
     }
     
-    let timestampFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .long
-        
-        return dateFormatter
-    }()
+
 
     @IBAction func newRideTapped(_ sender: Any) {
         performSegue(withIdentifier: "newRideSegue", sender: self)
@@ -89,7 +84,7 @@ extension HomeViewController: UITableViewDataSource {
         
         cell.destinationLabel.text = post.destination
         cell.fromLabel.text = post.from
-        cell.timeLabel.text = timestampFormatter.string(from: post.pickUpTime)
+        cell.timeLabel.text = post.pickUpTime.string(dateStyle: .long, timeStyle: .short)
         
         return cell
     }

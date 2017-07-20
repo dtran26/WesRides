@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--WesRides-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="WesRides" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,21 +37,21 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Destination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQM-dK-Dgv" userLabel="Destination Label">
-                                                            <rect key="frame" x="8" y="42" width="192" height="21"/>
+                                                            <rect key="frame" x="8" y="37" width="158" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5R-Mg-sIj">
-                                                            <rect key="frame" x="8" y="13" width="192" height="21"/>
+                                                            <rect key="frame" x="8" y="8" width="158" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qq5-R1-dHp">
-                                                            <rect key="frame" x="251" y="13" width="100" height="21"/>
+                                                            <rect key="frame" x="8" y="66" width="343" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -83,7 +83,7 @@
                             <constraint firstItem="JbS-iA-pDl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xwh-Tr-x02"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="DiG-Wd-bZ4">
+                    <navigationItem key="navigationItem" title="WesRides" id="DiG-Wd-bZ4">
                         <barButtonItem key="leftBarButtonItem" image="icons8-Menu Filled-50" id="Xfh-fu-gQc">
                             <inset key="imageInsets" minX="0.0" minY="14" maxX="26" maxY="14"/>
                         </barButtonItem>
@@ -105,6 +105,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1941.5999999999999" y="477.21139430284859"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cJT-xQ-yPX">
+            <objects>
+                <viewController id="0HW-Hj-GzR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I64-vm-u17"/>
+                        <viewControllerLayoutGuide type="bottom" id="iqW-w6-jne"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9VT-be-Gey">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="53r-IX-c1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1942" y="1224"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="3XD-kW-cDR">
