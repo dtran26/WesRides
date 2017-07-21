@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>FoldingCell.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>GTMOAuth2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -39,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SCLAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftDate.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,17 +47,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>080C9896192010E318C1CDFB0257E9A6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3380590F973AFAFA30255D504B7DEDAC</key>
+		<key>1D59C70F0CDBB389C50EE177885FA796</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C88261AB8B9AC5E2F3F4378DD537E92</key>
+		<key>2F4A8BC51D5F8DF51C70834CAD7D3474</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3380590F973AFAFA30255D504B7DEDAC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,17 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9EEDF4C7F3FB24C85DA2FC2328B0146D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B626E472969D6F87698AF0041EAAFC38</key>
 		<dict>
 			<key>primary</key>
 			<true/>

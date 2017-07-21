@@ -6,10 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--WesRides-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="WesRides" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,15 +58,27 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3e-fE-Yev">
+                                                            <rect key="frame" x="212" y="7" width="139" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.67796003552614692" green="0.74861470570798461" blue="0.94967480959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="creatorLabel" destination="n3e-fE-Yev" id="cTJ-hf-wyU"/>
                                             <outlet property="destinationLabel" destination="BQM-dK-Dgv" id="SBE-E0-JF8"/>
                                             <outlet property="fromLabel" destination="g5R-Mg-sIj" id="OWk-Hc-Brf"/>
                                             <outlet property="timeLabel" destination="Qq5-R1-dHp" id="EQY-jo-Pmo"/>
+                                            <segue destination="0HW-Hj-GzR" kind="presentation" identifier="detailedRide" id="KIt-Gp-Ibt">
+                                                <segue key="commit" inheritsFrom="parent" id="h48-aa-0mj"/>
+                                                <segue key="preview" inheritsFrom="commit" id="JYR-Kk-VMm"/>
+                                            </segue>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -83,7 +96,8 @@
                             <constraint firstItem="JbS-iA-pDl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xwh-Tr-x02"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="WesRides" id="DiG-Wd-bZ4">
+                    <navigationItem key="navigationItem" id="DiG-Wd-bZ4">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="icons8-Menu Filled-50" id="Xfh-fu-gQc">
                             <inset key="imageInsets" minX="0.0" minY="14" maxX="26" maxY="14"/>
                         </barButtonItem>
@@ -104,12 +118,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1941.5999999999999" y="477.21139430284859"/>
+            <point key="canvasLocation" x="1981.5999999999999" y="350.37481259370315"/>
         </scene>
-        <!--View Controller-->
+        <!--Detailed Ride View Controller-->
         <scene sceneID="cJT-xQ-yPX">
             <objects>
-                <viewController id="0HW-Hj-GzR" sceneMemberID="viewController">
+                <viewController id="0HW-Hj-GzR" customClass="DetailedRideViewController" customModule="WesRides" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I64-vm-u17"/>
                         <viewControllerLayoutGuide type="bottom" id="iqW-w6-jne"/>
@@ -117,12 +131,50 @@
                     <view key="view" contentMode="scaleToFill" id="9VT-be-Gey">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01m-I5-qBS">
+                                <rect key="frame" x="16" y="28" width="77" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.0061293000249849246" green="0.0067680746562576227" blue="0.0085858185279187316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="MBb-g8-12f" kind="unwind" unwindAction="unwindToHomeVCWithSegue:" id="6Sq-dI-FcN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeJ-PV-c6P">
+                                <rect key="frame" x="46" y="132" width="282" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Destination" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08K-7J-ZpZ">
+                                <rect key="frame" x="46" y="200" width="282" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuw-nt-MSm">
+                                <rect key="frame" x="59" y="257" width="257" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="notesOutlet" destination="kuw-nt-MSm" id="g17-lO-5ch"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53r-IX-c1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="MBb-g8-12f" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1942" y="1224"/>
+            <point key="canvasLocation" x="1983" y="1224"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="3XD-kW-cDR">
@@ -339,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Xb-Nd-SP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3632.8000000000002" y="-681.40929535232385"/>
+            <point key="canvasLocation" x="3609" y="-663"/>
         </scene>
         <!--Create New Ride-->
         <scene sceneID="alD-SU-lyf">
@@ -439,7 +491,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nF-3y-Hmk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="DpM-g0-63S" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2853.5999999999999" y="476.31184407796104"/>
+            <point key="canvasLocation" x="2865" y="352"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="jFS-fj-XZ2">
@@ -483,7 +535,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYB-rz-7cc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1203" y="478"/>
+            <point key="canvasLocation" x="1089" y="353"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B33-o0-csg">
@@ -501,7 +553,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xn6-6u-1ts" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2693.5999999999999" y="-681.40929535232385"/>
+            <point key="canvasLocation" x="2626" y="-663"/>
         </scene>
     </scenes>
     <resources>
@@ -509,5 +561,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cS1-r4-NjK"/>
+        <segue reference="KIt-Gp-Ibt"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -32,7 +32,6 @@ PODS:
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseUI/Auth (4.1.1):
     - Firebase/Auth
-  - FoldingCell (2.0.5)
   - GoogleSignIn (4.0.2):
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
@@ -55,6 +54,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.10)
   - GTMSessionFetcher/Full (1.1.10):
     - GTMSessionFetcher/Core (= 1.1.10)
+  - SCLAlertView (0.7.0)
   - SwiftDate (4.1.2)
 
 DEPENDENCIES:
@@ -64,8 +64,8 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - FirebaseUI/Auth
-  - FoldingCell (~> 2.0.3)
   - GoogleSignIn
+  - SCLAlertView
   - SwiftDate (~> 4.0)
 
 SPEC CHECKSUMS:
@@ -78,13 +78,13 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   FirebaseStorage: 8110a1ed2034c8fbfd83890d2acc9cdbbd99afec
   FirebaseUI: 5ebebe2c096c71f20abd1d43d0388958373bdaa0
-  FoldingCell: fb189fc746e95b722a1debf8ef455006b70cae2e
   GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SwiftDate: 2dfdebd4f67ae71c9c3e2413ee3c56947f302858
 
-PODFILE CHECKSUM: 6736cc2234dccfe9d9d50a7f44b2a92ce31d1717
+PODFILE CHECKSUM: a3ffa2a3ce4f022d050cd7d4291956c25200919f
 
 COCOAPODS: 1.2.1

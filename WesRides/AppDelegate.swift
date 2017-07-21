@@ -24,9 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 
         // [START user persistence]
         Auth.auth().addStateDidChangeListener() { auth, user in
-            if let user = user {
-                print(user.uid)
-                print("AAAAAAAAAAAAAAAAAAA")
+            if user != nil {
                 let storyboard = UIStoryboard(name: "Main", bundle: .main)
                 let viewController = storyboard.instantiateViewController(withIdentifier: "Main")
                 self.window?.rootViewController = viewController

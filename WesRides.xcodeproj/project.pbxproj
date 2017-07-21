@@ -24,6 +24,7 @@
 		B7A6C9EB1F1824B300FF66B6 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9EA1F1824B300FF66B6 /* PostService.swift */; };
 		B7A6C9ED1F1835F700FF66B6 /* NewRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9EC1F1835F700FF66B6 /* NewRideViewController.swift */; };
 		B7CD51921F1EA6EC00E4EE3A /* RideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD51911F1EA6EC00E4EE3A /* RideCell.swift */; };
+		B7CD51971F215CC100E4EE3A /* DetailedRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD51961F215CC100E4EE3A /* DetailedRideViewController.swift */; };
 		EC625D12BFAE69A1CE1ADB05 /* Pods_WesRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		B7A6C9EA1F1824B300FF66B6 /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostService.swift; path = Services/PostService.swift; sourceTree = "<group>"; };
 		B7A6C9EC1F1835F700FF66B6 /* NewRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewRideViewController.swift; path = Controllers/NewRideViewController.swift; sourceTree = "<group>"; };
 		B7CD51911F1EA6EC00E4EE3A /* RideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RideCell.swift; path = Views/RideCell.swift; sourceTree = "<group>"; };
+		B7CD51961F215CC100E4EE3A /* DetailedRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailedRideViewController.swift; path = Controllers/DetailedRideViewController.swift; sourceTree = "<group>"; };
 		D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WesRides.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 				B7A6C9CA1F14228B00FF66B6 /* HomeViewController.swift */,
 				B7A6C9E21F17372D00FF66B6 /* MenuViewController.swift */,
 				B7A6C9EC1F1835F700FF66B6 /* NewRideViewController.swift */,
+				B7CD51961F215CC100E4EE3A /* DetailedRideViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				B7A6C9EB1F1824B300FF66B6 /* PostService.swift in Sources */,
 				B7A6C9B31F10956B00FF66B6 /* AppDelegate.swift in Sources */,
 				B7A6C9E51F17DF8500FF66B6 /* AboutViewController.swift in Sources */,
+				B7CD51971F215CC100E4EE3A /* DetailedRideViewController.swift in Sources */,
 				B7A6C9E01F16E96D00FF66B6 /* SWRevealViewController.m in Sources */,
 				B7A6C9E91F18153600FF66B6 /* Ride.swift in Sources */,
 			);

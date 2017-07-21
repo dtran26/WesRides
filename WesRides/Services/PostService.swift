@@ -15,7 +15,9 @@ class PostService{
         // create new post in database
         let currentUser = (Auth.auth().currentUser)!
         
-        let post = Ride(from: startLocation, destination: endLocation, pickUpTime: time, notes: notes, capacity: capacity, creatorUID: currentUser.uid)
+        let name = currentUser.displayName
+        
+        let post = Ride(from: startLocation, destination: endLocation, pickUpTime: time, notes: notes, capacity: capacity, creatorUID: currentUser.uid, creatorDisplayName: name!)
         
         let dict = post.dictValue
         

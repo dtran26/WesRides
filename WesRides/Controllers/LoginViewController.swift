@@ -28,7 +28,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
     
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        print("hello")
         // Error
         if let error = error {
             print ("Failed to log in Google: ", error)

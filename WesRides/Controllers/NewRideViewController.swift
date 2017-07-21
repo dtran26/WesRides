@@ -10,6 +10,7 @@ import UIKit
 import ActionSheetPicker_3_0
 import SwiftDate
 import FirebaseAuth
+import SCLAlertView
 
 class NewRideViewController: UIViewController{
 
@@ -28,6 +29,8 @@ class NewRideViewController: UIViewController{
     @IBOutlet weak var capacity: UILabel!
     
     @IBOutlet weak var notes: UITextView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +63,7 @@ class NewRideViewController: UIViewController{
         stepper.wraps = true
         stepper.autorepeat = true
         stepper.maximumValue = 7
+        stepper.minimumValue = 1
     }
 
     @IBAction func startLocationTapped(_ sender: UITextField) {
@@ -105,10 +109,13 @@ class NewRideViewController: UIViewController{
     
     
     @IBAction func saveNewRide(_ sender: UIBarButtonItem) {
-        PostService.create(from: startLocationOutlet.text!, to: endLocationOutlet.text!, capacity: capacity.text!, time: chosenTime, notes: notes.text!)
-
-        performSegue(withIdentifier: "unwindToHome", sender: self)
-        
+        if (startLocationOutlet.text?.isEmpty)! || (endLocationOutlet.text?.isEmpty)!{
+            SCLAlertView().showError("Error", subTitle: "Fill in all the fields") // Error
+        }
+        else{
+            PostService.create(from: startLocationOutlet.text!, to: endLocationOutlet.text!, capacity: capacity.text!, time: chosenTime, notes: notes.text!)
+            performSegue(withIdentifier: "unwindToHome", sender: self)
+        }
         
     }
 
