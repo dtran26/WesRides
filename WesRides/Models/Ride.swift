@@ -22,9 +22,9 @@ class Ride {
     let creationDate: Date
     let creatorUID : String
     let creatorDisplayName : String
+    let offerNewRideBool: Bool
     
-    
-    init(from:String, destination:String, pickUpTime: Date, notes:String, capacity: String, creatorUID: String, creatorDisplayName: String)
+    init(from:String, destination:String, pickUpTime: Date, notes:String, capacity: String, creatorUID: String, creatorDisplayName: String, offerNewRideBool: Bool )
     {
         self.from = from
         self.destination = destination
@@ -34,6 +34,7 @@ class Ride {
         self.creationDate = Date()
         self.creatorUID = creatorUID
         self.creatorDisplayName = creatorDisplayName
+        self.offerNewRideBool = offerNewRideBool
     }
     
     init?(snapshot: DataSnapshot) {
@@ -43,7 +44,8 @@ class Ride {
             let pickUpTime = dict["pickUptime"] as? TimeInterval,
             let creationDate = dict["createdAt"] as? TimeInterval,
             let creatorUID = dict["creatorUID"] as? String,
-            let creatorDisplayName = dict["creatorDisplayName"] as? String
+            let creatorDisplayName = dict["creatorDisplayName"] as? String,
+            let offerNewRideBool = dict["offerNewRideBool"] as? Bool
             else { return nil }
         
         self.key = snapshot.key
@@ -53,6 +55,7 @@ class Ride {
         self.pickUpTime = Date(timeIntervalSince1970: pickUpTime)
         self.creatorUID = creatorUID
         self.creatorDisplayName = creatorDisplayName
+        self.offerNewRideBool = offerNewRideBool
     }
 
     var dictValue: [String : Any] {
@@ -66,6 +69,7 @@ class Ride {
                 "capacity" : capacity,
                 "creatorUID" : creatorUID,
                 "creatorDisplayName" : creatorDisplayName,
+                "offerNewRideBool" : offerNewRideBool,
                 "notes" : notes]
     }
     

@@ -11,13 +11,13 @@ import Firebase
 
 class PostService{
     
-    static func create(from startLocation: String, to endLocation: String, capacity: String, time: Date, notes: String) {
+    static func create(from startLocation: String, to endLocation: String, capacity: String, time: Date, notes: String, isOffer: Bool) {
         // create new post in database
         let currentUser = (Auth.auth().currentUser)!
         
         let name = currentUser.displayName
         
-        let post = Ride(from: startLocation, destination: endLocation, pickUpTime: time, notes: notes, capacity: capacity, creatorUID: currentUser.uid, creatorDisplayName: name!)
+        let post = Ride(from: startLocation, destination: endLocation, pickUpTime: time, notes: notes, capacity: capacity, creatorUID: currentUser.uid, creatorDisplayName: name!, offerNewRideBool: isOffer)
         
         let dict = post.dictValue
         

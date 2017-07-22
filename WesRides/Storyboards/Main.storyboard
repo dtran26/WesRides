@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RideCell" rowHeight="120" id="i9R-QR-62o" customClass="RideCell" customModule="WesRides" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RequestRideCell" rowHeight="120" id="i9R-QR-62o" customClass="RequestRideCell" customModule="WesRides" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i9R-QR-62o" id="BOL-Xc-7me">
@@ -34,7 +34,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="goe-6q-knR">
-                                                    <rect key="frame" x="8" y="8" width="359" height="105"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="112"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Destination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQM-dK-Dgv" userLabel="Destination Label">
@@ -71,14 +71,65 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="creatorLabel" destination="n3e-fE-Yev" id="cTJ-hf-wyU"/>
-                                            <outlet property="destinationLabel" destination="BQM-dK-Dgv" id="SBE-E0-JF8"/>
-                                            <outlet property="fromLabel" destination="g5R-Mg-sIj" id="OWk-Hc-Brf"/>
-                                            <outlet property="timeLabel" destination="Qq5-R1-dHp" id="EQY-jo-Pmo"/>
+                                            <outlet property="creatorLabel" destination="n3e-fE-Yev" id="q9N-qZ-WCx"/>
+                                            <outlet property="destinationLabel" destination="BQM-dK-Dgv" id="hyD-Ya-YCE"/>
+                                            <outlet property="fromLabel" destination="g5R-Mg-sIj" id="UFc-16-KNX"/>
+                                            <outlet property="timeLabel" destination="Qq5-R1-dHp" id="64j-1X-GdS"/>
                                             <segue destination="0HW-Hj-GzR" kind="presentation" identifier="detailedRide" id="KIt-Gp-Ibt">
                                                 <segue key="commit" inheritsFrom="parent" id="h48-aa-0mj"/>
                                                 <segue key="preview" inheritsFrom="commit" id="JYR-Kk-VMm"/>
                                             </segue>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OfferRideCell" id="OV7-sR-AQl" customClass="OfferRideCell" customModule="WesRides" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="148" width="375" height="119"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OV7-sR-AQl" id="Diz-4D-V6o">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="118.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bSp-Er-okr">
+                                                    <rect key="frame" x="8" y="5" width="359" height="114"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Destination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BC-Z5-zrH" userLabel="Destination Label">
+                                                            <rect key="frame" x="8" y="37" width="158" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McX-I4-xUa">
+                                                            <rect key="frame" x="8" y="8" width="158" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oim-Xs-Xtk">
+                                                            <rect key="frame" x="8" y="66" width="343" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jn-Wk-v7t">
+                                                            <rect key="frame" x="212" y="7" width="139" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.67796003549999995" green="0.74861470569999999" blue="0.94967480959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="creatorLabel" destination="7Jn-Wk-v7t" id="Wec-ut-zjl"/>
+                                            <outlet property="destinationLabel" destination="3BC-Z5-zrH" id="Fhu-WV-gvW"/>
+                                            <outlet property="fromLabel" destination="McX-I4-xUa" id="1Jg-yR-nTh"/>
+                                            <outlet property="timeLabel" destination="Oim-Xs-Xtk" id="vw0-dy-Ve4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -101,6 +152,17 @@
                         <barButtonItem key="leftBarButtonItem" image="icons8-Menu Filled-50" id="Xfh-fu-gQc">
                             <inset key="imageInsets" minX="0.0" minY="14" maxX="26" maxY="14"/>
                         </barButtonItem>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="VSV-Fg-Mjr">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Requests"/>
+                                <segment title="Offers"/>
+                            </segments>
+                            <connections>
+                                <action selector="rideSegmentedControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="28I-hD-mjV"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kWv-J3-Ez2">
                             <connections>
                                 <action selector="newRideTapped:" destination="BYZ-38-t0r" id="MTb-7c-sX1"/>
@@ -112,6 +174,7 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="openMenu" destination="Xfh-fu-gQc" id="Qhs-nz-gyo"/>
+                        <outlet property="rideSegmentedControl" destination="VSV-Fg-Mjr" id="mkt-dA-93H"/>
                         <outlet property="tableView" destination="JbS-iA-pDl" id="0Dq-T0-tN7"/>
                         <segue destination="81F-Hx-MfT" kind="show" identifier="newRideSegue" id="j7a-fO-ZYx"/>
                     </connections>
@@ -468,6 +531,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nwA-hY-alG">
+                                <rect key="frame" x="123" y="89" width="129" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Request"/>
+                                    <segment title="Offer"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -482,6 +553,7 @@
                         <outlet property="capacity" destination="Vzt-66-u48" id="yXC-J9-Paa"/>
                         <outlet property="endLocationOutlet" destination="nta-i9-VU9" id="Ex9-hM-RvG"/>
                         <outlet property="notes" destination="q4V-dB-qLe" id="Z5A-Wh-sWJ"/>
+                        <outlet property="requestOrOfferRide" destination="nwA-hY-alG" id="Wak-jr-0qj"/>
                         <outlet property="startLocationOutlet" destination="sY2-ML-PFB" id="yrF-Io-hSo"/>
                         <outlet property="stepper" destination="3ol-kO-ENJ" id="JL9-3n-mtz"/>
                         <outlet property="timeOutlet" destination="Mdv-3a-rgT" id="wge-Sc-e9G"/>
@@ -520,7 +592,9 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vgp-s8-Db3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="z3P-1O-0sU">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z3P-1O-0sU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -542,7 +616,9 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nGm-Rf-7ka" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="q2C-Pl-vy2">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q2C-Pl-vy2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

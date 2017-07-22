@@ -1,20 +1,20 @@
 //
-//  RideCell.swift
+//  OfferRideCell.swift
 //  WesRides
 //
-//  Created by Dan on 7/18/17.
+//  Created by Dan on 7/21/17.
 //  Copyright © 2017 dtran. All rights reserved.
 //
 
 import UIKit
 
-class RideCell: UITableViewCell{
+class OfferRideCell: UITableViewCell {
 
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var destinationLabel: UILabel!
-    
     @IBOutlet weak var creatorLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,5 +25,5 @@ class RideCell: UITableViewCell{
 
         // Configure the view for the selected state
     }
-    
+
 }

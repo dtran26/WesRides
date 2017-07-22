@@ -18,6 +18,8 @@ class NewRideViewController: UIViewController{
     
     var chosenTime = Date()
     
+    @IBOutlet weak var requestOrOfferRide: UISegmentedControl!
+    
     @IBOutlet weak var timeOutlet: UITextField!
     
     @IBOutlet weak var startLocationOutlet: UITextField!
@@ -29,7 +31,6 @@ class NewRideViewController: UIViewController{
     @IBOutlet weak var capacity: UILabel!
     
     @IBOutlet weak var notes: UITextView!
-    
     
     
     override func viewDidLoad() {
@@ -67,6 +68,7 @@ class NewRideViewController: UIViewController{
     }
 
     @IBAction func startLocationTapped(_ sender: UITextField) {
+        self.view.endEditing(true)
         ActionSheetStringPicker.show(withTitle: "Choose Start Location", rows: locations, initialSelection: 0, doneBlock: {
             picker, value, index in
             sender.text = self.locations[value]
@@ -78,6 +80,7 @@ class NewRideViewController: UIViewController{
     
     
     @IBAction func endLocationTapped(_ sender: UITextField) {
+        self.view.endEditing(true)
         ActionSheetStringPicker.show(withTitle: "Choose End Location", rows: locations, initialSelection: 0, doneBlock: {
             picker, value, index in
             sender.text = self.locations[value]
@@ -86,6 +89,7 @@ class NewRideViewController: UIViewController{
     }
     
     @IBAction func timeTapped(_ sender: UITextField) {
+        self.view.endEditing(true)
         let datePicker = ActionSheetDatePicker(title: "Pick Ride Time:", datePickerMode: UIDatePickerMode.dateAndTime, selectedDate: Date(), doneBlock: {
             picker, value, index in
                 if let value = value {
@@ -109,12 +113,22 @@ class NewRideViewController: UIViewController{
     
     
     @IBAction func saveNewRide(_ sender: UIBarButtonItem) {
-        if (startLocationOutlet.text?.isEmpty)! || (endLocationOutlet.text?.isEmpty)!{
+        if (startLocationOutlet.text?.isEmpty)! || (endLocationOutlet.text?.isEmpty)! || (startLocationOutlet.text == endLocationOutlet.text){
             SCLAlertView().showError("Error", subTitle: "Fill in all the fields") // Error
         }
+        
         else{
-            PostService.create(from: startLocationOutlet.text!, to: endLocationOutlet.text!, capacity: capacity.text!, time: chosenTime, notes: notes.text!)
-            performSegue(withIdentifier: "unwindToHome", sender: self)
+            switch requestOrOfferRide.selectedSegmentIndex{
+            case 0:
+                PostService.create(from: startLocationOutlet.text!, to: endLocationOutlet.text!, capacity: capacity.text!, time: chosenTime, notes: notes.text!, isOffer: false)
+                performSegue(withIdentifier: "unwindToHome", sender: self)
+            case 1:
+                PostService.create(from: startLocationOutlet.text!, to: endLocationOutlet.text!, capacity: capacity.text!, time: chosenTime, notes: notes.text!, isOffer: true)
+                performSegue(withIdentifier: "unwindToHome", sender: self)
+            default:
+                return
+                
+            }
         }
         
     }
@@ -144,3 +158,7 @@ extension NewRideViewController : UITextFieldDelegate {
 
 }
 
+extension NewRideViewController : UITextViewDelegate{
+    
+    
+}
