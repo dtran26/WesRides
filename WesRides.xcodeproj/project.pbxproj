@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B759B0AB1F2690250067A6BF /* HideHairline.swift in Sources */ = {isa = PBXBuildFile; fileRef = B759B0AA1F2690250067A6BF /* HideHairline.swift */; };
 		B7A6C9B31F10956B00FF66B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9B21F10956B00FF66B6 /* AppDelegate.swift */; };
 		B7A6C9BA1F10956B00FF66B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9B91F10956B00FF66B6 /* Assets.xcassets */; };
 		B7A6C9C71F14228000FF66B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9C61F14228000FF66B6 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		110105C692F75629D7968A1E /* Pods-WesRides.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WesRides.release.xcconfig"; path = "Pods/Target Support Files/Pods-WesRides/Pods-WesRides.release.xcconfig"; sourceTree = "<group>"; };
 		733806590FCFE4FB122C42C9 /* Pods-WesRides.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WesRides.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WesRides/Pods-WesRides.debug.xcconfig"; sourceTree = "<group>"; };
+		B759B0AA1F2690250067A6BF /* HideHairline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HideHairline.swift; path = Extensions/HideHairline.swift; sourceTree = "<group>"; };
 		B7A6C9AF1F10956B00FF66B6 /* WesRides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WesRides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A6C9B21F10956B00FF66B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7A6C9B91F10956B00FF66B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				B7A6C9B21F10956B00FF66B6 /* AppDelegate.swift */,
+				B759B0AA1F2690250067A6BF /* HideHairline.swift */,
 				B7A6C9CC1F1422A600FF66B6 /* Controllers */,
 				B7A6C9D41F142C8C00FF66B6 /* Storyboards */,
 				B7A6C9CD1F1422FB00FF66B6 /* Supporting Files */,
@@ -317,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B759B0AB1F2690250067A6BF /* HideHairline.swift in Sources */,
 				B7CD519D1F22AC6500E4EE3A /* OfferRideCell.swift in Sources */,
 				B7A6C9D81F156D8C00FF66B6 /* User.swift in Sources */,
 				B7CD51921F1EA6EC00E4EE3A /* RequestRideCell.swift in Sources */,

@@ -58,7 +58,7 @@ class NewRideViewController: UIViewController{
         stepper.wraps = true
         stepper.autorepeat = true
         stepper.maximumValue = 7
-        stepper.minimumValue = 1
+        stepper.minimumValue = 0
     }
     
     @IBAction func startLocationTapped(_ sender: UITextField) {
@@ -92,7 +92,9 @@ class NewRideViewController: UIViewController{
             
             return
         }, cancel: { ActionStringCancelBlock in return }, origin: sender.superview!)
+        let secondsInThreeWeek: TimeInterval = 7 * 24 * 60 * 60 * 3
         datePicker?.minimumDate = Date(timeInterval: 0, since: Date())
+        datePicker?.maximumDate = Date(timeInterval: secondsInThreeWeek, since: Date())
         datePicker?.minuteInterval = 20
         datePicker?.show()
     }
@@ -105,11 +107,11 @@ class NewRideViewController: UIViewController{
     
     
     @IBAction func saveNewRide(_ sender: UIBarButtonItem) {
-        if (startLocationOutlet.text?.isEmpty)! || (endLocationOutlet.text?.isEmpty)!{
+        if (startLocationOutlet.text?.isEmpty)! || (endLocationOutlet.text?.isEmpty)! || (timeOutlet.text?.isEmpty)! || capacity.text == "Capacity"{
             SCLAlertView().showError("Error", subTitle: "Fill in all the fields") // Error
         }
             
-        if (startLocationOutlet.text == endLocationOutlet.text) {
+        else if (startLocationOutlet.text == endLocationOutlet.text) {
             SCLAlertView().showError("Error", subTitle: "Change destination point") // Error
         }
         else{

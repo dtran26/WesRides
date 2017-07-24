@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--WesRides-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="WesRides" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="119" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JbS-iA-pDl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="119" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JbS-iA-pDl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i9R-QR-62o" id="BOL-Xc-7me">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="goe-6q-knR">
@@ -85,7 +85,7 @@
                                         <rect key="frame" x="0.0" y="148" width="375" height="119"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OV7-sR-AQl" id="Diz-4D-V6o">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="118.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bSp-Er-okr">
@@ -142,36 +142,58 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="J5Q-gd-ABV"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nB4-iK-UPa">
+                                <rect key="frame" x="295" y="587" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Fpr-87-gDO"/>
+                                    <constraint firstAttribute="width" constant="50" id="qR8-qv-grp"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="10" height="0.0"/>
+                                <state key="normal" image="icons8-plus_filled">
+                                    <color key="titleShadowColor" red="0.0061293000250000002" green="0.0067680746559999998" blue="0.0085858185279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="newRideTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Mo-Ja-l9U"/>
+                                </connections>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rh7-4g-eVg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="OPu-MW-ZbM">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="VSV-Fg-Mjr">
+                                            <rect key="frame" x="16" y="7" width="340" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Requests"/>
+                                                <segment title="Offers"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="rideSegmentedControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="28I-hD-mjV"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nB4-iK-UPa" secondAttribute="trailing" constant="30" id="6GT-XC-RJ2"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JbS-iA-pDl" secondAttribute="bottom" id="6Zl-2b-7jp"/>
                             <constraint firstAttribute="trailing" secondItem="JbS-iA-pDl" secondAttribute="trailing" id="Cun-K0-m2r"/>
+                            <constraint firstItem="Rh7-4g-eVg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Jpe-Ro-9Xa"/>
                             <constraint firstItem="JbS-iA-pDl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RgW-40-iFl"/>
+                            <constraint firstAttribute="bottom" secondItem="nB4-iK-UPa" secondAttribute="bottom" constant="30" id="UfY-tL-f7E"/>
+                            <constraint firstAttribute="trailing" secondItem="Rh7-4g-eVg" secondAttribute="trailing" id="XgV-8a-Zbe"/>
+                            <constraint firstItem="Rh7-4g-eVg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rX5-MN-Emg"/>
                             <constraint firstItem="JbS-iA-pDl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xwh-Tr-x02"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="DiG-Wd-bZ4">
-                        <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="icons8-Menu Filled-50" id="Xfh-fu-gQc">
-                            <inset key="imageInsets" minX="0.0" minY="14" maxX="26" maxY="14"/>
+                    <navigationItem key="navigationItem" title="WesRides" id="DiG-Wd-bZ4">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="cpn-DF-bMO"/>
+                        <barButtonItem key="leftBarButtonItem" image="icons8-menu" id="Xfh-fu-gQc">
+                            <inset key="imageInsets" minX="0.0" minY="35" maxX="70" maxY="35"/>
                         </barButtonItem>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="VSV-Fg-Mjr">
-                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Requests"/>
-                                <segment title="Offers"/>
-                            </segments>
-                            <connections>
-                                <action selector="rideSegmentedControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="28I-hD-mjV"/>
-                            </connections>
-                        </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kWv-J3-Ez2">
-                            <connections>
-                                <action selector="newRideTapped:" destination="BYZ-38-t0r" id="MTb-7c-sX1"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="kWv-J3-Ez2"/>
                     </navigationItem>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
@@ -258,16 +280,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ZpT-Um-YrW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wvz-m3-WCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2625" y="-1633"/>
+            <point key="canvasLocation" x="2625" y="-1675"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="3XD-kW-cDR">
             <objects>
                 <tableViewController id="qDG-32-XIr" customClass="MenuViewController" customModule="WesRides" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tjq-Pj-9X8">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tjq-Pj-9X8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -468,8 +491,8 @@
                         <color key="backgroundColor" red="1" green="0.36968619860000002" blue="0.41737375789999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="I0j-gd-Ol2">
-                        <barButtonItem key="leftBarButtonItem" image="icons8-Menu Filled-50" id="hkb-tP-l7t">
-                            <inset key="imageInsets" minX="0.0" minY="14" maxX="26" maxY="14"/>
+                        <barButtonItem key="leftBarButtonItem" image="icons8-menu" id="hkb-tP-l7t">
+                            <inset key="imageInsets" minX="0.0" minY="35" maxX="75" maxY="35"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -655,9 +678,28 @@
             </objects>
             <point key="canvasLocation" x="2626" y="-663"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="W4K-g1-lVV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tvx-fO-Dqy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kX0-2K-vhv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MBs-O3-TWq" kind="relationship" relationship="rootViewController" id="XSa-rE-3oJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JyW-zh-hlx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1588" y="-1675"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="icons8-Menu Filled-50" width="50" height="50"/>
+        <image name="icons8-menu" width="100" height="100"/>
+        <image name="icons8-plus_filled" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="KIt-Gp-Ibt"/>

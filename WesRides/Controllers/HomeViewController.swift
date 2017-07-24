@@ -11,17 +11,16 @@ import FirebaseAuth
 import GoogleSignIn
 
 
-class HomeViewController: UIViewController{
+class HomeViewController: UIViewController, HideableHairlineViewController{
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var openMenu: UIBarButtonItem!
     @IBOutlet weak var rideSegmentedControl: UISegmentedControl!
     
-    
     var requestedRides = [Ride]()
     var offeredRides = [Ride]()
-    
     let refreshControl = UIRefreshControl()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +32,11 @@ class HomeViewController: UIViewController{
             self.offeredRides = offerrides
             self.tableView.reloadData()
         })
+        hideHairline()
         
+        let plusbutton = UIView()
+        plusbutton.backgroundColor = .black
+        self.view.addSubview(plusbutton)
     }
     
     override func didReceiveMemoryWarning() {
@@ -87,14 +90,16 @@ class HomeViewController: UIViewController{
         tableView.separatorStyle = .none
         refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
         tableView.addSubview(refreshControl)
+        tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
         
     }
     
+
     
-    @IBAction func newRideTapped(_ sender: Any) {
+    
+    @IBAction func newRideTouched(_ sender: UIButton) {
         performSegue(withIdentifier: "newRideSegue", sender: self)
     }
-    
     @IBAction func unwindToHomeVC(segue: UIStoryboardSegue) {
     }
     
