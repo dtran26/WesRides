@@ -18,13 +18,13 @@ class Ride {
     var destination = ""
     var pickUpTime = Date()
     var notes = ""
-    var capacity = ""
+    var capacity : Int?
     let creationDate: Date
     let creatorUID : String
     let creatorDisplayName : String
     let offerNewRideBool: Bool
     
-    init(from:String, destination:String, pickUpTime: Date, notes:String, capacity: String, creatorUID: String, creatorDisplayName: String, offerNewRideBool: Bool )
+    init(from:String, destination:String, pickUpTime: Date, notes:String, capacity: Int, creatorUID: String, creatorDisplayName: String, offerNewRideBool: Bool )
     {
         self.from = from
         self.destination = destination
@@ -66,7 +66,7 @@ class Ride {
                 "endLocation" : destination,
                 "createdAt" : createdAgo,
                 "pickUptime" : time,
-                "capacity" : capacity,
+                "capacity" : capacity!,
                 "creatorUID" : creatorUID,
                 "creatorDisplayName" : creatorDisplayName,
                 "offerNewRideBool" : offerNewRideBool,

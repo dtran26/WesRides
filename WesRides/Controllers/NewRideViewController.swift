@@ -13,23 +13,17 @@ import FirebaseAuth
 import SCLAlertView
 
 class NewRideViewController: UIViewController{
-
+    
     let locations = ["Wesleyan", "Bradley", "New Haven", "Boston", "New York City"]
     
     var chosenTime = Date()
     
     @IBOutlet weak var requestOrOfferRide: UISegmentedControl!
-    
     @IBOutlet weak var timeOutlet: UITextField!
-    
     @IBOutlet weak var startLocationOutlet: UITextField!
-
     @IBOutlet weak var endLocationOutlet: UITextField!
-    
     @IBOutlet weak var stepper: UIStepper!
-    
     @IBOutlet weak var capacity: UILabel!
-    
     @IBOutlet weak var notes: UITextView!
     
     
@@ -39,9 +33,9 @@ class NewRideViewController: UIViewController{
         stepperSetUp()
         let tap = UITapGestureRecognizer(target: self, action: #selector(NewRideViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -66,7 +60,7 @@ class NewRideViewController: UIViewController{
         stepper.maximumValue = 7
         stepper.minimumValue = 1
     }
-
+    
     @IBAction func startLocationTapped(_ sender: UITextField) {
         self.view.endEditing(true)
         ActionSheetStringPicker.show(withTitle: "Choose Start Location", rows: locations, initialSelection: 0, doneBlock: {
@@ -74,8 +68,6 @@ class NewRideViewController: UIViewController{
             sender.text = self.locations[value]
             return
         }, cancel: { ActionStringCancelBlock in return }, origin: sender)
-        
-        
     }
     
     
@@ -92,11 +84,11 @@ class NewRideViewController: UIViewController{
         self.view.endEditing(true)
         let datePicker = ActionSheetDatePicker(title: "Pick Ride Time:", datePickerMode: UIDatePickerMode.dateAndTime, selectedDate: Date(), doneBlock: {
             picker, value, index in
-                if let value = value {
-                    sender.text = (value as! Date).string(dateStyle: .medium, timeStyle: .short)
-                    self.chosenTime = value as! Date
-                    print(self.chosenTime)
-                }
+            if let value = value {
+                sender.text = (value as! Date).string(dateStyle: .medium, timeStyle: .short)
+                self.chosenTime = value as! Date
+                print(self.chosenTime)
+            }
             
             return
         }, cancel: { ActionStringCancelBlock in return }, origin: sender.superview!)
@@ -105,7 +97,7 @@ class NewRideViewController: UIViewController{
         datePicker?.show()
     }
     
-
+    
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         capacity.text = Int(sender.value).description
     }
@@ -113,17 +105,20 @@ class NewRideViewController: UIViewController{
     
     
     @IBAction func saveNewRide(_ sender: UIBarButtonItem) {
-        if (startLocationOutlet.text?.isEmpty)! || (endLocationOutlet.text?.isEmpty)! || (startLocationOutlet.text == endLocationOutlet.text){
+        if (startLocationOutlet.text?.isEmpty)! || (endLocationOutlet.text?.isEmpty)!{
             SCLAlertView().showError("Error", subTitle: "Fill in all the fields") // Error
         }
-        
+            
+        if (startLocationOutlet.text == endLocationOutlet.text) {
+            SCLAlertView().showError("Error", subTitle: "Change destination point") // Error
+        }
         else{
             switch requestOrOfferRide.selectedSegmentIndex{
             case 0:
-                PostService.create(from: startLocationOutlet.text!, to: endLocationOutlet.text!, capacity: capacity.text!, time: chosenTime, notes: notes.text!, isOffer: false)
+                PostService.create(from: startLocationOutlet.text!, to: endLocationOutlet.text!, capacity: Int(capacity.text!)!, time: chosenTime, notes: notes.text!, isOffer: false)
                 performSegue(withIdentifier: "unwindToHome", sender: self)
             case 1:
-                PostService.create(from: startLocationOutlet.text!, to: endLocationOutlet.text!, capacity: capacity.text!, time: chosenTime, notes: notes.text!, isOffer: true)
+                PostService.create(from: startLocationOutlet.text!, to: endLocationOutlet.text!, capacity: Int(capacity.text!)!, time: chosenTime, notes: notes.text!, isOffer: true)
                 performSegue(withIdentifier: "unwindToHome", sender: self)
             default:
                 return
@@ -132,8 +127,8 @@ class NewRideViewController: UIViewController{
         }
         
     }
-
-
+    
+    
 }
 
 
@@ -155,7 +150,7 @@ extension NewRideViewController : UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
     }
-
+    
 }
 
 extension NewRideViewController : UITextViewDelegate{

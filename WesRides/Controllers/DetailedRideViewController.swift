@@ -9,31 +9,34 @@
 import UIKit
 
 class DetailedRideViewController: UIViewController {
-
+    @IBOutlet weak var fromOutlet: UILabel!
+    @IBOutlet weak var destinationOutlet: UILabel!
     @IBOutlet weak var notesOutlet: UILabel!
     
     var detailedRide : Ride?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fromOutlet.text = detailedRide?.from
+        destinationOutlet.text = detailedRide?.destination
         notesOutlet.text = detailedRide?.notes
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

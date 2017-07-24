@@ -16,8 +16,8 @@ class HomeViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var openMenu: UIBarButtonItem!
     @IBOutlet weak var rideSegmentedControl: UISegmentedControl!
-
-
+    
+    
     var requestedRides = [Ride]()
     var offeredRides = [Ride]()
     
@@ -33,9 +33,9 @@ class HomeViewController: UIViewController{
             self.offeredRides = offerrides
             self.tableView.reloadData()
         })
-    
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -44,7 +44,7 @@ class HomeViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTimeline), name: NSNotification.Name(rawValue: "upload"), object: nil)
     }
-
+    
     func sideMenu() {
         openMenu.target = self.revealViewController()
         openMenu.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -52,20 +52,9 @@ class HomeViewController: UIViewController{
     }
     
     
-
+    
     @IBAction func rideSegmentedControlValueChanged(_ sender: Any) {
         self.tableView.reloadData()
-        switch rideSegmentedControl.selectedSegmentIndex {
-        case 0:
-            print("hello")
-            //loadRequestedRides()
-        case 1:
-            print("hello2")
-            //loadOfferedRides
-        default:
-            return
-        }
-        
     }
     
     
@@ -74,7 +63,6 @@ class HomeViewController: UIViewController{
         case 0: //requests
             UserService.posts(completion: { (requestrides, offerrides) in
                 self.requestedRides = requestrides
-                self.offeredRides = offerrides
                 if self.refreshControl.isRefreshing {
                     self.refreshControl.endRefreshing()
                 }
@@ -82,7 +70,6 @@ class HomeViewController: UIViewController{
             })
         case 1:  // offers
             UserService.posts(completion: { (requestrides, offerrides) in
-                self.requestedRides = requestrides
                 self.offeredRides = offerrides
                 if self.refreshControl.isRefreshing {
                     self.refreshControl.endRefreshing()
@@ -92,13 +79,11 @@ class HomeViewController: UIViewController{
         default:
             return
         }
-
+        
     }
     
     func configureTableView() {
-        // remove separators for empty cells
         tableView.tableFooterView = UIView()
-        // remove separators from cells
         tableView.separatorStyle = .none
         refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
         tableView.addSubview(refreshControl)
@@ -112,20 +97,27 @@ class HomeViewController: UIViewController{
     
     @IBAction func unwindToHomeVC(segue: UIStoryboardSegue) {
     }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let identifier = segue.identifier{
-//            if identifier == "detailedRide"{
-//                if let cell = sender as? UITableViewCell{
-//                    let index = tableView.indexPath(for: cell)
-//                    let ride = rides[index!.row]
-//                    let detailedRideVC = segue.destination as! DetailedRideViewController
-//                    detailedRideVC.detailedRide = ride
-//                    
-//                }
-//            }
-//        }
-//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier{
+            if identifier == "detailedRide"{
+                if let cell = sender as? UITableViewCell{
+                    let index = tableView.indexPath(for: cell)
+                    let detailedRideVC = segue.destination as! DetailedRideViewController
+                    switch rideSegmentedControl.selectedSegmentIndex{
+                    case 0: //requests
+                        let ride = requestedRides[index!.row]
+                        detailedRideVC.detailedRide = ride
+                    case 1:  // offers
+                        let ride = offeredRides[index!.row]
+                        detailedRideVC.detailedRide = ride
+                    default:
+                        return
+                    }
+                }
+            }
+        }
+    }
     
     
     
@@ -144,15 +136,6 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let post = rides[indexPath.row]
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "RequestRideCell", for: indexPath) as! RequestRideCell
-//        
-//        cell.destinationLabel.text = post.destination
-//        cell.fromLabel.text = post.from
-//        cell.timeLabel.text = post.pickUpTime.string(dateStyle: .long, timeStyle: .short)
-//        cell.creatorLabel.text = post.creatorDisplayName
-//        
-//        return cell
         var cell = UITableViewCell()
         switch rideSegmentedControl.selectedSegmentIndex {
         case 0:  // requests

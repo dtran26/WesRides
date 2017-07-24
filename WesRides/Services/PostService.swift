@@ -11,7 +11,7 @@ import Firebase
 
 class PostService{
     
-    static func create(from startLocation: String, to endLocation: String, capacity: String, time: Date, notes: String, isOffer: Bool) {
+    static func create(from startLocation: String, to endLocation: String, capacity: Int, time: Date, notes: String, isOffer: Bool) {
         // create new post in database
         let currentUser = (Auth.auth().currentUser)!
         

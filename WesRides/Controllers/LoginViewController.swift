@@ -11,7 +11,7 @@ import Firebase
 import GoogleSignIn
 
 class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -67,7 +67,7 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
                     print(user.uid)
                     print(userFullName!)
                     print(user.photoURL!)
-                    print ("New user!")       
+                    print ("New user!")
                 }
             })
         }
@@ -78,8 +78,8 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         // Perform any operations when the user disconnects from app here.
         // ...
     }
-
-
+    
+    
     
     @IBAction func unwindToLoginVC(segue: UIStoryboardSegue) {
         GIDSignIn.sharedInstance().delegate = self
