@@ -9,7 +9,6 @@
 import UIKit
 import FirebaseAuth
 import GoogleSignIn
-import DGElasticPullToRefresh
 
 
 class HomeViewController: UIViewController, HideableHairlineViewController{
@@ -21,7 +20,6 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
     var requestedRides = [Ride]()
     var offeredRides = [Ride]()
     let refreshControl = UIRefreshControl()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +89,7 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
         tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
 
     }
+    
     
     @IBAction func newRideTouched(_ sender: UIButton) {
         performSegue(withIdentifier: "newRideSegue", sender: self)
