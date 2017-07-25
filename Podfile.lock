@@ -1,5 +1,6 @@
 PODS:
   - ActionSheetPicker-3.0 (2.2.0)
+  - DGElasticPullToRefresh (1.1)
   - Firebase/Auth (4.0.3):
     - Firebase/Core
     - FirebaseAuth (= 4.0.0)
@@ -59,6 +60,7 @@ PODS:
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
+  - DGElasticPullToRefresh
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -70,6 +72,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
+  DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
   Firebase: 9e33fdfbca37cab635c693883caa90a4475b842b
   FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
   FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
@@ -85,6 +88,6 @@ SPEC CHECKSUMS:
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SwiftDate: 2dfdebd4f67ae71c9c3e2413ee3c56947f302858
 
-PODFILE CHECKSUM: a3ffa2a3ce4f022d050cd7d4291956c25200919f
+PODFILE CHECKSUM: eb2db319e3b3b181ea53dc3ac3a59fc382785f84
 
 COCOAPODS: 1.2.1

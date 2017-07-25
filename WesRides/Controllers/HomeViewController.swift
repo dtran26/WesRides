@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import GoogleSignIn
+import DGElasticPullToRefresh
 
 
 class HomeViewController: UIViewController, HideableHairlineViewController{
@@ -33,10 +34,7 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
             self.tableView.reloadData()
         })
         hideHairline()
-        
-        let plusbutton = UIView()
-        plusbutton.backgroundColor = .black
-        self.view.addSubview(plusbutton)
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -91,16 +89,15 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
         refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
         tableView.addSubview(refreshControl)
         tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
-        
-    }
-    
 
-    
+    }
     
     @IBAction func newRideTouched(_ sender: UIButton) {
         performSegue(withIdentifier: "newRideSegue", sender: self)
     }
+    
     @IBAction func unwindToHomeVC(segue: UIStoryboardSegue) {
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

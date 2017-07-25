@@ -94,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				B7A6C9B21F10956B00FF66B6 /* AppDelegate.swift */,
-				B759B0AA1F2690250067A6BF /* HideHairline.swift */,
 				B7A6C9CC1F1422A600FF66B6 /* Controllers */,
 				B7A6C9D41F142C8C00FF66B6 /* Storyboards */,
 				B7A6C9CD1F1422FB00FF66B6 /* Supporting Files */,
@@ -123,6 +122,7 @@
 		B7A6C9CD1F1422FB00FF66B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B759B0AA1F2690250067A6BF /* HideHairline.swift */,
 				B7A6C9D01F14237A00FF66B6 /* GoogleService-Info.plist */,
 				B7A6C9C81F14228300FF66B6 /* LaunchScreen.storyboard */,
 				B7A6C9C41F14227B00FF66B6 /* Info.plist */,

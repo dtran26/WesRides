@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DGElasticPullToRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FirebaseUI-FirebaseAuthUI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,27 +52,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>080C9896192010E318C1CDFB0257E9A6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1D59C70F0CDBB389C50EE177885FA796</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2F4A8BC51D5F8DF51C70834CAD7D3474</key>
+		<key>2CCCA42B9BD4933C0479F2B5EB8A655A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>3380590F973AFAFA30255D504B7DEDAC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>47D07B436D82BB983C8429FF84F919A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4FFEF778A4FE96AEF03E3669E4EAF9B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -78,6 +83,11 @@
 			<true/>
 		</dict>
 		<key>965699190112DDBD9B7864D091660DBC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9C17A268E414E30ED3C78AD8ACBD74A2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
