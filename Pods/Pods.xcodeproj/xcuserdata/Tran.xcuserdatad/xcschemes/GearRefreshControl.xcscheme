@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '47D07B436D82BB983C8429FF84F919A3'
-               BlueprintName = 'DGElasticPullToRefresh'
+               BlueprintIdentifier = '0751C1FED7E5020F6528A8B64693F489'
+               BlueprintName = 'GearRefreshControl'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'DGElasticPullToRefresh.framework'>
+               BuildableName = 'GearRefreshControl.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

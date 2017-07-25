@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "MKDropdownMenu.h"
 
-FOUNDATION_EXPORT double DGElasticPullToRefreshVersionNumber;
-FOUNDATION_EXPORT const unsigned char DGElasticPullToRefreshVersionString[];
+FOUNDATION_EXPORT double MKDropdownMenuVersionNumber;
+FOUNDATION_EXPORT const unsigned char MKDropdownMenuVersionString[];
 

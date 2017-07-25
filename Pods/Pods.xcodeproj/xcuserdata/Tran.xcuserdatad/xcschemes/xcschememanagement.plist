@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>DGElasticPullToRefresh.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>FirebaseUI-FirebaseAuthUI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,7 +24,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GearRefreshControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MKDropdownMenu.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,12 +57,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0751C1FED7E5020F6528A8B64693F489</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2CCCA42B9BD4933C0479F2B5EB8A655A</key>
+		<key>13FEAD762EC39342ECF56182987CA1EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +77,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>47D07B436D82BB983C8429FF84F919A3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4FFEF778A4FE96AEF03E3669E4EAF9B9</key>
+		<key>5CA6BDB09DEFC7ACA351B90C84E9C7D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9C17A268E414E30ED3C78AD8ACBD74A2</key>
+		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
+		<key>F5998E20F683EE1E9022DCED6FFD564C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD03B20D7CD7667738F2913AEB5719AB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

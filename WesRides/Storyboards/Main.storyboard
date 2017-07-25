@@ -143,7 +143,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nB4-iK-UPa">
-                                <rect key="frame" x="295" y="587" width="80" height="80"/>
+                                <rect key="frame" x="275" y="567" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Fpr-87-gDO"/>
                                     <constraint firstAttribute="width" constant="80" id="qR8-qv-grp"/>
@@ -177,12 +177,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="nB4-iK-UPa" secondAttribute="trailing" id="6GT-XC-RJ2"/>
+                            <constraint firstAttribute="trailing" secondItem="nB4-iK-UPa" secondAttribute="trailing" constant="20" id="6GT-XC-RJ2"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JbS-iA-pDl" secondAttribute="bottom" id="6Zl-2b-7jp"/>
                             <constraint firstAttribute="trailing" secondItem="JbS-iA-pDl" secondAttribute="trailing" id="Cun-K0-m2r"/>
                             <constraint firstItem="Rh7-4g-eVg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Jpe-Ro-9Xa"/>
                             <constraint firstItem="JbS-iA-pDl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RgW-40-iFl"/>
-                            <constraint firstAttribute="bottom" secondItem="nB4-iK-UPa" secondAttribute="bottom" id="UfY-tL-f7E"/>
+                            <constraint firstAttribute="bottom" secondItem="nB4-iK-UPa" secondAttribute="bottom" constant="20" id="UfY-tL-f7E"/>
                             <constraint firstAttribute="trailing" secondItem="Rh7-4g-eVg" secondAttribute="trailing" id="XgV-8a-Zbe"/>
                             <constraint firstItem="Rh7-4g-eVg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rX5-MN-Emg"/>
                             <constraint firstItem="JbS-iA-pDl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xwh-Tr-x02"/>
@@ -641,7 +641,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z3P-1O-0sU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="z3P-1O-0sU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

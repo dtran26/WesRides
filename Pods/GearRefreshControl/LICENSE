@@ -1,8 +1,6 @@
-/*
-
 The MIT License (MIT)
 
-Copyright (c) 2015 Danil Gontovnik
+Copyright (c) 2015 Andrea Mazzini
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,22 +20,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-*/
-
-import CoreGraphics
-
-public struct DGElasticPullToRefreshConstants {
-    
-    struct KeyPaths {
-        static let ContentOffset = "contentOffset"
-        static let ContentInset = "contentInset"
-        static let Frame = "frame"
-        static let PanGestureRecognizerState = "panGestureRecognizer.state"
-    }
-    
-    public static var WaveMaxHeight: CGFloat = 70.0
-    public static var MinOffsetToPull: CGFloat = 95.0
-    public static var LoadingContentInset: CGFloat = 50.0
-    public static var LoadingViewSize: CGFloat = 30.0
-	
-}

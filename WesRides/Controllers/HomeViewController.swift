@@ -10,7 +10,6 @@ import UIKit
 import FirebaseAuth
 import GoogleSignIn
 
-
 class HomeViewController: UIViewController, HideableHairlineViewController{
     
     @IBOutlet weak var tableView: UITableView!
@@ -26,13 +25,15 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
         // Do any additional setup after loading the view, typically from a nib.
         sideMenu()
         configureTableView()
+        // load timeline
         UserService.posts(completion: { (requestrides, offerrides) in
             self.requestedRides = requestrides
             self.offeredRides = offerrides
             self.tableView.reloadData()
         })
-        hideHairline()
+        // cosmetic fix
         self.navigationController?.navigationBar.isTranslucent = false
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -87,7 +88,7 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
         refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
         tableView.addSubview(refreshControl)
         tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
-
+        hideHairline()
     }
     
     
