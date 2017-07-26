@@ -15,7 +15,6 @@ import SCLAlertView
 class NewRideViewController: UIViewController{
     
     let locations = ["Wesleyan", "Bradley", "New Haven", "Boston", "New York City"]
-    
     var chosenTime = Date()
     
     @IBOutlet weak var requestOrOfferRide: UISegmentedControl!

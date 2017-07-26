@@ -25,6 +25,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="119" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JbS-iA-pDl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="0.97254901960784312" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="0.97254901959999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RequestRideCell" rowHeight="120" id="i9R-QR-62o" customClass="RequestRideCell" customModule="WesRides" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
@@ -70,6 +71,7 @@
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="creatorLabel" destination="n3e-fE-Yev" id="q9N-qZ-WCx"/>
                                             <outlet property="destinationLabel" destination="BQM-dK-Dgv" id="hyD-Ya-YCE"/>
@@ -125,6 +127,7 @@
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.97254901959999995" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="creatorLabel" destination="7Jn-Wk-v7t" id="Wec-ut-zjl"/>
                                             <outlet property="destinationLabel" destination="3BC-Z5-zrH" id="Fhu-WV-gvW"/>
@@ -449,7 +452,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1588" y="-663.41829085457277"/>
+            <point key="canvasLocation" x="1089" y="-586"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="cZ8-ZA-8PU">
@@ -464,39 +467,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R92-7N-YZN">
-                                <rect key="frame" x="168" y="20" width="39" height="25"/>
+                                <rect key="frame" x="166" y="20" width="43" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6Z-pG-BHK">
-                                <rect key="frame" x="16" y="17" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="fhX-Z6-c6C" kind="unwind" unwindAction="unwindToHomeVCWithSegue:" id="sB4-6w-qhL"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elt-M3-ad5" customClass="NiceButton" customModule="WesRides" customModuleProvider="target">
-                                <rect key="frame" x="16" y="179" width="153" height="30"/>
+                                <rect key="frame" x="16" y="149" width="153" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Choose Start Location"/>
                                 <connections>
                                     <action selector="chooseFrom:" destination="wC4-01-oQR" eventType="touchUpInside" id="Iah-nT-vOt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqS-b7-NkO">
-                                <rect key="frame" x="311" y="17" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Search"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCp-Gm-bMf" customClass="NiceButton" customModule="WesRides" customModuleProvider="target">
-                                <rect key="frame" x="206" y="179" width="153" height="30"/>
+                                <rect key="frame" x="206" y="149" width="153" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Choose End Location"/>
                                 <connections>
                                     <action selector="choseDestination:" destination="wC4-01-oQR" eventType="touchUpInside" id="f34-kw-Ra3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqS-b7-NkO">
+                                <rect key="frame" x="311" y="17" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchTapped:" destination="wC4-01-oQR" eventType="touchUpInside" id="IYN-xw-bYJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6Z-pG-BHK">
+                                <rect key="frame" x="16" y="17" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="fhX-Z6-c6C" kind="unwind" unwindAction="unwindToHomeVCWithSegue:" id="sB4-6w-qhL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -506,12 +512,48 @@
                     <connections>
                         <outlet property="destinationButton" destination="LCp-Gm-bMf" id="pzw-Ni-8Gu"/>
                         <outlet property="fromButton" destination="elt-M3-ad5" id="aph-on-rVq"/>
+                        <segue destination="RMu-iS-fA1" kind="show" identifier="showFilter" id="9CT-rN-ue4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Xb-Nd-SP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="fhX-Z6-c6C" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2864.8000000000002" y="-663.41829085457277"/>
+            <point key="canvasLocation" x="1982" y="-586"/>
+        </scene>
+        <!--Filtered Rides View Controller-->
+        <scene sceneID="JS3-Ib-vZI">
+            <objects>
+                <viewController id="RMu-iS-fA1" customClass="FilteredRidesViewController" customModule="WesRides" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cjm-J8-gyV"/>
+                        <viewControllerLayoutGuide type="bottom" id="b6u-y6-Xey"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WGR-dH-6Ti">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oc5-QS-Lhe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uv4-DD-BT3">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uv4-DD-BT3" id="BO9-yE-HiA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8go-pJ-R50" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2864.8000000000002" y="-586.05697151424295"/>
         </scene>
         <!--Create New Ride-->
         <scene sceneID="alD-SU-lyf">
@@ -642,15 +684,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0HJ-b9-tYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="542" y="-663"/>
+            <point key="canvasLocation" x="-74" y="-586"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TcN-wF-pxJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vgp-s8-Db3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="z3P-1O-0sU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -674,7 +714,7 @@
         <image name="icons8-plus_filled" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="w3c-2z-XNo"/>
+        <segue reference="c0e-c2-PR4"/>
         <segue reference="KIt-Gp-Ibt"/>
     </inferredMetricsTieBreakers>
 </document>

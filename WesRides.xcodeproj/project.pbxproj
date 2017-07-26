@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B759B0AB1F2690250067A6BF /* HideHairline.swift in Sources */ = {isa = PBXBuildFile; fileRef = B759B0AA1F2690250067A6BF /* HideHairline.swift */; };
 		B759B0AD1F27EC600067A6BF /* NiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B759B0AC1F27EC600067A6BF /* NiceButton.swift */; };
+		B759B0B01F2911060067A6BF /* FilteredRidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B759B0AF1F2911060067A6BF /* FilteredRidesViewController.swift */; };
 		B7A6C9B31F10956B00FF66B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9B21F10956B00FF66B6 /* AppDelegate.swift */; };
 		B7A6C9BA1F10956B00FF66B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9B91F10956B00FF66B6 /* Assets.xcassets */; };
 		B7A6C9C71F14228000FF66B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9C61F14228000FF66B6 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		733806590FCFE4FB122C42C9 /* Pods-WesRides.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WesRides.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WesRides/Pods-WesRides.debug.xcconfig"; sourceTree = "<group>"; };
 		B759B0AA1F2690250067A6BF /* HideHairline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HideHairline.swift; path = Extensions/HideHairline.swift; sourceTree = "<group>"; };
 		B759B0AC1F27EC600067A6BF /* NiceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NiceButton.swift; path = Views/NiceButton.swift; sourceTree = "<group>"; };
+		B759B0AF1F2911060067A6BF /* FilteredRidesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilteredRidesViewController.swift; path = Controllers/FilteredRidesViewController.swift; sourceTree = "<group>"; };
 		B7A6C9AF1F10956B00FF66B6 /* WesRides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WesRides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A6C9B21F10956B00FF66B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7A6C9B91F10956B00FF66B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				B7A6C9E21F17372D00FF66B6 /* MenuViewController.swift */,
 				B7A6C9EC1F1835F700FF66B6 /* NewRideViewController.swift */,
 				B7CD51961F215CC100E4EE3A /* DetailedRideViewController.swift */,
+				B759B0AF1F2911060067A6BF /* FilteredRidesViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				B759B0AD1F27EC600067A6BF /* NiceButton.swift in Sources */,
 				B7A6C9D61F142CEC00FF66B6 /* LoginViewController.swift in Sources */,
 				B7A6C9E31F17372D00FF66B6 /* MenuViewController.swift in Sources */,
+				B759B0B01F2911060067A6BF /* FilteredRidesViewController.swift in Sources */,
 				B7A6C9CB1F14228B00FF66B6 /* HomeViewController.swift in Sources */,
 				B7A6C9EB1F1824B300FF66B6 /* PostService.swift in Sources */,
 				B7A6C9B31F10956B00FF66B6 /* AppDelegate.swift in Sources */,

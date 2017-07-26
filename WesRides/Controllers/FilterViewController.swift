@@ -24,6 +24,10 @@ class FilterViewController: UIViewController {
         "New York City"
     ]
     
+    @IBAction func searchTapped(_ sender: UIButton) {
+        //self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "showFilter", sender: nil)
+    }
     
     
     override func viewDidLoad() {
@@ -68,6 +72,7 @@ class FilterViewController: UIViewController {
             self.destinationButton.setTitle(item, for: .normal)
         }
     }
+
 
 
 
