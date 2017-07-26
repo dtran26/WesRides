@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DropDown.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FirebaseUI-FirebaseAuthUI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,22 +29,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>GearRefreshControl.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MKDropdownMenu.xcscheme</key>
+		<key>Pods-WesRides.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-WesRides.xcscheme</key>
+		<key>Presentr.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -57,17 +57,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0751C1FED7E5020F6528A8B64693F489</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>13FEAD762EC39342ECF56182987CA1EC</key>
+		<key>2A6A126A6A009936463CED06CE81357D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5CA6BDB09DEFC7ACA351B90C84E9C7D9</key>
+		<key>5168099F2EBFC99A707C03C9EADE01A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>90723199604CD986B3B7D1001204C3E1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,12 +97,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F5998E20F683EE1E9022DCED6FFD564C</key>
+		<key>BC53A8E3F2364914CA04069C838B9184</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FD03B20D7CD7667738F2913AEB5719AB</key>
+		<key>D3FFCD454D1995E855F0D94AA23F5E2C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

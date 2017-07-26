@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import GoogleSignIn
+import Presentr
 
 class HomeViewController: UIViewController, HideableHairlineViewController{
     
@@ -19,6 +20,17 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
     var requestedRides = [Ride]()
     var offeredRides = [Ride]()
     let refreshControl = UIRefreshControl()
+    let presenter: Presentr = {
+        let presenter = Presentr(presentationType: .bottomHalf)
+        presenter.transitionType = .coverVertical
+        presenter.dismissOnSwipe = true
+        presenter.roundCorners = true
+        return presenter
+    }()
+
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +112,11 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
         
     }
     
+    @IBAction func searchTouched(_ sender: Any) {
+        let secondVC = storyboard!.instantiateViewController(withIdentifier: "FilterViewController")
+        customPresentViewController(presenter, viewController: secondVC, animated: true, completion: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier{
             if identifier == "detailedRide"{
@@ -124,6 +141,12 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
     
     
 }
+
+
+
+
+
+
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

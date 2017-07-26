@@ -16,7 +16,7 @@ target 'WesRides' do
   pod 'ActionSheetPicker-3.0'
   pod 'SwiftDate', '~> 4.0'
   pod 'SCLAlertView'
-  pod 'GearRefreshControl', '~> 1.0.0'
-  pod 'MKDropdownMenu'
+  pod 'DropDown'
+  pod 'Presentr'
 
 end
