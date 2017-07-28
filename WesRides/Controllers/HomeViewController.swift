@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import GoogleSignIn
 import ActionSheetPicker_3_0
+import TBEmptyDataSet
 
 class HomeViewController: UIViewController, HideableHairlineViewController{
     
@@ -28,11 +29,11 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
         sideMenu()
         configureTableView()
         // load timeline
-        reloadTimeline()
-        // cosmetic fix
-        //        self.navigationController?.navigationBar.isTranslucent = false
-        
-        
+        UserService.posts(completion: { (requestrides, offerrides) in
+            self.requestedRides = requestrides
+            self.offeredRides = offerrides
+            self.tableView.reloadData()
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,14 +59,17 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
     
     
     func reloadTimeline() {
-        UserService.posts(completion: { (requestrides, offerrides) in
-            self.requestedRides = requestrides
-            self.offeredRides = offerrides
-            if self.refreshControl.isRefreshing {
-                self.refreshControl.endRefreshing()
-            }
-            self.tableView.reloadData()
-        })
+        let delayTime = DispatchTime.now() + Double(Int64(1.25 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: delayTime) { () -> Void in
+            UserService.posts(completion: { (requestrides, offerrides) in
+                self.requestedRides = requestrides
+                self.offeredRides = offerrides
+                if self.refreshControl.isRefreshing {
+                    self.refreshControl.endRefreshing()
+                }
+                self.tableView.reloadData()
+            })
+        }
     }
     
     
@@ -199,4 +203,5 @@ extension HomeViewController: UITableViewDataSource {
         return cell
     }
 }
+
 
