@@ -11,7 +11,8 @@ import DropDown
 
 class FilterViewController: UIViewController {
     
-    
+    var requestedRidesFiltered = [Ride]()
+    var offererRidesFiltered = [Ride]()
     let chooseFromDropDown = DropDown()
     let chooseDestinationDropDown = DropDown()
     @IBOutlet weak var fromButton: UIButton!
@@ -25,8 +26,7 @@ class FilterViewController: UIViewController {
     ]
     
     @IBAction func searchTapped(_ sender: UIButton) {
-        //self.dismiss(animated: true, completion: nil)
-        self.performSegue(withIdentifier: "showFilter", sender: nil)
+
     }
     
     

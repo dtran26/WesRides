@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>DropDown.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>FirebaseUI-FirebaseAuthUI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -39,11 +34,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Presentr.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SCLAlertView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -54,15 +44,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TBEmptyDataSet.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>085705ACEA50AB1CBB05589CC1FAA876</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2A6A126A6A009936463CED06CE81357D</key>
+		<key>28DDF180A42CC295E915F107973CA096</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,17 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5168099F2EBFC99A707C03C9EADE01A5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>90723199604CD986B3B7D1001204C3E1</key>
+		<key>6C80A5FCEECBE83929CE6BBE7EC0B3D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>889345973D90811043D7D1A3A6CD01CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -93,16 +93,6 @@
 			<true/>
 		</dict>
 		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BC53A8E3F2364914CA04069C838B9184</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D3FFCD454D1995E855F0D94AA23F5E2C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

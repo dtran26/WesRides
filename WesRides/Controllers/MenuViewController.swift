@@ -12,10 +12,17 @@ import GoogleSignIn
 
 class MenuViewController: UITableViewController {
     
+    @IBOutlet weak var userImage: UIImageView!
+    
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    let currentUser = (Auth.auth().currentUser)!
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        userNameLabel.text = currentUser.displayName
     }
     
     override func didReceiveMemoryWarning() {

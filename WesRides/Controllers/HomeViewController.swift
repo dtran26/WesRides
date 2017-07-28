@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 import GoogleSignIn
-import Presentr
+import ActionSheetPicker_3_0
 
 class HomeViewController: UIViewController, HideableHairlineViewController{
     
@@ -20,16 +20,6 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
     var requestedRides = [Ride]()
     var offeredRides = [Ride]()
     let refreshControl = UIRefreshControl()
-    let presenter: Presentr = {
-        let presenter = Presentr(presentationType: .bottomHalf)
-        presenter.transitionType = .coverVertical
-        presenter.dismissOnSwipe = true
-        presenter.roundCorners = true
-        return presenter
-    }()
-
-    
-    
     
     
     override func viewDidLoad() {
@@ -38,13 +28,10 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
         sideMenu()
         configureTableView()
         // load timeline
-        UserService.posts(completion: { (requestrides, offerrides) in
-            self.requestedRides = requestrides
-            self.offeredRides = offerrides
-            self.tableView.reloadData()
-        })
+        reloadTimeline()
         // cosmetic fix
-        self.navigationController?.navigationBar.isTranslucent = false
+        //        self.navigationController?.navigationBar.isTranslucent = false
+        
         
     }
     
@@ -71,28 +58,16 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
     
     
     func reloadTimeline() {
-        switch rideSegmentedControl.selectedSegmentIndex{
-        case 0: //requests
-            UserService.posts(completion: { (requestrides, offerrides) in
-                self.requestedRides = requestrides
-                if self.refreshControl.isRefreshing {
-                    self.refreshControl.endRefreshing()
-                }
-                self.tableView.reloadData()
-            })
-        case 1:  // offers
-            UserService.posts(completion: { (requestrides, offerrides) in
-                self.offeredRides = offerrides
-                if self.refreshControl.isRefreshing {
-                    self.refreshControl.endRefreshing()
-                }
-                self.tableView.reloadData()
-            })
-        default:
-            return
-        }
-        
+        UserService.posts(completion: { (requestrides, offerrides) in
+            self.requestedRides = requestrides
+            self.offeredRides = offerrides
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
+            self.tableView.reloadData()
+        })
     }
+    
     
     func configureTableView() {
         tableView.tableFooterView = UIView()
@@ -113,9 +88,54 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
     }
     
     @IBAction func searchTouched(_ sender: Any) {
-        let secondVC = storyboard!.instantiateViewController(withIdentifier: "FilterViewController")
-        customPresentViewController(presenter, viewController: secondVC, animated: true, completion: nil)
+        ActionSheetMultipleStringPicker.show(withTitle: "Filter Rides", rows: [
+            ["From","Wesleyan", "Bradley", "New Haven", "Boston", "New York City"],
+            ["To","Wesleyan", "Bradley", "New Haven", "Boston", "New York City"]
+            ], initialSelection: [0, 0], doneBlock: {
+                picker, indexes, values in
+                let pickerArray = values as! Array<String>
+                UserService.posts(completion: { (requestrides, offerrides) in
+                    self.requestedRides = requestrides
+                    self.offeredRides = offerrides
+                })
+                
+                switch self.rideSegmentedControl.selectedSegmentIndex {
+                    
+                case 0: //requests
+                    self.requestedRides = self.requestedRides.filter({ (Ride) -> Bool in
+                        if pickerArray[0] != "From" && pickerArray[1] == "To"{
+                            return Ride.from == pickerArray[0]
+                        }
+                        else if pickerArray[0] == "From" && pickerArray[1] != "To"{
+                            return Ride.destination == pickerArray[1]
+                        }
+                        else if pickerArray[0] != "From" && pickerArray[1] != "To"{
+                            return (Ride.from == pickerArray[0] && Ride.destination == pickerArray[1])
+                        }
+                        return true
+                    })
+                case 1: //offers
+                    self.offeredRides = self.offeredRides.filter({ (Ride) -> Bool in
+                        if pickerArray[0] != "From" && pickerArray[1] == "To"{
+                            return Ride.from == pickerArray[0]
+                        }
+                        else if pickerArray[0] == "From" && pickerArray[1] != "To"{
+                            return Ride.destination == pickerArray[1]
+                        }
+                        else if pickerArray[0] != "From" && pickerArray[1] != "To"{
+                            return (Ride.from == pickerArray[0] && Ride.destination == pickerArray[1])
+                        }
+                        return true
+                    })
+                default:
+                    return
+                }
+                self.tableView.reloadData()
+                
+                return
+        }, cancel: { ActionMultipleStringCancelBlock in return }, origin: sender)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier{
@@ -138,14 +158,7 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
         }
     }
     
-    
-    
 }
-
-
-
-
-
 
 
 extension HomeViewController: UITableViewDataSource {
