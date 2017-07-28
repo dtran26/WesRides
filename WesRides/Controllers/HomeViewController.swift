@@ -10,17 +10,19 @@ import UIKit
 import FirebaseAuth
 import GoogleSignIn
 import ActionSheetPicker_3_0
-import TBEmptyDataSet
+import DZNEmptyDataSet
 
 class HomeViewController: UIViewController, HideableHairlineViewController{
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var openMenu: UIBarButtonItem!
     @IBOutlet weak var rideSegmentedControl: UISegmentedControl!
+    var filteredPicker: ActionSheetMultipleStringPicker!
     
     var requestedRides = [Ride]()
     var offeredRides = [Ride]()
     let refreshControl = UIRefreshControl()
+
     
     
     override func viewDidLoad() {
@@ -60,16 +62,17 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
     
     func reloadTimeline() {
         let delayTime = DispatchTime.now() + Double(Int64(1.25 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-        DispatchQueue.main.asyncAfter(deadline: delayTime) { () -> Void in
-            UserService.posts(completion: { (requestrides, offerrides) in
-                self.requestedRides = requestrides
-                self.offeredRides = offerrides
-                if self.refreshControl.isRefreshing {
+        
+        UserService.posts(completion: { (requestrides, offerrides) in
+            self.requestedRides = requestrides
+            self.offeredRides = offerrides
+            if self.refreshControl.isRefreshing {
+                DispatchQueue.main.asyncAfter(deadline: delayTime) { () -> Void in
                     self.refreshControl.endRefreshing()
                 }
-                self.tableView.reloadData()
-            })
-        }
+            }
+            self.tableView.reloadData()
+        })
     }
     
     
@@ -92,7 +95,7 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
     }
     
     @IBAction func searchTouched(_ sender: Any) {
-        ActionSheetMultipleStringPicker.show(withTitle: "Filter Rides", rows: [
+        self.filteredPicker = ActionSheetMultipleStringPicker.init(title: "Filter Rides", rows: [
             ["From","Wesleyan", "Bradley", "New Haven", "Boston", "New York City"],
             ["To","Wesleyan", "Bradley", "New Haven", "Boston", "New York City"]
             ], initialSelection: [0, 0], doneBlock: {
@@ -138,6 +141,9 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
                 
                 return
         }, cancel: { ActionMultipleStringCancelBlock in return }, origin: sender)
+        
+        self.filteredPicker.tapDismissAction = TapAction.cancel
+        self.filteredPicker.show()
     }
     
     

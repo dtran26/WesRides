@@ -16,6 +16,6 @@ target 'WesRides' do
   pod 'ActionSheetPicker-3.0'
   pod 'SwiftDate', '~> 4.0'
   pod 'SCLAlertView'
-  pod 'TBEmptyDataSet'
+  pod 'DZNEmptyDataSet'
 
 end

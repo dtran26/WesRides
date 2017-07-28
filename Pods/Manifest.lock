@@ -1,5 +1,6 @@
 PODS:
   - ActionSheetPicker-3.0 (2.2.0)
+  - DZNEmptyDataSet (1.8.1)
   - Firebase/Auth (4.0.3):
     - Firebase/Core
     - FirebaseAuth (= 4.0.0)
@@ -56,10 +57,10 @@ PODS:
     - GTMSessionFetcher/Core (= 1.1.10)
   - SCLAlertView (0.7.0)
   - SwiftDate (4.1.2)
-  - TBEmptyDataSet (2.5)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
+  - DZNEmptyDataSet
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -68,10 +69,10 @@ DEPENDENCIES:
   - GoogleSignIn
   - SCLAlertView
   - SwiftDate (~> 4.0)
-  - TBEmptyDataSet
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Firebase: 9e33fdfbca37cab635c693883caa90a4475b842b
   FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
   FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
@@ -86,8 +87,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SwiftDate: 2dfdebd4f67ae71c9c3e2413ee3c56947f302858
-  TBEmptyDataSet: 4527a34cba692e29964b2a07d0ffc46b20946bca
 
-PODFILE CHECKSUM: d4da70e2cba046e94515df552172bc7c41fff071
+PODFILE CHECKSUM: f11fc8a53b166f348ac098bb4836dc7cbb15ed66
 
 COCOAPODS: 1.2.1
