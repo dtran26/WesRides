@@ -17,5 +17,6 @@ target 'WesRides' do
   pod 'SwiftDate', '~> 4.0'
   pod 'SCLAlertView'
   pod 'DZNEmptyDataSet'
+  pod 'RoundedSwitch'
 
 end

@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RoundedSwitch.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SCLAlertView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,11 +57,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0A2197E980114E93FF7D5C3287263B1D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
@@ -67,17 +67,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4B7FB7EFAD9F29767750501EAB0BDB54</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>6942646584058EF6F5B640C74D1F6FD0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>965699190112DDBD9B7864D091660DBC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A0D26C961B4D7B6A6981C0C91E2492D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A7F3C67E782634D9911ECE94ED5D23E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F2005A20CA3E03ADA7DD9E02367E5232</key>
+		<key>FD7654908BBE84C8E2019626C0EFB7F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

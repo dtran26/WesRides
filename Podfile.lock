@@ -55,6 +55,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.10)
   - GTMSessionFetcher/Full (1.1.10):
     - GTMSessionFetcher/Core (= 1.1.10)
+  - RoundedSwitch (2.0.1)
   - SCLAlertView (0.7.0)
   - SwiftDate (4.1.2)
 
@@ -67,6 +68,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseUI/Auth
   - GoogleSignIn
+  - RoundedSwitch
   - SCLAlertView
   - SwiftDate (~> 4.0)
 
@@ -85,9 +87,10 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  RoundedSwitch: 85ea55811bbeb5747dd99e2c2290c86e820decb5
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SwiftDate: 2dfdebd4f67ae71c9c3e2413ee3c56947f302858
 
-PODFILE CHECKSUM: f11fc8a53b166f348ac098bb4836dc7cbb15ed66
+PODFILE CHECKSUM: 74bb57bb60474440f8918cdf497eec67a9c34a90
 
 COCOAPODS: 1.2.1

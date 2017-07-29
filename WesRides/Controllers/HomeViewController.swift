@@ -22,7 +22,7 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
     var requestedRides = [Ride]()
     var offeredRides = [Ride]()
     let refreshControl = UIRefreshControl()
-
+    
     
     
     override func viewDidLoad() {
@@ -31,11 +31,9 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
         sideMenu()
         configureTableView()
         // load timeline
-        UserService.posts(completion: { (requestrides, offerrides) in
-            self.requestedRides = requestrides
-            self.offeredRides = offerrides
-            self.tableView.reloadData()
-        })
+        reloadTimeline()
+    
+//        tableView.tableFooterView = UIView()
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,7 +70,10 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
                 }
             }
             self.tableView.reloadData()
+            self.tableView.emptyDataSetSource = self
+            self.tableView.emptyDataSetDelegate = self
         })
+        
     }
     
     
@@ -181,6 +182,7 @@ extension HomeViewController: UITableViewDataSource {
         default:
             return 0
         }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -208,6 +210,16 @@ extension HomeViewController: UITableViewDataSource {
         }
         return cell
     }
+}
+
+extension HomeViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+
+        let str = "No Rides"
+        let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
 }
 
 

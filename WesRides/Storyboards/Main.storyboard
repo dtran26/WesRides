@@ -64,7 +64,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3e-fE-Yev">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="n3e-fE-Yev">
                                                             <rect key="frame" x="212" y="7" width="139" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="RobotoSlab-Regular" family="Roboto Slab" pointSize="17"/>
@@ -103,32 +103,32 @@
                                                             <rect key="frame" x="8" y="37" width="158" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="RobotoSlab-Regular" family="Roboto Slab" pointSize="17"/>
-                                                            <color key="textColor" red="0.98469046361123047" green="1" blue="0.95527380492427783" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McX-I4-xUa">
                                                             <rect key="frame" x="8" y="8" width="158" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="RobotoSlab-Regular" family="Roboto Slab" pointSize="17"/>
-                                                            <color key="textColor" red="0.98469046361123047" green="1" blue="0.95527380492427783" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oim-Xs-Xtk">
                                                             <rect key="frame" x="8" y="66" width="343" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="RobotoSlab-Regular" family="Roboto Slab" pointSize="17"/>
-                                                            <color key="textColor" red="0.98469046361123047" green="1" blue="0.95527380492427783" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jn-Wk-v7t">
                                                             <rect key="frame" x="212" y="7" width="139" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="RobotoSlab-Regular" family="Roboto Slab" pointSize="17"/>
-                                                            <color key="textColor" red="0.98469046361123047" green="1" blue="0.95527380492427783" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.23137254901960785" green="0.55686274509803924" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.7803921568627451" green="0.83921568627450982" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -215,7 +215,7 @@
                         <outlet property="openMenu" destination="Xfh-fu-gQc" id="Qhs-nz-gyo"/>
                         <outlet property="rideSegmentedControl" destination="VSV-Fg-Mjr" id="mkt-dA-93H"/>
                         <outlet property="tableView" destination="JbS-iA-pDl" id="0Dq-T0-tN7"/>
-                        <segue destination="81F-Hx-MfT" kind="show" identifier="newRideSegue" id="j7a-fO-ZYx"/>
+                        <segue destination="lFs-AG-dSb" kind="presentation" identifier="newRideSegue" id="j7a-fO-ZYx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -267,7 +267,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.41960784313725491" green="0.50588235294117645" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.78039215689999997" green="0.83921568629999999" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="destinationOutlet" destination="08K-7J-ZpZ" id="CDY-XY-pAf"/>
@@ -555,6 +555,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create New Ride" id="MBe-7W-lbe">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="pew-GK-9my">
+                            <connections>
+                                <action selector="didCancel:" destination="81F-Hx-MfT" id="Pn3-DF-otZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Nej-l6-Xx2">
                             <connections>
                                 <action selector="saveNewRide:" destination="81F-Hx-MfT" id="ZCa-4y-nV6"/>
@@ -575,7 +580,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nF-3y-Hmk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="DpM-g0-63S" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2865" y="352"/>
+            <point key="canvasLocation" x="3804" y="351.27436281859076"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="jFS-fj-XZ2">
@@ -604,7 +609,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vgp-s8-Db3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="z3P-1O-0sU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z3P-1O-0sU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -620,6 +625,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYB-rz-7cc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1089" y="353"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wpr-Yq-aLi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lFs-AG-dSb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Eg-Bd-ufy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="81F-Hx-MfT" kind="relationship" relationship="rootViewController" id="fku-Hr-FHb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1yp-Qi-Nt1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2864.8000000000002" y="351.27436281859076"/>
         </scene>
     </scenes>
     <resources>

@@ -103,6 +103,9 @@ class NewRideViewController: UIViewController{
         capacity.text = Int(sender.value).description
     }
     
+    @IBAction func didCancel(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
     @IBAction func saveNewRide(_ sender: UIBarButtonItem) {
