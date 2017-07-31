@@ -16,6 +16,8 @@ class DetailedRideViewController: UIViewController {
     @IBOutlet weak var capacityOutlet: UILabel!
     @IBOutlet weak var seatRequiredOrAvailable: UILabel!
     
+    @IBOutlet weak var creatorOutlet: UILabel!
+    
     @IBOutlet weak var joinButton: UIButton!
     
     var detailedRide : Ride?
@@ -27,6 +29,7 @@ class DetailedRideViewController: UIViewController {
         timeOutlet.text = detailedRide?.pickUpTime.string(dateStyle: .long, timeStyle: .short)
         print(String(describing: detailedRide!.capacity))
         capacityOutlet.text = String(describing: detailedRide!.capacity)
+        creatorOutlet.text = detailedRide?.creatorDisplayName
         if (detailedRide?.offerNewRideBool)!{
             seatRequiredOrAvailable.text = "Available"
         }
@@ -37,6 +40,7 @@ class DetailedRideViewController: UIViewController {
         if !(detailedRide?.offerNewRideBool)!{
             joinButton.isHidden = true
         }
+        
         // Do any additional setup after loading the view.
     }
     
