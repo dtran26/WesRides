@@ -9,9 +9,14 @@
 import UIKit
 
 class DetailedRideViewController: UIViewController {
+    
     @IBOutlet weak var fromOutlet: UILabel!
     @IBOutlet weak var destinationOutlet: UILabel!
-    @IBOutlet weak var notesOutlet: UILabel!
+    @IBOutlet weak var timeOutlet: UILabel!
+    @IBOutlet weak var capacityOutlet: UILabel!
+    @IBOutlet weak var seatRequiredOrAvailable: UILabel!
+    
+    @IBOutlet weak var joinButton: UIButton!
     
     var detailedRide : Ride?
     
@@ -19,15 +24,25 @@ class DetailedRideViewController: UIViewController {
         super.viewDidLoad()
         fromOutlet.text = detailedRide?.from
         destinationOutlet.text = detailedRide?.destination
-        notesOutlet.text = detailedRide?.notes
+        timeOutlet.text = detailedRide?.pickUpTime.string(dateStyle: .long, timeStyle: .short)
+        print(String(describing: detailedRide!.capacity))
+        capacityOutlet.text = String(describing: detailedRide!.capacity)
+        if (detailedRide?.offerNewRideBool)!{
+            seatRequiredOrAvailable.text = "Available"
+        }
+        else if !(detailedRide?.offerNewRideBool)!{
+            seatRequiredOrAvailable.text = "Required"
+        }
+        
+        if !(detailedRide?.offerNewRideBool)!{
+            joinButton.isHidden = true
+        }
         // Do any additional setup after loading the view.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func backToHome(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
-    
     
     /*
      // MARK: - Navigation

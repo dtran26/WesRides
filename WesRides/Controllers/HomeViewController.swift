@@ -12,13 +12,13 @@ import GoogleSignIn
 import ActionSheetPicker_3_0
 import DZNEmptyDataSet
 
+
 class HomeViewController: UIViewController, HideableHairlineViewController{
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var openMenu: UIBarButtonItem!
     @IBOutlet weak var rideSegmentedControl: UISegmentedControl!
     var filteredPicker: ActionSheetMultipleStringPicker!
-    
     var requestedRides = [Ride]()
     var offeredRides = [Ride]()
     let refreshControl = UIRefreshControl()
@@ -32,13 +32,7 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
         configureTableView()
         // load timeline
         reloadTimeline()
-    
-//        tableView.tableFooterView = UIView()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,8 +44,6 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
         openMenu.action = #selector(SWRevealViewController.revealToggle(_:))
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
-    
-    
     
     @IBAction func rideSegmentedControlValueChanged(_ sender: Any) {
         self.tableView.reloadData()
@@ -214,12 +206,13 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-
-        let str = "No Rides"
+        
+        let str = "No Rides Found 😔"
         let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)]
         return NSAttributedString(string: str, attributes: attrs)
     }
     
 }
+
 
 

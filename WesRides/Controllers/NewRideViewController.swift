@@ -22,7 +22,7 @@ class NewRideViewController: UIViewController{
     @IBOutlet weak var startLocationOutlet: UITextField!
     @IBOutlet weak var endLocationOutlet: UITextField!
     @IBOutlet weak var stepper: UIStepper!
-    @IBOutlet weak var capacity: UILabel!
+    @IBOutlet weak var capacity: UITextField!
     @IBOutlet weak var notes: UITextView!
     
     
@@ -35,12 +35,6 @@ class NewRideViewController: UIViewController{
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
     //Calls this function when the tap is recognized.
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -51,6 +45,7 @@ class NewRideViewController: UIViewController{
         self.startLocationOutlet.delegate = self
         self.endLocationOutlet.delegate = self
         self.timeOutlet.delegate = self
+        self.capacity.delegate = self
     }
     
     func stepperSetUp(){
@@ -94,7 +89,7 @@ class NewRideViewController: UIViewController{
         let secondsInThreeWeek: TimeInterval = 7 * 24 * 60 * 60 * 3
         datePicker?.minimumDate = Date(timeInterval: 0, since: Date())
         datePicker?.maximumDate = Date(timeInterval: secondsInThreeWeek, since: Date())
-        datePicker?.minuteInterval = 20
+        datePicker?.minuteInterval = 10
         datePicker?.show()
     }
     

@@ -18,7 +18,7 @@ class Ride {
     var destination = ""
     var pickUpTime = Date()
     var notes = ""
-    var capacity : Int?
+    let capacity : Int
     let creationDate: Date
     let creatorUID : String
     let creatorDisplayName : String
@@ -43,6 +43,7 @@ class Ride {
             let destination = dict["endLocation"] as? String,
             let pickUpTime = dict["pickUptime"] as? TimeInterval,
             let creationDate = dict["createdAt"] as? TimeInterval,
+            let capacity = dict["capacity"] as? Int,
             let creatorUID = dict["creatorUID"] as? String,
             let creatorDisplayName = dict["creatorDisplayName"] as? String,
             let offerNewRideBool = dict["offerNewRideBool"] as? Bool
@@ -56,6 +57,7 @@ class Ride {
         self.creatorUID = creatorUID
         self.creatorDisplayName = creatorDisplayName
         self.offerNewRideBool = offerNewRideBool
+        self.capacity = capacity
     }
 
     var dictValue: [String : Any] {
@@ -66,7 +68,7 @@ class Ride {
                 "endLocation" : destination,
                 "createdAt" : createdAgo,
                 "pickUptime" : time,
-                "capacity" : capacity!,
+                "capacity" : capacity,
                 "creatorUID" : creatorUID,
                 "creatorDisplayName" : creatorDisplayName,
                 "offerNewRideBool" : offerNewRideBool,

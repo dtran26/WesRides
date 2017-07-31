@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PullToDismiss.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>RoundedSwitch.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,6 +62,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>08C80536DCD8C1C244353ED077626E79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
@@ -67,27 +77,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>390240B96A29B2B791D26BF1ECD997EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6942646584058EF6F5B640C74D1F6FD0</key>
+		<key>69E462350D2427EF7B4E736BAE1A95DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>965699190112DDBD9B7864D091660DBC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A0D26C961B4D7B6A6981C0C91E2492D3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A7F3C67E782634D9911ECE94ED5D23E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,7 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FD7654908BBE84C8E2019626C0EFB7F3</key>
+		<key>D5933E29EA42A6D2377A954F29B182B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E666A0E092E6D95011E2EE6C67881376</key>
 		<dict>
 			<key>primary</key>
 			<true/>

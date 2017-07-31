@@ -11,6 +11,7 @@ import FirebaseAuth
 import GoogleSignIn
 
 class MenuViewController: UITableViewController {
+
     
     @IBOutlet weak var userImage: UIImageView!
     
@@ -18,16 +19,16 @@ class MenuViewController: UITableViewController {
     
     let currentUser = (Auth.auth().currentUser)!
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         userNameLabel.text = currentUser.displayName
+        self.tableView.backgroundColor = UIColor(red:0.20, green:0.24, blue:0.26, alpha:1.0)
+        
+        
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
     }
     
     override func viewWillAppear(_ animated: Bool) {

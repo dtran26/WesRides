@@ -14,7 +14,6 @@
 		B759B0B91F2A8EFD0067A6BF /* RobotoSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B759B0B41F2A8EFD0067A6BF /* RobotoSlab-Light.ttf */; };
 		B759B0BA1F2A8EFD0067A6BF /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B759B0B51F2A8EFD0067A6BF /* RobotoSlab-Regular.ttf */; };
 		B759B0BB1F2A8EFD0067A6BF /* RobotoSlab-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B759B0B61F2A8EFD0067A6BF /* RobotoSlab-Thin.ttf */; };
-		B759B0BD1F2BB96D0067A6BF /* EmptyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B759B0BC1F2BB96D0067A6BF /* EmptyData.swift */; };
 		B7A6C9B31F10956B00FF66B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9B21F10956B00FF66B6 /* AppDelegate.swift */; };
 		B7A6C9BA1F10956B00FF66B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9B91F10956B00FF66B6 /* Assets.xcassets */; };
 		B7A6C9C71F14228000FF66B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9C61F14228000FF66B6 /* Main.storyboard */; };
@@ -46,7 +45,6 @@
 		B759B0B41F2A8EFD0067A6BF /* RobotoSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Light.ttf"; sourceTree = "<group>"; };
 		B759B0B51F2A8EFD0067A6BF /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
 		B759B0B61F2A8EFD0067A6BF /* RobotoSlab-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Thin.ttf"; sourceTree = "<group>"; };
-		B759B0BC1F2BB96D0067A6BF /* EmptyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyData.swift; path = Models/EmptyData.swift; sourceTree = "<group>"; };
 		B7A6C9AF1F10956B00FF66B6 /* WesRides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WesRides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A6C9B21F10956B00FF66B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7A6C9B91F10956B00FF66B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 			children = (
 				B7A6C9D71F156D8C00FF66B6 /* User.swift */,
 				B7A6C9E81F18153600FF66B6 /* Ride.swift */,
-				B759B0BC1F2BB96D0067A6BF /* EmptyData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -362,7 +359,6 @@
 				B759B0AB1F2690250067A6BF /* HideHairline.swift in Sources */,
 				B7CD519D1F22AC6500E4EE3A /* OfferRideCell.swift in Sources */,
 				B7A6C9D81F156D8C00FF66B6 /* User.swift in Sources */,
-				B759B0BD1F2BB96D0067A6BF /* EmptyData.swift in Sources */,
 				B7CD51921F1EA6EC00E4EE3A /* RequestRideCell.swift in Sources */,
 				B7A6C9DB1F169C5200FF66B6 /* UserService.swift in Sources */,
 				B7A6C9ED1F1835F700FF66B6 /* NewRideViewController.swift in Sources */,

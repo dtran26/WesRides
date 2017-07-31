@@ -18,5 +18,6 @@ target 'WesRides' do
   pod 'SCLAlertView'
   pod 'DZNEmptyDataSet'
   pod 'RoundedSwitch'
+  pod 'PullToDismiss', '~> 2.1'
 
 end

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
+class LoginViewController: UIViewController{
     
     
     override func viewDidLoad() {
@@ -21,11 +21,13 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         GIDSignIn.sharedInstance().uiDelegate = self
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func unwindToLoginVC(segue: UIStoryboardSegue) {
+        GIDSignIn.sharedInstance().delegate = self
     }
-    
+}
+
+
+extension LoginViewController : GIDSignInDelegate, GIDSignInUIDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         // Error
@@ -62,12 +64,6 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
                     let username =  userEmail.components(separatedBy: "@")[0]
                     let riderAttrs = ["username": username, "userEmail": userEmail, "fullName": userFullName]
                     userRef.setValue(riderAttrs)
-                    print(userEmail)
-                    print(username)
-                    print(user.uid)
-                    print(userFullName!)
-                    print(user.photoURL!)
-                    print ("New user!")
                 }
             })
         }
@@ -79,9 +75,4 @@ class LoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDeleg
         // ...
     }
     
-    
-    
-    @IBAction func unwindToLoginVC(segue: UIStoryboardSegue) {
-        GIDSignIn.sharedInstance().delegate = self
-    }
 }

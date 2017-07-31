@@ -12,7 +12,6 @@ import FirebaseDatabase.FIRDataSnapshot
 class User{
     
     var fullName : String
-    var phoneNumber = ""
     var email : String
     var username : String
     let uid : String
