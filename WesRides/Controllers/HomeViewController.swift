@@ -13,7 +13,7 @@ import ActionSheetPicker_3_0
 import DZNEmptyDataSet
 
 
-class HomeViewController: UIViewController, HideableHairlineViewController{
+class HomeViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var openMenu: UIBarButtonItem!
@@ -27,10 +27,8 @@ class HomeViewController: UIViewController, HideableHairlineViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         sideMenu()
         configureTableView()
-        // load timeline
         reloadTimeline()
         
     }
@@ -214,5 +212,8 @@ extension HomeViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
     
 }
 
-
+extension HomeViewController: HideableHairlineViewController{
+    
+    
+}
 

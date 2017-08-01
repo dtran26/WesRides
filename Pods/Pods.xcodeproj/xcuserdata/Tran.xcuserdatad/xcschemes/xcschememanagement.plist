@@ -39,16 +39,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PullToDismiss.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RoundedSwitch.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SCLAlertView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -59,14 +49,19 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftMessages-SwiftMessages.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftMessages.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>08C80536DCD8C1C244353ED077626E79</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
@@ -77,17 +72,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>390240B96A29B2B791D26BF1ECD997EF</key>
+		<key>506F7DA1DCA9E5F63FCB3F94596EC521</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>69E462350D2427EF7B4E736BAE1A95DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,17 +92,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B8B712D66797E5A11C02FC2CD68D0C62</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D1FC847408B724133B6B7D836A830B1D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D386C75EFD4F03725E4EFB866B600B9A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D5933E29EA42A6D2377A954F29B182B9</key>
+		<key>E3840015FE8EA2C9B697237AE31831EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E666A0E092E6D95011E2EE6C67881376</key>
+		<key>E6DDAC8784919A3A157862BB254372A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -15,11 +15,8 @@ class DetailedRideViewController: UIViewController {
     @IBOutlet weak var timeOutlet: UILabel!
     @IBOutlet weak var capacityOutlet: UILabel!
     @IBOutlet weak var seatRequiredOrAvailable: UILabel!
-    
     @IBOutlet weak var creatorOutlet: UILabel!
-    
     @IBOutlet weak var joinButton: UIButton!
-    
     var detailedRide : Ride?
     
     override func viewDidLoad() {
@@ -27,7 +24,6 @@ class DetailedRideViewController: UIViewController {
         fromOutlet.text = detailedRide?.from
         destinationOutlet.text = detailedRide?.destination
         timeOutlet.text = detailedRide?.pickUpTime.string(dateStyle: .long, timeStyle: .short)
-        print(String(describing: detailedRide!.capacity))
         capacityOutlet.text = String(describing: detailedRide!.capacity)
         creatorOutlet.text = detailedRide?.creatorDisplayName
         if (detailedRide?.offerNewRideBool)!{
@@ -40,22 +36,16 @@ class DetailedRideViewController: UIViewController {
         if !(detailedRide?.offerNewRideBool)!{
             joinButton.isHidden = true
         }
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func backToHome(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+ 
+    @IBAction func joinOfferedRide(_ sender: UIButton) {
+        
+    }
+
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

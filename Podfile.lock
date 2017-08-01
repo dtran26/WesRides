@@ -55,10 +55,9 @@ PODS:
   - GTMSessionFetcher/Core (1.1.10)
   - GTMSessionFetcher/Full (1.1.10):
     - GTMSessionFetcher/Core (= 1.1.10)
-  - PullToDismiss (2.1)
-  - RoundedSwitch (2.0.1)
   - SCLAlertView (0.7.0)
   - SwiftDate (4.1.2)
+  - SwiftMessages (3.4.0)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
@@ -69,10 +68,9 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseUI/Auth
   - GoogleSignIn
-  - PullToDismiss (~> 2.1)
-  - RoundedSwitch
   - SCLAlertView
   - SwiftDate (~> 4.0)
+  - SwiftMessages
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
@@ -89,11 +87,10 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
-  PullToDismiss: 5513d561c382d201d0e3fbbdab9a47196cf5d2e2
-  RoundedSwitch: 85ea55811bbeb5747dd99e2c2290c86e820decb5
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SwiftDate: 2dfdebd4f67ae71c9c3e2413ee3c56947f302858
+  SwiftMessages: e20aa1557fde1525ea369361bec4943cc0d08e7c
 
-PODFILE CHECKSUM: 617a4594ad7a247476094d71449be83b051ab6c9
+PODFILE CHECKSUM: 393aac0e8d642ed798d71ef35a413b3a86f0d716
 
 COCOAPODS: 1.2.1

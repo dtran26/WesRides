@@ -9,11 +9,9 @@
 import Foundation
 import FirebaseDatabase
 
-
 class Ride {
     
     var key : String?
-    var email = ""
     var from = ""
     var destination = ""
     var pickUpTime = Date()
@@ -22,9 +20,10 @@ class Ride {
     let creationDate: Date
     let creatorUID : String
     let creatorDisplayName : String
+    let creatorEmail : String
     let offerNewRideBool: Bool
     
-    init(from:String, destination:String, pickUpTime: Date, notes:String, capacity: Int, creatorUID: String, creatorDisplayName: String, offerNewRideBool: Bool )
+    init(from:String, destination:String, pickUpTime: Date, notes:String, capacity: Int, creatorUID: String, creatorDisplayName: String, offerNewRideBool: Bool, creatorEmail: String )
     {
         self.from = from
         self.destination = destination
@@ -35,6 +34,7 @@ class Ride {
         self.creatorUID = creatorUID
         self.creatorDisplayName = creatorDisplayName
         self.offerNewRideBool = offerNewRideBool
+        self.creatorEmail = creatorEmail
     }
     
     init?(snapshot: DataSnapshot) {
@@ -46,6 +46,7 @@ class Ride {
             let capacity = dict["capacity"] as? Int,
             let creatorUID = dict["creatorUID"] as? String,
             let creatorDisplayName = dict["creatorDisplayName"] as? String,
+            let creatorEmail = dict["creatorEmail"] as? String,
             let offerNewRideBool = dict["offerNewRideBool"] as? Bool
             else { return nil }
         
@@ -58,6 +59,7 @@ class Ride {
         self.creatorDisplayName = creatorDisplayName
         self.offerNewRideBool = offerNewRideBool
         self.capacity = capacity
+        self.creatorEmail = creatorEmail
     }
 
     var dictValue: [String : Any] {
@@ -71,6 +73,7 @@ class Ride {
                 "capacity" : capacity,
                 "creatorUID" : creatorUID,
                 "creatorDisplayName" : creatorDisplayName,
+                "creatorEmail" : creatorEmail,
                 "offerNewRideBool" : offerNewRideBool,
                 "notes" : notes]
     }

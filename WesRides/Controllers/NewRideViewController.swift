@@ -11,12 +11,13 @@ import ActionSheetPicker_3_0
 import SwiftDate
 import FirebaseAuth
 import SCLAlertView
+import SwiftMessages
 
 class NewRideViewController: UIViewController{
     
     let locations = ["Wesleyan", "Bradley", "New Haven", "Boston", "New York City"]
     var chosenTime = Date()
-    
+    var isRideOffer : Bool?
     @IBOutlet weak var requestOrOfferRide: UISegmentedControl!
     @IBOutlet weak var timeOutlet: UITextField!
     @IBOutlet weak var startLocationOutlet: UITextField!
@@ -114,15 +115,27 @@ class NewRideViewController: UIViewController{
         else{
             switch requestOrOfferRide.selectedSegmentIndex{
             case 0:
-                PostService.create(from: startLocationOutlet.text!, to: endLocationOutlet.text!, capacity: Int(capacity.text!)!, time: chosenTime, notes: notes.text!, isOffer: false)
-                performSegue(withIdentifier: "unwindToHome", sender: self)
+                isRideOffer = false
             case 1:
-                PostService.create(from: startLocationOutlet.text!, to: endLocationOutlet.text!, capacity: Int(capacity.text!)!, time: chosenTime, notes: notes.text!, isOffer: true)
-                performSegue(withIdentifier: "unwindToHome", sender: self)
+                isRideOffer = true
             default:
                 return
-                
             }
+            let view = MessageView.viewFromNib(layout: .CenteredView)
+            var config = SwiftMessages.Config()
+            view.configureTheme(.info)
+            view.configureDropShadow()
+            view.configureContent(title: "Confirm Ride Details", body: "From: \(startLocationOutlet.text!) \nTo: \(endLocationOutlet.text!) \nWhen: \(timeOutlet.text!)", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: "OK 👌"
+                , buttonTapHandler: { _ in
+                PostService.create(from: self.startLocationOutlet.text!, to: self.endLocationOutlet.text!, capacity: Int(self.capacity.text!)!, time: self.chosenTime, notes: self.notes.text!, isOffer: self.isRideOffer!)
+                SwiftMessages.hide()
+                self.performSegue(withIdentifier: "unwindToHome", sender: nil)
+            })
+            config.presentationStyle = .center
+            config.duration = .forever
+            config.dimMode = .blur(style: .dark, alpha: 1, interactive: true)
+            config.presentationContext  = .window(windowLevel: UIWindowLevelStatusBar)
+            SwiftMessages.show(config: config, view: view)
         }
         
     }
@@ -131,7 +144,7 @@ class NewRideViewController: UIViewController{
 }
 
 
-extension NewRideViewController : UITextFieldDelegate {
+extension NewRideViewController: UITextFieldDelegate {
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         return true
@@ -152,7 +165,7 @@ extension NewRideViewController : UITextFieldDelegate {
     
 }
 
-extension NewRideViewController : UITextViewDelegate{
+extension NewRideViewController: UITextViewDelegate{
     
     
 }

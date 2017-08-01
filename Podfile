@@ -17,7 +17,6 @@ target 'WesRides' do
   pod 'SwiftDate', '~> 4.0'
   pod 'SCLAlertView'
   pod 'DZNEmptyDataSet'
-  pod 'RoundedSwitch'
-  pod 'PullToDismiss', '~> 2.1'
+  pod 'SwiftMessages'
 
 end

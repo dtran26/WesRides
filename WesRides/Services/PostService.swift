@@ -17,7 +17,7 @@ class PostService{
         
         let name = currentUser.displayName
         
-        let post = Ride(from: startLocation, destination: endLocation, pickUpTime: time, notes: notes, capacity: capacity, creatorUID: currentUser.uid, creatorDisplayName: name!, offerNewRideBool: isOffer)
+        let post = Ride(from: startLocation, destination: endLocation, pickUpTime: time, notes: notes, capacity: capacity, creatorUID: currentUser.uid, creatorDisplayName: name!, offerNewRideBool: isOffer, creatorEmail: currentUser.email!)
         
         let dict = post.dictValue
         
