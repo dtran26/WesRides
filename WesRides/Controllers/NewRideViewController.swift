@@ -10,7 +10,6 @@ import UIKit
 import ActionSheetPicker_3_0
 import SwiftDate
 import FirebaseAuth
-import SCLAlertView
 import SwiftMessages
 
 class NewRideViewController: UIViewController{
@@ -36,9 +35,7 @@ class NewRideViewController: UIViewController{
         
     }
     
-    //Calls this function when the tap is recognized.
     func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
     
@@ -82,7 +79,6 @@ class NewRideViewController: UIViewController{
             if let value = value {
                 sender.text = (value as! Date).string(dateStyle: .medium, timeStyle: .short)
                 self.chosenTime = value as! Date
-                print(self.chosenTime)
             }
             
             return
@@ -105,13 +101,28 @@ class NewRideViewController: UIViewController{
     
     
     @IBAction func saveNewRide(_ sender: UIBarButtonItem) {
-        if (startLocationOutlet.text?.isEmpty)! || (endLocationOutlet.text?.isEmpty)! || (timeOutlet.text?.isEmpty)! || capacity.text == "Capacity"{
-            SCLAlertView().showError("Error", subTitle: "Fill in all the fields") // Error
+        let warning = MessageView.viewFromNib(layout: .CardView)
+        warning.configureTheme(.warning)
+        warning.configureDropShadow()
+        warning.button?.isHidden = true
+        let iconText = ["🤔", "😖", "🙄", "😶", "😩", "😰"].sm_random()!
+        var warningConfig = SwiftMessages.defaultConfig
+        warningConfig.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
+        if (startLocationOutlet.text?.isEmpty)! || (endLocationOutlet.text?.isEmpty)! || (timeOutlet.text?.isEmpty)! || capacity.text == ""{
+            warning.configureContent(title: "Fill in all the required fields", body: "Consider yourself warned", iconText: iconText)
+            SwiftMessages.show(config: warningConfig, view: warning)
         }
             
         else if (startLocationOutlet.text == endLocationOutlet.text) {
-            SCLAlertView().showError("Error", subTitle: "Change destination point") // Error
+            warning.configureContent(title: "Change Destination Point", body: "Consider yourself warned", iconText: iconText)
+            SwiftMessages.show(config: warningConfig, view: warning)
         }
+            
+        else if (capacity.text! == "0") {
+            warning.configureContent(title: "Capacity cannot be 0", body: "Consider yourself warned", iconText: iconText)
+            SwiftMessages.show(config: warningConfig, view: warning)
+        }
+    
         else{
             switch requestOrOfferRide.selectedSegmentIndex{
             case 0:
@@ -127,15 +138,23 @@ class NewRideViewController: UIViewController{
             view.configureDropShadow()
             view.configureContent(title: "Confirm Ride Details", body: "From: \(startLocationOutlet.text!) \nTo: \(endLocationOutlet.text!) \nWhen: \(timeOutlet.text!)", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: "OK 👌"
                 , buttonTapHandler: { _ in
-                PostService.create(from: self.startLocationOutlet.text!, to: self.endLocationOutlet.text!, capacity: Int(self.capacity.text!)!, time: self.chosenTime, notes: self.notes.text!, isOffer: self.isRideOffer!)
-                SwiftMessages.hide()
-                self.performSegue(withIdentifier: "unwindToHome", sender: nil)
+                    PostService.create(from: self.startLocationOutlet.text!, to: self.endLocationOutlet.text!, capacity: Int(self.capacity.text!)!, time: self.chosenTime, notes: self.notes.text!, isOffer: self.isRideOffer!)
+                    SwiftMessages.hide()
+                    self.performSegue(withIdentifier: "unwindToHome", sender: nil)
+                    let status = MessageView.viewFromNib(layout: .StatusLine)
+                    status.backgroundView.backgroundColor = UIColor(red:0.29, green:0.71, blue:0.26, alpha:1.0)
+                    status.bodyLabel?.textColor = UIColor.white
+                    status.configureContent(body: "Ride Successfuly Created")
+                    var statusConfig = SwiftMessages.defaultConfig
+                    statusConfig.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
+                    SwiftMessages.show(config: statusConfig, view: status)
             })
             config.presentationStyle = .center
             config.duration = .forever
             config.dimMode = .blur(style: .dark, alpha: 1, interactive: true)
             config.presentationContext  = .window(windowLevel: UIWindowLevelStatusBar)
             SwiftMessages.show(config: config, view: view)
+            
         }
         
     }

@@ -15,7 +15,6 @@ target 'WesRides' do
   pod 'GoogleSignIn'
   pod 'ActionSheetPicker-3.0'
   pod 'SwiftDate', '~> 4.0'
-  pod 'SCLAlertView'
   pod 'DZNEmptyDataSet'
   pod 'SwiftMessages'
 
