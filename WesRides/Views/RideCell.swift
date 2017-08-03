@@ -1,14 +1,14 @@
 //
-//  OfferRideCell.swift
+//  RideCell.swift
 //  WesRides
 //
-//  Created by Dan on 7/21/17.
+//  Created by Dan on 7/18/17.
 //  Copyright © 2017 dtran. All rights reserved.
 //
 
 import UIKit
 
-class OfferRideCell: UITableViewCell {
+class RideCell: UITableViewCell{
 
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var fromLabel: UILabel!
@@ -25,5 +25,5 @@ class OfferRideCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

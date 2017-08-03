@@ -11,14 +11,13 @@ import FirebaseDatabase.FIRDataSnapshot
 
 class User{
     
-    var fullName : String
-    var email : String
-    var username : String
+    let fullName : String
+    let email : String
     let uid : String
+    var lastPostTime : Date?
     
-    init(uid: String, username : String, email: String, fullName : String){
+    init(uid: String, email: String, fullName : String){
         self.uid = uid
-        self.username = username
         self.email = email
         self.fullName = fullName
 
@@ -26,12 +25,10 @@ class User{
     
     init?(snapshot: DataSnapshot){
         guard let dict = snapshot.value as? [String : Any],
-              let username = dict["username"] as? String,
               let email = dict["userEmail"] as? String,
               let fullName = dict["fullName"] as? String
             else{ return nil }
         self.uid = snapshot.key
-        self.username = username
         self.email = email
         self.fullName = fullName
     }

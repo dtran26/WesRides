@@ -14,11 +14,11 @@ class MenuViewController: UITableViewController {
 
     @IBOutlet weak var userNameLabel: UILabel!
     
-    let currentUser = (Auth.auth().currentUser)!
+    let currentUser = Auth.auth().currentUser
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        userNameLabel.text = "Hey, \(currentUser.displayName!)"
+        userNameLabel.text = "Hey, \(currentUser?.displayName! ?? "awesome person")"
         self.tableView.backgroundColor = UIColor(red:0.20, green:0.24, blue:0.26, alpha:1.0)
         
     }

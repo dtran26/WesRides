@@ -51,7 +51,7 @@ class HomeViewController: UIViewController{
     func reloadTimeline() {
         let delayTime = DispatchTime.now() + Double(Int64(1.25 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         
-        UserService.posts(completion: { (requestrides, offerrides) in
+        UserService.posts(own: false, completion: { (requestrides, offerrides) in
             self.requestedRides = requestrides
             self.offeredRides = offerrides
             if self.refreshControl.isRefreshing {
@@ -92,7 +92,7 @@ class HomeViewController: UIViewController{
             ], initialSelection: [0, 0], doneBlock: {
                 picker, indexes, values in
                 let pickerArray = values as! Array<String>
-                UserService.posts(completion: { (requestrides, offerrides) in
+                UserService.posts(own: false, completion: { (requestrides, offerrides) in
                     self.requestedRides = requestrides
                     self.offeredRides = offerrides
                 })
@@ -179,22 +179,22 @@ extension HomeViewController: UITableViewDataSource {
         var cell = UITableViewCell()
         switch rideSegmentedControl.selectedSegmentIndex {
         case 0:  // requests
-            let requestCell = tableView.dequeueReusableCell(withIdentifier: "RequestRideCell", for: indexPath) as! RequestRideCell
+            let requestCell = tableView.dequeueReusableCell(withIdentifier: "RequestRideCell", for: indexPath) as! RideCell
             let post = requestedRides[indexPath.row]
             requestCell.destinationLabel.text = post.destination
             requestCell.fromLabel.text = post.from
             requestCell.timeLabel.text = post.pickUpTime.string(dateStyle: .long, timeStyle: .short)
             requestCell.creatorLabel.text = post.creatorDisplayName
-            cell = requestCell as RequestRideCell
+            cell = requestCell as RideCell
             
         case 1:  // offers
-            let offerCell = tableView.dequeueReusableCell(withIdentifier: "OfferRideCell", for: indexPath) as! OfferRideCell
+            let offerCell = tableView.dequeueReusableCell(withIdentifier: "OfferRideCell", for: indexPath) as! RideCell
             let post = offeredRides[indexPath.row]
             offerCell.destinationLabel.text = post.destination
             offerCell.fromLabel.text = post.from
             offerCell.timeLabel.text = post.pickUpTime.string(dateStyle: .long, timeStyle: .short)
             offerCell.creatorLabel.text = post.creatorDisplayName
-            cell = offerCell as OfferRideCell
+            cell = offerCell as RideCell
         default:
             break
         }
@@ -213,7 +213,6 @@ extension HomeViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
 }
 
 extension HomeViewController: HideableHairlineViewController{
-    
     
 }
 

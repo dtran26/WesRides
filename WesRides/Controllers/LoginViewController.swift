@@ -55,14 +55,13 @@ extension LoginViewController : GIDSignInDelegate, GIDSignInUIDelegate {
             
             userRef.observeSingleEvent(of: .value, with: { (snapshot) in
                 if let user = User(snapshot: snapshot){
-                    print ("User already exists \(user.username).")
+                    print ("User already exists \(user.fullName).")
                 }
                 else{
                     
                     let userEmail = user.email!
                     let userFullName = user.displayName
-                    let username =  userEmail.components(separatedBy: "@")[0]
-                    let riderAttrs = ["username": username, "userEmail": userEmail, "fullName": userFullName]
+                    let riderAttrs = ["userEmail": userEmail, "fullName": userFullName!, "lastPostTime" : 10.0] as [String : Any]
                     userRef.setValue(riderAttrs)
                 }
             })

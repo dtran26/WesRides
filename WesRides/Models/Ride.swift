@@ -12,16 +12,16 @@ import FirebaseDatabase
 class Ride {
     
     var key : String?
-    var from = ""
-    var destination = ""
-    var pickUpTime = Date()
-    var notes = ""
+    let from : String
+    let destination : String
+    let pickUpTime : Date
     let capacity : Int
     let creationDate: Date
     let creatorUID : String
     let creatorDisplayName : String
     let creatorEmail : String
     let offerNewRideBool: Bool
+    var notes = ""
     
     init(from:String, destination:String, pickUpTime: Date, notes:String, capacity: Int, creatorUID: String, creatorDisplayName: String, offerNewRideBool: Bool, creatorEmail: String )
     {

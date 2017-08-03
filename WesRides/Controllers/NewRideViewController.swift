@@ -10,6 +10,7 @@ import UIKit
 import ActionSheetPicker_3_0
 import SwiftDate
 import FirebaseAuth
+import FirebaseDatabase
 import SwiftMessages
 
 class NewRideViewController: UIViewController{
@@ -32,6 +33,8 @@ class NewRideViewController: UIViewController{
         stepperSetUp()
         let tap = UITapGestureRecognizer(target: self, action: #selector(NewRideViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+
+
         
     }
     
@@ -74,7 +77,7 @@ class NewRideViewController: UIViewController{
     
     @IBAction func timeTapped(_ sender: UITextField) {
         self.view.endEditing(true)
-        let datePicker = ActionSheetDatePicker(title: "Pick Ride Time:", datePickerMode: UIDatePickerMode.dateAndTime, selectedDate: Date(), doneBlock: {
+        let datePicker = ActionSheetDatePicker(title: "Pick Ride Time:", datePickerMode: UIDatePickerMode.dateAndTime, selectedDate: Date(timeInterval: 3600, since: Date()), doneBlock: {
             picker, value, index in
             if let value = value {
                 sender.text = (value as! Date).string(dateStyle: .medium, timeStyle: .short)
@@ -84,7 +87,8 @@ class NewRideViewController: UIViewController{
             return
         }, cancel: { ActionStringCancelBlock in return }, origin: sender.superview!)
         let secondsInThreeWeek: TimeInterval = 7 * 24 * 60 * 60 * 3
-        datePicker?.minimumDate = Date(timeInterval: 0, since: Date())
+        let secondsInAnHour : TimeInterval = 60 * 60
+        datePicker?.minimumDate = Date(timeInterval: secondsInAnHour, since: Date())
         datePicker?.maximumDate = Date(timeInterval: secondsInThreeWeek, since: Date())
         datePicker?.minuteInterval = 10
         datePicker?.show()
@@ -99,8 +103,27 @@ class NewRideViewController: UIViewController{
         self.dismiss(animated: true, completion: nil)
     }
     
+    let dispatch = DispatchGroup()
     
     @IBAction func saveNewRide(_ sender: UIBarButtonItem) {
+        var timeInterval : TimeInterval?
+        
+        let currentUser = (Auth.auth().currentUser)!
+        let userRef = Database.database().reference().child("users").child(currentUser.uid)
+        dispatch.enter()
+        
+        userRef.observe(DataEventType.value, with: { (snapshot) in
+            
+            let userDict = snapshot.value as? [String : AnyObject] ?? [:]
+            let lastPostTime = userDict["lastPostTime"]!
+            let userLastPostedAt = Date(timeIntervalSince1970: lastPostTime as! TimeInterval)
+            let currentTime = Date()
+            timeInterval = currentTime.timeIntervalSince(userLastPostedAt)
+            self.dispatch.leave()
+        })
+        
+        
+        // WARNING SET UP
         let warning = MessageView.viewFromNib(layout: .CardView)
         warning.configureTheme(.warning)
         warning.configureDropShadow()
@@ -108,18 +131,28 @@ class NewRideViewController: UIViewController{
         let iconText = ["🤔", "😖", "🙄", "😶", "😩", "😰"].sm_random()!
         var warningConfig = SwiftMessages.defaultConfig
         warningConfig.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
+        
+        
+        dispatch.notify(queue: .main) {
+            if (timeInterval! < TimeInterval(30.0)) {
+                warning.configureContent(title: "You are posting too much", body: "Chill out", iconText: iconText)
+                SwiftMessages.show(config: warningConfig, view: warning)
+            }
+        }
+        
+        
         if (startLocationOutlet.text?.isEmpty)! || (endLocationOutlet.text?.isEmpty)! || (timeOutlet.text?.isEmpty)! || capacity.text == ""{
-            warning.configureContent(title: "Fill in all the required fields", body: "Consider yourself warned", iconText: iconText)
+            warning.configureContent(title: "Fill in all the required fields", body: "", iconText: iconText)
             SwiftMessages.show(config: warningConfig, view: warning)
         }
             
         else if (startLocationOutlet.text == endLocationOutlet.text) {
-            warning.configureContent(title: "Change Destination Point", body: "Consider yourself warned", iconText: iconText)
+            warning.configureContent(title: "Change Destination Point", body: "", iconText: iconText)
             SwiftMessages.show(config: warningConfig, view: warning)
         }
             
         else if (capacity.text! == "0") {
-            warning.configureContent(title: "Capacity cannot be 0", body: "Consider yourself warned", iconText: iconText)
+            warning.configureContent(title: "Capacity cannot be zero", body: "", iconText: iconText)
             SwiftMessages.show(config: warningConfig, view: warning)
         }
     

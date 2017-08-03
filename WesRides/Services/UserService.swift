@@ -11,9 +11,10 @@ import Firebase
 
 struct UserService {
     
-    static func posts(completion: @escaping ([Ride], [Ride]) -> Void) {
+    static func posts(own: Bool, completion: @escaping ([Ride], [Ride]) -> Void) {
 
         let ref = Database.database().reference().child("posts")
+        let currentUser = Auth.auth().currentUser
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
@@ -23,10 +24,15 @@ struct UserService {
             var posts = snapshot.flatMap(Ride.init)
             var postsOffered = snapshot.flatMap(Ride.init)
             
+            if !own {
             posts = posts.filter({ (Ride) -> Bool in
                 Ride.pickUpTime.isInFuture
             })
+            postsOffered = postsOffered.filter({ (Ride) -> Bool in
+                Ride.pickUpTime.isInFuture
+            })
             
+            }
             posts = posts.sorted(by: { (Ride1, Ride2) -> Bool in
                 Ride1.pickUpTime < Ride2.pickUpTime
             })
@@ -35,9 +41,7 @@ struct UserService {
                 Ride.offerNewRideBool == false
             })
             
-            postsOffered = postsOffered.filter({ (Ride) -> Bool in
-                Ride.pickUpTime.isInFuture
-            })
+
             
             postsOffered = postsOffered.sorted(by: { (Ride1, Ride2) -> Bool in
                 Ride1.pickUpTime < Ride2.pickUpTime
@@ -46,6 +50,15 @@ struct UserService {
             postsOffered = postsOffered.filter({ (Ride) -> Bool in
                 Ride.offerNewRideBool == true
             })
+            
+            if own{
+                posts = posts.filter({ (Ride) -> Bool in
+                    Ride.creatorDisplayName == currentUser?.displayName
+                })
+                postsOffered = postsOffered.filter({ (Ride) -> Bool in
+                    Ride.creatorDisplayName == currentUser?.displayName
+                })
+            }
             
             completion(posts, postsOffered)
             
