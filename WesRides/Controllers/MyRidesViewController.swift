@@ -33,7 +33,10 @@ class MyRidesViewController: UIViewController {
         tableView.rowHeight = 120
         tableView.separatorStyle = .none
         hideHairline()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    
 }
 
 
@@ -90,6 +93,25 @@ extension MyRidesViewController: UITableViewDataSource{
         
         return cell
         
+    }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            if indexPath.section == 0{
+                requestedRides.remove(at: indexPath.row)
+            }
+            if indexPath.section == 1{
+                offeredRides.remove(at: indexPath.row)
+            }
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
     

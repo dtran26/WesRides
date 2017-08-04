@@ -43,7 +43,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="goe-6q-knR">
-                                                    <rect key="frame" x="7" y="0.0" width="360" height="110"/>
+                                                    <rect key="frame" x="7" y="5" width="360" height="110"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5R-Mg-sIj">
@@ -115,7 +115,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bSp-Er-okr">
-                                                    <rect key="frame" x="7" y="0.0" width="360" height="110"/>
+                                                    <rect key="frame" x="7" y="5" width="360" height="110"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Destination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BC-Z5-zrH" userLabel="Destination Label">
@@ -596,7 +596,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZb-wm-lq9">
-                                                    <rect key="frame" x="7" y="0.0" width="360" height="110"/>
+                                                    <rect key="frame" x="7" y="5" width="360" height="110"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cA-Wb-lfR">
@@ -664,7 +664,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4I-Nw-5sI">
-                                                    <rect key="frame" x="7" y="0.0" width="360" height="110"/>
+                                                    <rect key="frame" x="7" y="5" width="360" height="110"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1N-EX-hVq">
@@ -737,7 +737,6 @@
                         <barButtonItem key="leftBarButtonItem" image="icons8-menu" id="Fkh-yd-6qz">
                             <inset key="imageInsets" minX="0.0" minY="35" maxX="70" maxY="35"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="nIM-84-Ort"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="lFg-aM-Hg0" id="YCu-kR-SQs"/>
