@@ -73,7 +73,7 @@ class HomeViewController: UIViewController{
         tableView.separatorStyle = .none
         refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
         tableView.addSubview(refreshControl)
-        tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsetsMake(45, 0, 0, 0)
         hideHairline()
     }
     

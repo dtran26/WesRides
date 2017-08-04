@@ -21,22 +21,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WESRIDES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9M-VZ-Nfx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WESRIDES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9M-VZ-Nfx">
                                 <rect key="frame" x="73" y="95" width="229" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="45"/>
-                                <color key="textColor" red="1" green="0.97254901960784312" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3jL-e0-Asc" customClass="GIDSignInButton">
-                                <rect key="frame" x="133" y="315" width="108" height="37"/>
+                                <rect key="frame" x="110" y="307" width="154" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="u9M-VZ-Nfx" firstAttribute="centerX" secondItem="UEX-vw-UWH" secondAttribute="centerX" id="tsc-hc-dnh"/>
+                            <constraint firstItem="u9M-VZ-Nfx" firstAttribute="top" secondItem="fFJ-O6-jJX" secondAttribute="bottom" constant="75" id="zz2-L9-jSt"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="googleSignInButton" destination="3jL-e0-Asc" id="dmS-CG-CKL"/>
                         <segue destination="Zib-xb-agO" kind="show" identifier="login" id="Ndh-hV-K2E"/>
                     </connections>
                 </viewController>

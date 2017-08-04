@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A55696F272FF688344C4A01C6393E2F7'
-               BlueprintName = 'CollapsibleTableSectionViewController'
+               BlueprintIdentifier = '76BD4592010354D6C23D6ECCA20D83A8'
+               BlueprintName = 'ChameleonFramework'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'CollapsibleTableSectionViewController.framework'>
+               BuildableName = 'ChameleonFramework.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

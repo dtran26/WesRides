@@ -13,12 +13,16 @@ import GoogleSignIn
 class LoginViewController: UIViewController{
     
     
+    @IBOutlet weak var googleSignInButton: GIDSignInButton!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
+        googleSignInButton.style = GIDSignInButtonStyle.standard
     }
     
     @IBAction func unwindToLoginVC(segue: UIStoryboardSegue) {

@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>CollapsibleTableSectionViewController.xcscheme</key>
+		<key>ChameleonFramework.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -72,12 +72,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3E4D9BAE50940C18333B972CF8450CBA</key>
+		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
+		<key>737711998B63BA4FAE6871AD6A28BA2F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>76BD4592010354D6C23D6ECCA20D83A8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8DAD6A7810149E4105F58CA0C7CC9D65</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,17 +97,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A55696F272FF688344C4A01C6393E2F7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A5A999381A01059559CFD5874E7666B9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B7BA82DD3AA1ED588C77954371CACCF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,12 +112,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E89555BFB829406427D4062A1A98EC95</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F02726E27FED5DE837B3845C4A5B508C</key>
+		<key>E3307DD06F4320A0C46D49DE7857BAFC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

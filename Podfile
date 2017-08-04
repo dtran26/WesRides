@@ -17,6 +17,5 @@ target 'WesRides' do
   pod 'SwiftDate', '~> 4.0'
   pod 'DZNEmptyDataSet'
   pod 'SwiftMessages'
-  pod 'CollapsibleTableSectionViewController'
-  
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
 end

@@ -16,7 +16,6 @@ class DetailedRideViewController: UIViewController {
     @IBOutlet weak var capacityOutlet: UILabel!
     @IBOutlet weak var seatRequiredOrAvailable: UILabel!
     @IBOutlet weak var creatorOutlet: UILabel!
-    @IBOutlet weak var joinButton: UIButton!
     var detailedRide : Ride?
     
     override func viewDidLoad() {
@@ -32,19 +31,13 @@ class DetailedRideViewController: UIViewController {
         else if !(detailedRide?.offerNewRideBool)!{
             seatRequiredOrAvailable.text = "Required"
         }
-        
-        if !(detailedRide?.offerNewRideBool)!{
-            joinButton.isHidden = true
-        }
     }
     
     @IBAction func backToHome(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
  
-    @IBAction func joinOfferedRide(_ sender: UIButton) {
-        
-    }
+
 
     
     
