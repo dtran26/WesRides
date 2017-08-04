@@ -106,21 +106,19 @@ class NewRideViewController: UIViewController{
     let dispatch = DispatchGroup()
     
     @IBAction func saveNewRide(_ sender: UIBarButtonItem) {
-        var timeInterval : TimeInterval?
+//        var timeInterval : TimeInterval?
+//        
+//        let currentUser = (Auth.auth().currentUser)!
+//        let userRef = Database.database().reference().child("users").child(currentUser.uid)
         
-        let currentUser = (Auth.auth().currentUser)!
-        let userRef = Database.database().reference().child("users").child(currentUser.uid)
-        dispatch.enter()
-        
-        userRef.observe(DataEventType.value, with: { (snapshot) in
-            
-            let userDict = snapshot.value as? [String : AnyObject] ?? [:]
-            let lastPostTime = userDict["lastPostTime"]!
-            let userLastPostedAt = Date(timeIntervalSince1970: lastPostTime as! TimeInterval)
-            let currentTime = Date()
-            timeInterval = currentTime.timeIntervalSince(userLastPostedAt)
-            self.dispatch.leave()
-        })
+//        userRef.observe(DataEventType.value, with: { (snapshot) in
+//            
+//            let userDict = snapshot.value as? [String : AnyObject] ?? [:]
+//            let lastPostTime = userDict["lastPostTime"]!
+//            let userLastPostedAt = Date(timeIntervalSince1970: lastPostTime as! TimeInterval)
+//            let currentTime = Date()
+//            timeInterval = currentTime.timeIntervalSince(userLastPostedAt)
+//        })
         
         
         // WARNING SET UP
@@ -133,12 +131,10 @@ class NewRideViewController: UIViewController{
         warningConfig.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
         
         
-        dispatch.notify(queue: .main) {
-            if (timeInterval! < TimeInterval(30.0)) {
-                warning.configureContent(title: "You are posting too much", body: "Chill out", iconText: iconText)
-                SwiftMessages.show(config: warningConfig, view: warning)
-            }
-        }
+//        if (timeInterval! < TimeInterval(30.0)) {
+//            warning.configureContent(title: "You are posting too much", body: "Chill out", iconText: iconText)
+//            SwiftMessages.show(config: warningConfig, view: warning)
+//        }
         
         
         if (startLocationOutlet.text?.isEmpty)! || (endLocationOutlet.text?.isEmpty)! || (timeOutlet.text?.isEmpty)! || capacity.text == ""{

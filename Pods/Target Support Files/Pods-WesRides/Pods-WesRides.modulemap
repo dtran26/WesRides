@@ -1,6 +1,0 @@
-framework module Pods_WesRides {
-  umbrella header "Pods-WesRides-umbrella.h"
-
-  export *
-  module * { export * }
-}
