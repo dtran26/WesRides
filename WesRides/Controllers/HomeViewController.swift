@@ -15,6 +15,7 @@ import DZNEmptyDataSet
 
 class HomeViewController: UIViewController{
     
+    @IBOutlet weak var rideView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var openMenu: UIBarButtonItem!
     @IBOutlet weak var rideSegmentedControl: UISegmentedControl!
@@ -72,7 +73,8 @@ class HomeViewController: UIViewController{
         tableView.separatorStyle = .none
         refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
         tableView.addSubview(refreshControl)
-        tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsetsMake(55, 0, 0, 0)
+        tableView.rowHeight = 150
         hideHairline()
     }
     

@@ -68,30 +68,25 @@ extension MyRidesViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
         
-        if indexPath.section == 0{
-            let myRequestCell = tableView.dequeueReusableCell(withIdentifier: "MyRidesRequested", for: indexPath)
+        var post : Ride?
+        
+        let myRideCell = tableView.dequeueReusableCell(withIdentifier: "MyRidesCell", for: indexPath)
             as! RideCell
-            let post = requestedRides[indexPath.row]
-            myRequestCell.destinationLabel.text = post.destination
-            myRequestCell.fromLabel.text = post.from
-            myRequestCell.timeLabel.text = post.pickUpTime.string(dateStyle: .long, timeStyle: .short)
-            myRequestCell.creatorLabel.text = post.creatorDisplayName
-            cell = myRequestCell as RideCell
+        if indexPath.section == 0{
+            post = requestedRides[indexPath.row]
         }
-
         if indexPath.section == 1{
-            let myOfferCell = tableView.dequeueReusableCell(withIdentifier: "MyRidesOffered", for: indexPath) as! RideCell
-            let post = offeredRides[indexPath.row]
-            myOfferCell.destinationLabel.text = post.destination
-            myOfferCell.fromLabel.text = post.from
-            myOfferCell.timeLabel.text = post.pickUpTime.string(dateStyle: .long, timeStyle: .short)
-            myOfferCell.creatorLabel.text = post.creatorDisplayName
-            cell = myOfferCell as RideCell
+            post = offeredRides[indexPath.row]
         }
+        myRideCell.destinationLabel.text = post?.destination
+        myRideCell.fromLabel.text = post?.from
+        myRideCell.timeLabel.text = post?.pickUpTime.string(dateStyle: .long, timeStyle: .short)
+        myRideCell.creatorLabel.text = post?.creatorDisplayName
         
-        return cell
+        
+        
+        return myRideCell
         
     }
     
@@ -109,6 +104,7 @@ extension MyRidesViewController: UITableViewDataSource{
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true

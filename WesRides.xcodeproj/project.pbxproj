@@ -14,6 +14,7 @@
 		B759B0BA1F2A8EFD0067A6BF /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B759B0B51F2A8EFD0067A6BF /* RobotoSlab-Regular.ttf */; };
 		B759B0BB1F2A8EFD0067A6BF /* RobotoSlab-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B759B0B61F2A8EFD0067A6BF /* RobotoSlab-Thin.ttf */; };
 		B759B0C11F3102E10067A6BF /* MyRidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B759B0C01F3102E10067A6BF /* MyRidesViewController.swift */; };
+		B786A5261F350AA300BAE890 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B786A5251F350AA300BAE890 /* CardView.swift */; };
 		B7A6C9B31F10956B00FF66B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9B21F10956B00FF66B6 /* AppDelegate.swift */; };
 		B7A6C9BA1F10956B00FF66B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9B91F10956B00FF66B6 /* Assets.xcassets */; };
 		B7A6C9C71F14228000FF66B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7A6C9C61F14228000FF66B6 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		B759B0B51F2A8EFD0067A6BF /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
 		B759B0B61F2A8EFD0067A6BF /* RobotoSlab-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Thin.ttf"; sourceTree = "<group>"; };
 		B759B0C01F3102E10067A6BF /* MyRidesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyRidesViewController.swift; path = Controllers/MyRidesViewController.swift; sourceTree = "<group>"; };
+		B786A5251F350AA300BAE890 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = Views/CardView.swift; sourceTree = "<group>"; };
 		B7A6C9AF1F10956B00FF66B6 /* WesRides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WesRides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A6C9B21F10956B00FF66B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7A6C9B91F10956B00FF66B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		B7CD51931F1EA6FC00E4EE3A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B786A5251F350AA300BAE890 /* CardView.swift */,
 				B7CD51911F1EA6EC00E4EE3A /* RideCell.swift */,
 			);
 			name = Views;
@@ -326,7 +329,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WesRides/Pods-WesRides-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -381,6 +384,7 @@
 				B759B0C11F3102E10067A6BF /* MyRidesViewController.swift in Sources */,
 				B7A6C9D81F156D8C00FF66B6 /* User.swift in Sources */,
 				B7CD51921F1EA6EC00E4EE3A /* RideCell.swift in Sources */,
+				B786A5261F350AA300BAE890 /* CardView.swift in Sources */,
 				B7A6C9DB1F169C5200FF66B6 /* UserService.swift in Sources */,
 				B7A6C9ED1F1835F700FF66B6 /* NewRideViewController.swift in Sources */,
 				B7A6C9D61F142CEC00FF66B6 /* LoginViewController.swift in Sources */,
