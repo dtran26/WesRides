@@ -17,4 +17,6 @@ target 'WesRides' do
   pod 'SwiftDate', '~> 4.0'
   pod 'DZNEmptyDataSet'
   pod 'SwiftMessages'
+  pod 'CollapsibleTableSectionViewController'
+  
 end

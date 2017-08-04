@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3E4D9BAE50940C18333B972CF8450CBA'
-               BlueprintName = 'SwiftMessages-SwiftMessages'
+               BlueprintIdentifier = 'A55696F272FF688344C4A01C6393E2F7'
+               BlueprintName = 'CollapsibleTableSectionViewController'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftMessages.bundle'>
+               BuildableName = 'CollapsibleTableSectionViewController.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
