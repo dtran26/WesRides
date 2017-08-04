@@ -73,8 +73,7 @@ class HomeViewController: UIViewController{
         tableView.separatorStyle = .none
         refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
         tableView.addSubview(refreshControl)
-        tableView.contentInset = UIEdgeInsetsMake(55, 0, 0, 0)
-        tableView.rowHeight = 150
+        tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
         hideHairline()
     }
     
@@ -178,29 +177,23 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell()
+        var post : Ride?
+        let rideCell = tableView.dequeueReusableCell(withIdentifier: "RideCell", for: indexPath) as! RideCell
+
         switch rideSegmentedControl.selectedSegmentIndex {
         case 0:  // requests
-            let requestCell = tableView.dequeueReusableCell(withIdentifier: "RequestRideCell", for: indexPath) as! RideCell
-            let post = requestedRides[indexPath.row]
-            requestCell.destinationLabel.text = post.destination
-            requestCell.fromLabel.text = post.from
-            requestCell.timeLabel.text = post.pickUpTime.string(dateStyle: .long, timeStyle: .short)
-            requestCell.creatorLabel.text = post.creatorDisplayName
-            cell = requestCell as RideCell
-            
+            post = requestedRides[indexPath.row]
         case 1:  // offers
-            let offerCell = tableView.dequeueReusableCell(withIdentifier: "OfferRideCell", for: indexPath) as! RideCell
-            let post = offeredRides[indexPath.row]
-            offerCell.destinationLabel.text = post.destination
-            offerCell.fromLabel.text = post.from
-            offerCell.timeLabel.text = post.pickUpTime.string(dateStyle: .long, timeStyle: .short)
-            offerCell.creatorLabel.text = post.creatorDisplayName
-            cell = offerCell as RideCell
+            post = offeredRides[indexPath.row]
         default:
             break
         }
-        return cell
+        
+        rideCell.destinationLabel.text = post?.destination
+        rideCell.fromLabel.text = post?.from
+        rideCell.timeLabel.text = post?.pickUpTime.string(dateStyle: .long, timeStyle: .short)
+        rideCell.creatorLabel.text = post?.creatorDisplayName
+        return rideCell
     }
 }
 
