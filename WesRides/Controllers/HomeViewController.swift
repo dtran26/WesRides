@@ -40,6 +40,14 @@ class HomeViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTimeline), name: NSNotification.Name(rawValue: "upload"), object: nil)
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        DispatchQueue.main.async {
+            self.reloadTimeline()
+            self.tableView.reloadData()
+        }
     }
     
     func sideMenu() {
@@ -64,9 +72,9 @@ class HomeViewController: UIViewController{
                     self.refreshControl.endRefreshing()
                 }
             }
+            self.tableView.reloadData()
             self.tableView.emptyDataSetSource = self
             self.tableView.emptyDataSetDelegate = self
-            self.tableView.reloadData()
             
         })
         

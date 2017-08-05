@@ -27,13 +27,37 @@ class PostService{
         userRef.updateChildValues(["lastPostTime" : dict["createdAt"]!])
     
         postRef.updateChildValues(dict) { (error, ref) in
-            if error == nil {
-                NotificationCenter.default.post(name: Notification.Name(rawValue: "upload"), object: self)
+//            if error == nil {
+//                NotificationCenter.default.post(name: Notification.Name(rawValue: "upload"), object: self)
+//                print("Post successfull")
+//            }
+//            else{
+//                print(error)
+//            }
+            guard error != nil else{
+                print(error as Any)
+                return
             }
+            
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "upload"), object: self)
+            print("Post successfull")
         }
         
     }
     
+    static func delete(_ post: Ride){
+        Database.database().reference().child("posts").child((post.key)!).removeValue(completionBlock: { (error, refer) in
+            if error != nil {
+                print(error!)
+            } else {
+                print(refer)
+                print("Post Removed Correctly")
+            }
+            
+        })
+
+        
+    }
     
     
 }

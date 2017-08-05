@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseDatabase
 import DZNEmptyDataSet
 
 class MyRidesViewController: UIViewController {
@@ -44,8 +44,10 @@ class MyRidesViewController: UIViewController {
     override func setEditing(_ editing: Bool, animated: Bool) {
         if(cellStyleForEditing == .none) {
             cellStyleForEditing = .delete
+            self.editButtonItem.title = "Cancel"
         } else {
             cellStyleForEditing = .none
+            self.editButtonItem.title = "Edit"
         }
         tableView.setEditing(cellStyleForEditing != .none, animated: true)
     }
@@ -64,6 +66,8 @@ class MyRidesViewController: UIViewController {
             self.tableView.reloadData()
             self.tableView.emptyDataSetSource = self
             self.tableView.emptyDataSetDelegate = self
+
+
         })
         
     }
@@ -139,16 +143,7 @@ extension MyRidesViewController: UITableViewDataSource{
                 offeredRides.remove(at: indexPath.row)
             }
             tableView.deleteRows(at: [indexPath], with: .fade)
-            Database.database().reference().child("posts").child((postToDelete?.key)!).removeValue(completionBlock: { (error, refer) in
-                if error != nil {
-                    print(error!)
-                } else {
-                    print(refer)
-                    print("Child Removed Correctly")
-                }
-                
-            })
-            
+            PostService.delete(postToDelete!)
             tableView.reloadData()
         }
         
