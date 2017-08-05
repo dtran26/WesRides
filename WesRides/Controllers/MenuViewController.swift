@@ -20,6 +20,7 @@ class MenuViewController: UITableViewController {
         super.viewDidLoad()
         userNameLabel.text = "Hey, \(currentUser?.displayName! ?? "awesome person")"
         self.tableView.backgroundColor = UIColor(red:0.20, green:0.24, blue:0.26, alpha:1.0)
+        tableView.tableFooterView = UIView()
         
     }
     

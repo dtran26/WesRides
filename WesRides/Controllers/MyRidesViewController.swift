@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import DZNEmptyDataSet
 
 class MyRidesViewController: UIViewController {
@@ -124,16 +125,33 @@ extension MyRidesViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
+        var postToDelete : Ride?
+        
         if editingStyle == .delete {
-            // Delete the row from the data source
+            
             if indexPath.section == 0{
+                postToDelete = requestedRides[indexPath.row]
                 requestedRides.remove(at: indexPath.row)
+                
             }
             if indexPath.section == 1{
+                postToDelete = offeredRides[indexPath.row]
                 offeredRides.remove(at: indexPath.row)
             }
             tableView.deleteRows(at: [indexPath], with: .fade)
+            Database.database().reference().child("posts").child((postToDelete?.key)!).removeValue(completionBlock: { (error, refer) in
+                if error != nil {
+                    print(error!)
+                } else {
+                    print(refer)
+                    print("Child Removed Correctly")
+                }
+                
+            })
+            
+            tableView.reloadData()
         }
+        
     }
     
     
@@ -152,7 +170,15 @@ extension MyRidesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
         return NSAttributedString(string: str, attributes: attrs)
     }
     
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+    
+    func emptyDataSetShouldAllowTouch(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.flatWhite
+    }
 }
-
-
-

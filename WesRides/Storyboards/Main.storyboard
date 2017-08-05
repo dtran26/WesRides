@@ -34,7 +34,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JbS-iA-pDl">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RideCell" rowHeight="140" id="i9R-QR-62o" customClass="RideCell" customModule="WesRides" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="140"/>
@@ -138,6 +137,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="goe-6q-knR" firstAttribute="top" secondItem="BOL-Xc-7me" secondAttribute="topMargin" id="HO9-31-JFX"/>
                                                 <constraint firstItem="goe-6q-knR" firstAttribute="centerY" secondItem="BOL-Xc-7me" secondAttribute="centerY" id="JSN-sC-pal"/>

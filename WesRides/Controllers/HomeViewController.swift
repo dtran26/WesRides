@@ -34,7 +34,9 @@ class HomeViewController: UIViewController{
         configureTableView()
         reloadTimeline()
         toolBar.barTintColor = UIColor.flatWhite
+        
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTimeline), name: NSNotification.Name(rawValue: "upload"), object: nil)
@@ -62,9 +64,10 @@ class HomeViewController: UIViewController{
                     self.refreshControl.endRefreshing()
                 }
             }
-            self.tableView.reloadData()
             self.tableView.emptyDataSetSource = self
             self.tableView.emptyDataSetDelegate = self
+            self.tableView.reloadData()
+            
         })
         
     }
@@ -76,8 +79,8 @@ class HomeViewController: UIViewController{
         refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
         tableView.addSubview(refreshControl)
         tableView.contentInset = UIEdgeInsetsMake(45, 0, 0, 0)
-        hideHairline()
         tableView.backgroundColor = UIColor.flatWhite
+        hideHairline()
         
     }
     
@@ -209,6 +212,17 @@ extension HomeViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
         return NSAttributedString(string: str, attributes: attrs)
     }
     
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+    
+    func emptyDataSetShouldAllowTouch(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.flatWhite
+    }
 }
 
 extension HomeViewController: HideableHairlineViewController{
