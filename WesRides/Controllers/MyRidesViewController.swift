@@ -13,29 +13,50 @@ class MyRidesViewController: UIViewController {
 
     var requestedRides = [Ride]()
     var offeredRides = [Ride]()
-    
+    let refreshControl = UIRefreshControl()
+    @IBOutlet weak var openMenu: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserService.posts(own: true) { (requestrides, offerrides) in
-            self.requestedRides = requestrides
-            self.offeredRides = offerrides
-            self.tableView.reloadData()
-        }
+        reloadTimeline()
         configureTableView()
-        
+        sideMenu()
     }
 
+    func sideMenu() {
+        openMenu.target = self.revealViewController()
+        openMenu.action = #selector(SWRevealViewController.revealToggle(_:))
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    }
     
     func configureTableView() {
         tableView.tableFooterView = UIView()
         tableView.rowHeight = 120
         tableView.separatorStyle = .none
-        hideHairline()
+        refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
+        tableView.addSubview(refreshControl)
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    func reloadTimeline() {
+        let delayTime = DispatchTime.now() + Double(Int64(1.25 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        
+        UserService.posts(own: true, completion: { (requestrides, offerrides) in
+            self.requestedRides = requestrides
+            self.offeredRides = offerrides
+            if self.refreshControl.isRefreshing {
+                DispatchQueue.main.asyncAfter(deadline: delayTime) { () -> Void in
+                    self.refreshControl.endRefreshing()
+                }
+            }
+            self.tableView.reloadData()
+            self.tableView.emptyDataSetSource = self
+            self.tableView.emptyDataSetDelegate = self
+        })
+        
+    }
+
     
 }
 
@@ -57,37 +78,37 @@ extension MyRidesViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return requestedRides.count
-        }
         
-        if section == 1 {
+        switch section{
+        case 0:
+            return requestedRides.count
+        case 1:
             return offeredRides.count
+        default:
+            return 0
         }
-        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var post : Ride?
+        let myRideCell = tableView.dequeueReusableCell(withIdentifier: "MyRideCell", for: indexPath) as! RideCell
         
-        let myRideCell = tableView.dequeueReusableCell(withIdentifier: "MyRidesCell", for: indexPath)
-            as! RideCell
-        if indexPath.section == 0{
+        switch indexPath.section{
+        case 0:
             post = requestedRides[indexPath.row]
-        }
-        if indexPath.section == 1{
+        case 1:
             post = offeredRides[indexPath.row]
+        default:
+            break
         }
+        
         myRideCell.destinationLabel.text = post?.destination
         myRideCell.fromLabel.text = post?.from
         myRideCell.timeLabel.text = post?.pickUpTime.string(dateStyle: .long, timeStyle: .short)
         myRideCell.creatorLabel.text = post?.creatorDisplayName
         
-        
-        
         return myRideCell
-        
     }
     
     
@@ -124,5 +145,4 @@ extension MyRidesViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
 }
 
 
-extension MyRidesViewController: HideableHairlineViewController{
-}
+

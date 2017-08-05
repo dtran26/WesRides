@@ -11,10 +11,12 @@ import FirebaseAuth
 import GoogleSignIn
 import ActionSheetPicker_3_0
 import DZNEmptyDataSet
+import ChameleonFramework
 
 
 class HomeViewController: UIViewController{
     
+    @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var rideView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var openMenu: UIBarButtonItem!
@@ -31,7 +33,7 @@ class HomeViewController: UIViewController{
         sideMenu()
         configureTableView()
         reloadTimeline()
-        
+        toolBar.barTintColor = UIColor.flatWhite
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,6 +77,8 @@ class HomeViewController: UIViewController{
         tableView.addSubview(refreshControl)
         tableView.contentInset = UIEdgeInsetsMake(45, 0, 0, 0)
         hideHairline()
+        tableView.backgroundColor = UIColor.flatWhite
+        
     }
     
     

@@ -18,6 +18,7 @@ class RideCell: UITableViewCell{
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        backgroundColor = UIColor.flatWhite
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
