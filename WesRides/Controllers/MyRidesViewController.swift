@@ -11,9 +11,10 @@ import DZNEmptyDataSet
 
 class MyRidesViewController: UIViewController {
 
+    let refreshControl = UIRefreshControl()
     var requestedRides = [Ride]()
     var offeredRides = [Ride]()
-    let refreshControl = UIRefreshControl()
+    var cellStyleForEditing: UITableViewCellEditingStyle = .none
     @IBOutlet weak var openMenu: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
@@ -37,6 +38,15 @@ class MyRidesViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
         tableView.addSubview(refreshControl)
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        if(cellStyleForEditing == .none) {
+            cellStyleForEditing = .delete
+        } else {
+            cellStyleForEditing = .none
+        }
+        tableView.setEditing(cellStyleForEditing != .none, animated: true)
     }
     
     func reloadTimeline() {
