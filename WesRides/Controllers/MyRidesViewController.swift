@@ -39,6 +39,7 @@ class MyRidesViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
         tableView.addSubview(refreshControl)
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.backgroundColor = UIColor.flatWhite
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {

@@ -42,14 +42,10 @@ class NewRideViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         let currentUser = Auth.auth().currentUser
         let userRef = Database.database().reference().child("users").child((currentUser?.uid)!)
-        
         userRef.observeSingleEvent(of: .value, with: { (snapshot) in
             let userDict = snapshot.value as? [String : Any] ?? [:]
             self.postCount = userDict["postCount"] as? Int
         })
-        
-        
-        
     }
     
     func dismissKeyboard() {
@@ -131,7 +127,7 @@ class NewRideViewController: UIViewController{
         warningConfig.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
         
         //WARNING ONE
-        if (postCount! > 4){
+        if (postCount! > 3){
             warning.configureContent(title: "You have reached your post limit", body: "Delete old rides before posting new ones", iconText: iconText)
             SwiftMessages.show(config: warningConfig, view: warning)
         }

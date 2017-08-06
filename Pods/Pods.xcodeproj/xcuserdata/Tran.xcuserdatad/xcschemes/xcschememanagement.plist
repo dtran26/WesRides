@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Floaty.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GTMOAuth2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,12 +72,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0E4286CB9AB1B8C6BB142F9AA3EB5241</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>3380590F973AFAFA30255D504B7DEDAC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5762EA56D390205F8802004DC1FE40ED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5C123A74CD9D6CDA27160800BA68B01A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,17 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>75BE30D2FF4BF380A5810FB17A1A0F2E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>76BD4592010354D6C23D6ECCA20D83A8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7DD41D5679AAE1551D1BEA40BCC6A172</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>94FE38AE4B7FAC8BD23731DCD2A9B8FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,22 +122,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AE9309F5EF0A5E23290CD0DEBA5C7780</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D234BFE965ABD086A0A54EBDDCC6E63E</key>
+		<key>D386C75EFD4F03725E4EFB866B600B9A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D386C75EFD4F03725E4EFB866B600B9A</key>
+		<key>D5D113FCCE28EDE36C0E4D5FCCDB63FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

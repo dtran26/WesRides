@@ -39,7 +39,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>BebasNeue.ttf</string>
+		<string>BebasNeueWhatever.ttf</string>
 		<string>RobotoSlab-Regular.ttf</string>
 		<string>WildernessTypeface-Regular.ttf</string>
 	</array>
