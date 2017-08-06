@@ -22,7 +22,10 @@ class LoginViewController: UIViewController{
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
-        googleSignInButton.style = GIDSignInButtonStyle.standard
+    }
+    
+    @IBAction func signInTapped(_ sender: UIButton) {
+        GIDSignIn.sharedInstance().signIn()
     }
     
     @IBAction func unwindToLoginVC(segue: UIStoryboardSegue) {
@@ -65,7 +68,7 @@ extension LoginViewController : GIDSignInDelegate, GIDSignInUIDelegate {
                     
                     let userEmail = user.email!
                     let userFullName = user.displayName
-                    let riderAttrs = ["userEmail": userEmail, "fullName": userFullName!, "lastPostTime" : 10.0] as [String : Any]
+                    let riderAttrs = ["userEmail": userEmail, "fullName": userFullName!, "lastPostTime" : 10.0, "postCount" : 0] as [String : Any]
                     userRef.setValue(riderAttrs)
                 }
             })

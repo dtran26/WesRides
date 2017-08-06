@@ -15,6 +15,7 @@ class User{
     let email : String
     let uid : String
     var lastPostTime : Date?
+    var postCount = 0
     
     init(uid: String, email: String, fullName : String){
         self.uid = uid
@@ -26,11 +27,13 @@ class User{
     init?(snapshot: DataSnapshot){
         guard let dict = snapshot.value as? [String : Any],
               let email = dict["userEmail"] as? String,
-              let fullName = dict["fullName"] as? String
+              let fullName = dict["fullName"] as? String,
+              let postCount = dict["postCount"] as? Int
             else{ return nil }
         self.uid = snapshot.key
         self.email = email
         self.fullName = fullName
+        self.postCount = postCount
     }
     
 

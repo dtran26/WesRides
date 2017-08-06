@@ -15,7 +15,6 @@ import ChameleonFramework
 
 
 class HomeViewController: UIViewController{
-    
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var rideView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -34,9 +33,9 @@ class HomeViewController: UIViewController{
         configureTableView()
         reloadTimeline()
         toolBar.barTintColor = UIColor.flatWhite
-        
     }
     
+
     
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTimeline), name: NSNotification.Name(rawValue: "upload"), object: nil)

@@ -18,4 +18,5 @@ target 'WesRides' do
   pod 'DZNEmptyDataSet'
   pod 'SwiftMessages'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  pod 'Eureka'
 end

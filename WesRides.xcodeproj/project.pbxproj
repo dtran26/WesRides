@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B759B0AB1F2690250067A6BF /* HideHairline.swift in Sources */ = {isa = PBXBuildFile; fileRef = B759B0AA1F2690250067A6BF /* HideHairline.swift */; };
+		B759B0AB1F2690250067A6BF /* NavbarHideHairline.swift in Sources */ = {isa = PBXBuildFile; fileRef = B759B0AA1F2690250067A6BF /* NavbarHideHairline.swift */; };
 		B759B0B71F2A8EFD0067A6BF /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B759B0B21F2A8EFD0067A6BF /* LICENSE.txt */; };
 		B759B0B81F2A8EFD0067A6BF /* RobotoSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B759B0B31F2A8EFD0067A6BF /* RobotoSlab-Bold.ttf */; };
 		B759B0B91F2A8EFD0067A6BF /* RobotoSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B759B0B41F2A8EFD0067A6BF /* RobotoSlab-Light.ttf */; };
@@ -30,6 +30,10 @@
 		B7A6C9E91F18153600FF66B6 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9E81F18153600FF66B6 /* Ride.swift */; };
 		B7A6C9EB1F1824B300FF66B6 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9EA1F1824B300FF66B6 /* PostService.swift */; };
 		B7A6C9ED1F1835F700FF66B6 /* NewRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9EC1F1835F700FF66B6 /* NewRideViewController.swift */; };
+		B7B822031F35BB5C00CCE9F0 /* WildernessTypeface-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B822021F35BB5C00CCE9F0 /* WildernessTypeface-Regular.ttf */; };
+		B7B822091F36D52000CCE9F0 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7B822081F36D52000CCE9F0 /* BebasNeue.otf */; };
+		B7B8220D1F36DF6E00CCE9F0 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B8220C1F36DF6E00CCE9F0 /* UIView+Animation.swift */; };
+		B7B822161F36E73800CCE9F0 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B7B822151F36E72700CCE9F0 /* GoogleSignIn.bundle */; };
 		B7CD51921F1EA6EC00E4EE3A /* RideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD51911F1EA6EC00E4EE3A /* RideCell.swift */; };
 		B7CD51971F215CC100E4EE3A /* DetailedRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD51961F215CC100E4EE3A /* DetailedRideViewController.swift */; };
 		EC625D12BFAE69A1CE1ADB05 /* Pods_WesRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */; };
@@ -38,7 +42,7 @@
 /* Begin PBXFileReference section */
 		110105C692F75629D7968A1E /* Pods-WesRides.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WesRides.release.xcconfig"; path = "Pods/Target Support Files/Pods-WesRides/Pods-WesRides.release.xcconfig"; sourceTree = "<group>"; };
 		733806590FCFE4FB122C42C9 /* Pods-WesRides.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WesRides.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WesRides/Pods-WesRides.debug.xcconfig"; sourceTree = "<group>"; };
-		B759B0AA1F2690250067A6BF /* HideHairline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HideHairline.swift; path = Extensions/HideHairline.swift; sourceTree = "<group>"; };
+		B759B0AA1F2690250067A6BF /* NavbarHideHairline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavbarHideHairline.swift; path = Extensions/NavbarHideHairline.swift; sourceTree = "<group>"; };
 		B759B0B21F2A8EFD0067A6BF /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		B759B0B31F2A8EFD0067A6BF /* RobotoSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Bold.ttf"; sourceTree = "<group>"; };
 		B759B0B41F2A8EFD0067A6BF /* RobotoSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Light.ttf"; sourceTree = "<group>"; };
@@ -65,6 +69,13 @@
 		B7A6C9E81F18153600FF66B6 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ride.swift; path = Models/Ride.swift; sourceTree = "<group>"; };
 		B7A6C9EA1F1824B300FF66B6 /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostService.swift; path = Services/PostService.swift; sourceTree = "<group>"; };
 		B7A6C9EC1F1835F700FF66B6 /* NewRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewRideViewController.swift; path = Controllers/NewRideViewController.swift; sourceTree = "<group>"; };
+		B7B822021F35BB5C00CCE9F0 /* WildernessTypeface-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WildernessTypeface-Regular.ttf"; sourceTree = "<group>"; };
+		B7B822081F36D52000CCE9F0 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
+		B7B8220C1F36DF6E00CCE9F0 /* UIView+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Animation.swift"; path = "Extensions/UIView+Animation.swift"; sourceTree = "<group>"; };
+		B7B822101F36E72700CCE9F0 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		B7B822121F36E72700CCE9F0 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
+		B7B822131F36E72700CCE9F0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B7B822151F36E72700CCE9F0 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
 		B7CD51911F1EA6EC00E4EE3A /* RideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RideCell.swift; path = Views/RideCell.swift; sourceTree = "<group>"; };
 		B7CD51961F215CC100E4EE3A /* DetailedRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailedRideViewController.swift; path = Controllers/DetailedRideViewController.swift; sourceTree = "<group>"; };
 		D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WesRides.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +96,8 @@
 		B759B0AE1F27F1880067A6BF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B759B0AA1F2690250067A6BF /* HideHairline.swift */,
+				B759B0AA1F2690250067A6BF /* NavbarHideHairline.swift */,
+				B7B8220C1F36DF6E00CCE9F0 /* UIView+Animation.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -105,6 +117,7 @@
 		B7A6C9A61F10956B00FF66B6 = {
 			isa = PBXGroup;
 			children = (
+				B7B8220F1F36E72700CCE9F0 /* GoogleSignIn */,
 				B7A6C9B11F10956B00FF66B6 /* WesRides */,
 				B7A6C9B01F10956B00FF66B6 /* Products */,
 				F04DA03806411CFEEF38A28B /* Pods */,
@@ -123,7 +136,7 @@
 		B7A6C9B11F10956B00FF66B6 /* WesRides */ = {
 			isa = PBXGroup;
 			children = (
-				B759B0B11F2A8EFD0067A6BF /* Roboto_Slab */,
+				B7B822011F35B8B400CCE9F0 /* Fonts */,
 				B7A6C9B21F10956B00FF66B6 /* AppDelegate.swift */,
 				B759B0AE1F27F1880067A6BF /* Extensions */,
 				B7A6C9CC1F1422A600FF66B6 /* Controllers */,
@@ -196,6 +209,44 @@
 				B7A6C9DD1F16E96D00FF66B6 /* WesRides-Bridging-Header.h */,
 			);
 			name = SideMenu;
+			sourceTree = "<group>";
+		};
+		B7B822011F35B8B400CCE9F0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B7B822021F35BB5C00CCE9F0 /* WildernessTypeface-Regular.ttf */,
+				B7B822081F36D52000CCE9F0 /* BebasNeue.otf */,
+				B759B0B11F2A8EFD0067A6BF /* Roboto_Slab */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		B7B8220F1F36E72700CCE9F0 /* GoogleSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				B7B822101F36E72700CCE9F0 /* CHANGELOG.md */,
+				B7B822111F36E72700CCE9F0 /* Frameworks */,
+				B7B822131F36E72700CCE9F0 /* README.md */,
+				B7B822141F36E72700CCE9F0 /* Resources */,
+			);
+			name = GoogleSignIn;
+			path = Pods/GoogleSignIn;
+			sourceTree = "<group>";
+		};
+		B7B822111F36E72700CCE9F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7B822121F36E72700CCE9F0 /* GoogleSignIn.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7B822141F36E72700CCE9F0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B7B822151F36E72700CCE9F0 /* GoogleSignIn.bundle */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		B7CD51931F1EA6FC00E4EE3A /* Views */ = {
@@ -288,14 +339,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7B822161F36E73800CCE9F0 /* GoogleSignIn.bundle in Resources */,
 				B759B0B71F2A8EFD0067A6BF /* LICENSE.txt in Resources */,
 				B7A6C9C71F14228000FF66B6 /* Main.storyboard in Resources */,
+				B7B822091F36D52000CCE9F0 /* BebasNeue.otf in Resources */,
 				B759B0B81F2A8EFD0067A6BF /* RobotoSlab-Bold.ttf in Resources */,
 				B759B0BA1F2A8EFD0067A6BF /* RobotoSlab-Regular.ttf in Resources */,
 				B7A6C9C91F14228300FF66B6 /* LaunchScreen.storyboard in Resources */,
 				B759B0B91F2A8EFD0067A6BF /* RobotoSlab-Light.ttf in Resources */,
 				B759B0BB1F2A8EFD0067A6BF /* RobotoSlab-Thin.ttf in Resources */,
 				B7A6C9D31F142C7E00FF66B6 /* Login.storyboard in Resources */,
+				B7B822031F35BB5C00CCE9F0 /* WildernessTypeface-Regular.ttf in Resources */,
 				B7A6C9D11F14237A00FF66B6 /* GoogleService-Info.plist in Resources */,
 				B7A6C9BA1F10956B00FF66B6 /* Assets.xcassets in Resources */,
 			);
@@ -329,7 +383,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WesRides/Pods-WesRides-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -351,6 +405,7 @@
 				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -362,6 +417,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -380,7 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B759B0AB1F2690250067A6BF /* HideHairline.swift in Sources */,
+				B759B0AB1F2690250067A6BF /* NavbarHideHairline.swift in Sources */,
 				B759B0C11F3102E10067A6BF /* MyRidesViewController.swift in Sources */,
 				B7A6C9D81F156D8C00FF66B6 /* User.swift in Sources */,
 				B7CD51921F1EA6EC00E4EE3A /* RideCell.swift in Sources */,
@@ -391,6 +447,7 @@
 				B7A6C9E31F17372D00FF66B6 /* MenuViewController.swift in Sources */,
 				B7A6C9CB1F14228B00FF66B6 /* HomeViewController.swift in Sources */,
 				B7A6C9EB1F1824B300FF66B6 /* PostService.swift in Sources */,
+				B7B8220D1F36DF6E00CCE9F0 /* UIView+Animation.swift in Sources */,
 				B7A6C9B31F10956B00FF66B6 /* AppDelegate.swift in Sources */,
 				B7CD51971F215CC100E4EE3A /* DetailedRideViewController.swift in Sources */,
 				B7A6C9E01F16E96D00FF66B6 /* SWRevealViewController.m in Sources */,

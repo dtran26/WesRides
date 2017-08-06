@@ -17,6 +17,7 @@ class NewRideViewController: UIViewController{
     
     let locations = ["Wesleyan", "Bradley", "New Haven", "Boston", "New York City"]
     var chosenTime = Date()
+    var postCount : Int?
     var isRideOffer : Bool?
     @IBOutlet weak var requestOrOfferRide: UISegmentedControl!
     @IBOutlet weak var timeOutlet: UITextField!
@@ -35,6 +36,19 @@ class NewRideViewController: UIViewController{
         view.addGestureRecognizer(tap)
 
 
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let currentUser = Auth.auth().currentUser
+        let userRef = Database.database().reference().child("users").child((currentUser?.uid)!)
+        
+        userRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            let userDict = snapshot.value as? [String : Any] ?? [:]
+            self.postCount = userDict["postCount"] as? Int
+        })
+        
+        
         
     }
     
@@ -103,50 +117,38 @@ class NewRideViewController: UIViewController{
         self.dismiss(animated: true, completion: nil)
     }
     
-    let dispatch = DispatchGroup()
     
     @IBAction func saveNewRide(_ sender: UIBarButtonItem) {
-//        var timeInterval : TimeInterval?
-//        
-//        let currentUser = (Auth.auth().currentUser)!
-//        let userRef = Database.database().reference().child("users").child(currentUser.uid)
-        
-//        userRef.observe(DataEventType.value, with: { (snapshot) in
-//            
-//            let userDict = snapshot.value as? [String : AnyObject] ?? [:]
-//            let lastPostTime = userDict["lastPostTime"]!
-//            let userLastPostedAt = Date(timeIntervalSince1970: lastPostTime as! TimeInterval)
-//            let currentTime = Date()
-//            timeInterval = currentTime.timeIntervalSince(userLastPostedAt)
-//        })
-        
-        
+        print(postCount!)
+
         // WARNING SET UP
         let warning = MessageView.viewFromNib(layout: .CardView)
         warning.configureTheme(.warning)
         warning.configureDropShadow()
         warning.button?.isHidden = true
-        let iconText = ["🤔", "😖", "🙄", "😶", "😩", "😰"].sm_random()!
+        let iconText = ["🤔", "😖", "🙄", "😶", "😔", "😰"].sm_random()!
         var warningConfig = SwiftMessages.defaultConfig
         warningConfig.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
         
+        //WARNING ONE
+        if (postCount! > 4){
+            warning.configureContent(title: "You have reached your post limit", body: "Delete old rides before posting new ones", iconText: iconText)
+            SwiftMessages.show(config: warningConfig, view: warning)
+        }
         
-//        if (timeInterval! < TimeInterval(30.0)) {
-//            warning.configureContent(title: "You are posting too much", body: "Chill out", iconText: iconText)
-//            SwiftMessages.show(config: warningConfig, view: warning)
-//        }
-        
-        
-        if (startLocationOutlet.text?.isEmpty)! || (endLocationOutlet.text?.isEmpty)! || (timeOutlet.text?.isEmpty)! || capacity.text == ""{
+        //WARNING TWO
+        else if (startLocationOutlet.text?.isEmpty)! || (endLocationOutlet.text?.isEmpty)! || (timeOutlet.text?.isEmpty)! || capacity.text == ""{
             warning.configureContent(title: "Fill in all the required fields", body: "", iconText: iconText)
             SwiftMessages.show(config: warningConfig, view: warning)
         }
-            
+        
+        //WARNING THREE
         else if (startLocationOutlet.text == endLocationOutlet.text) {
             warning.configureContent(title: "Change Destination Point", body: "", iconText: iconText)
             SwiftMessages.show(config: warningConfig, view: warning)
         }
-            
+          
+        //WARNING FOUR
         else if (capacity.text! == "0") {
             warning.configureContent(title: "Capacity cannot be zero", body: "", iconText: iconText)
             SwiftMessages.show(config: warningConfig, view: warning)

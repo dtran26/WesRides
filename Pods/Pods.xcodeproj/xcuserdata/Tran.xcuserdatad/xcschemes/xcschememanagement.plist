@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Eureka.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FirebaseUI-FirebaseAuthUI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,12 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
+		<key>675A114988AE198732ED4AD726408964</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>737711998B63BA4FAE6871AD6A28BA2F</key>
+		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,7 +92,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8DAD6A7810149E4105F58CA0C7CC9D65</key>
+		<key>7DD41D5679AAE1551D1BEA40BCC6A172</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>94FE38AE4B7FAC8BD23731DCD2A9B8FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,22 +107,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>AE9309F5EF0A5E23290CD0DEBA5C7780</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B7BA82DD3AA1ED588C77954371CACCF9</key>
+		<key>D234BFE965ABD086A0A54EBDDCC6E63E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>D386C75EFD4F03725E4EFB866B600B9A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E3307DD06F4320A0C46D49DE7857BAFC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

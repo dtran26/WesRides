@@ -20,21 +20,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        
         FirebaseApp.configure()
-
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
         // [START user persistence]
         Auth.auth().addStateDidChangeListener() { auth, user in
+            
             if user != nil {
-                let storyboard = UIStoryboard(name: "Main", bundle: .main)
-                let viewController = storyboard.instantiateViewController(withIdentifier: "Main")
-                self.window?.rootViewController = viewController
-                self.window?.makeKeyAndVisible()
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "Home")
+                    self.window?.rootViewController = viewController
+                    self.window?.makeKeyAndVisible()
+                
+
             } else {
-                let storyboard = UIStoryboard(name: "Login", bundle: .main)
-                if let initialViewController = storyboard.instantiateInitialViewController() {
+                let storyboard = UIStoryboard(name: "Login", bundle: nil)
+                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "SignIn")
                     self.window?.rootViewController = initialViewController
                     self.window?.makeKeyAndVisible()
-                }
+                    
+                
             }
         }
         // [END user persistence]

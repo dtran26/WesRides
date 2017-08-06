@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3pi-hi-wsf">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -8,53 +8,51 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="WildernessTypeface-Regular.ttf">
+            <string>WildernessTypeface-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="dvh-Hj-D1J">
             <objects>
-                <viewController id="3pi-hi-wsf" customClass="LoginViewController" customModule="WesRides" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignIn" id="3pi-hi-wsf" customClass="LoginViewController" customModule="WesRides" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fFJ-O6-jJX"/>
                         <viewControllerLayoutGuide type="bottom" id="eKe-dq-XoU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UEX-vw-UWH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WESRIDES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9M-VZ-Nfx">
-                                <rect key="frame" x="73" y="95" width="229" height="72"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="45"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WesRides" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9M-VZ-Nfx">
+                                <rect key="frame" x="84" y="124" width="246" height="162"/>
+                                <fontDescription key="fontDescription" name="WildernessTypeface-Regular" family="Wilderness Typeface" pointSize="135"/>
+                                <color key="textColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3jL-e0-Asc" customClass="GIDSignInButton">
-                                <rect key="frame" x="110" y="307" width="154" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcO-pF-evg" customClass="GIDSignInButton">
+                                <rect key="frame" x="134" y="406" width="145" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="Edf-xS-6yC"/>
+                                    <constraint firstAttribute="height" constant="35" id="wDz-UD-z8a"/>
+                                </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.59999999999999998" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.15868747234344482" green="0.21822044253349304" blue="0.30320093035697937" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="u9M-VZ-Nfx" firstAttribute="centerX" secondItem="UEX-vw-UWH" secondAttribute="centerX" id="tsc-hc-dnh"/>
-                            <constraint firstItem="u9M-VZ-Nfx" firstAttribute="top" secondItem="fFJ-O6-jJX" secondAttribute="bottom" constant="75" id="zz2-L9-jSt"/>
+                            <constraint firstItem="u9M-VZ-Nfx" firstAttribute="centerX" secondItem="UEX-vw-UWH" secondAttribute="centerX" id="77i-dv-jz4"/>
+                            <constraint firstItem="hcO-pF-evg" firstAttribute="centerX" secondItem="u9M-VZ-Nfx" secondAttribute="centerX" id="YIf-Ml-xsD"/>
+                            <constraint firstItem="u9M-VZ-Nfx" firstAttribute="top" secondItem="fFJ-O6-jJX" secondAttribute="bottom" constant="104" id="ftf-WS-0XA"/>
+                            <constraint firstItem="hcO-pF-evg" firstAttribute="top" secondItem="u9M-VZ-Nfx" secondAttribute="bottom" constant="120" id="zb9-Ou-imK"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="googleSignInButton" destination="3jL-e0-Asc" id="dmS-CG-CKL"/>
-                        <segue destination="Zib-xb-agO" kind="show" identifier="login" id="Ndh-hV-K2E"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psL-j3-4vT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="108" y="-39.130434782608695"/>
-        </scene>
-        <!--Main-->
-        <scene sceneID="gtU-o4-0ud">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="Zib-xb-agO" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K6C-4f-ncG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="889" y="-80"/>
+            <point key="canvasLocation" x="105.79710144927537" y="-40.760869565217398"/>
         </scene>
     </scenes>
 </document>

@@ -11,42 +11,42 @@ import Firebase
 
 class PostService{
     
+    private static var postCount = 0
+    private static let currentUser = Auth.auth().currentUser
+    private static let userRef = Database.database().reference().child("users").child((currentUser?.uid)!)
+    private static let postRef = Database.database().reference().child("posts")
+    
+    
     static func create(from startLocation: String, to endLocation: String, capacity: Int, time: Date, notes: String, isOffer: Bool) {
         // create new post in database
-        let currentUser = Auth.auth().currentUser
-        
         let name = currentUser?.displayName
-        
         let post = Ride(from: startLocation, destination: endLocation, pickUpTime: time, notes: notes, capacity: capacity, creatorUID: (currentUser?.uid)!, creatorDisplayName: name!, offerNewRideBool: isOffer, creatorEmail: (currentUser?.email!)!)
         
         let dict = post.dictValue
-        
-        let postRef = Database.database().reference().child("posts").childByAutoId()
-        let userRef = Database.database().reference().child("users").child((currentUser?.uid)!)
+
+        userRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            let userDict = snapshot.value as? [String : Any] ?? [:]
+            let currentPostCount = userDict["postCount"] as! Int
+            postCount = currentPostCount + 1
+            print("User's current postCount: \(postCount)")
+            userRef.updateChildValues(["postCount" : postCount])
+        })
         
         userRef.updateChildValues(["lastPostTime" : dict["createdAt"]!])
-    
-        postRef.updateChildValues(dict) { (error, ref) in
-//            if error == nil {
-//                NotificationCenter.default.post(name: Notification.Name(rawValue: "upload"), object: self)
-//                print("Post successfull")
-//            }
-//            else{
-//                print(error)
-//            }
-            guard error != nil else{
-                print(error as Any)
-                return
+        postRef.childByAutoId().updateChildValues(dict) { (error, ref) in
+            if error == nil {
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "upload"), object: self)
+                print("Post successfull")
             }
-            
-            NotificationCenter.default.post(name: Notification.Name(rawValue: "upload"), object: self)
-            print("Post successfull")
+            else{
+                print(error ?? "Post not successfull")
+            }
         }
         
     }
     
     static func delete(_ post: Ride){
-        Database.database().reference().child("posts").child((post.key)!).removeValue(completionBlock: { (error, refer) in
+        postRef.child((post.key)!).removeValue(completionBlock: { (error, refer) in
             if error != nil {
                 print(error!)
             } else {
@@ -55,6 +55,16 @@ class PostService{
             }
             
         })
+        
+        userRef.observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            let userDict = snapshot.value as? [String : Any] ?? [:]
+            let currentPostCount = userDict["postCount"] as! Int
+            postCount = currentPostCount - 1
+            print("User's current postCount: \(currentPostCount)")
+            print("User's new postCount: \(postCount)")
+            userRef.updateChildValues(["postCount" : postCount])
+        })
+        
 
         
     }
