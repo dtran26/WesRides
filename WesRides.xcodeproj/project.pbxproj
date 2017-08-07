@@ -20,12 +20,10 @@
 		B7A6C9D61F142CEC00FF66B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9D51F142CEC00FF66B6 /* LoginViewController.swift */; };
 		B7A6C9D81F156D8C00FF66B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9D71F156D8C00FF66B6 /* User.swift */; };
 		B7A6C9DB1F169C5200FF66B6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9DA1F169C5200FF66B6 /* UserService.swift */; };
-		B7A6C9E01F16E96D00FF66B6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9DF1F16E96D00FF66B6 /* SWRevealViewController.m */; };
 		B7A6C9E31F17372D00FF66B6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9E21F17372D00FF66B6 /* MenuViewController.swift */; };
 		B7A6C9E91F18153600FF66B6 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9E81F18153600FF66B6 /* Ride.swift */; };
 		B7A6C9EB1F1824B300FF66B6 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9EA1F1824B300FF66B6 /* PostService.swift */; };
 		B7A6C9ED1F1835F700FF66B6 /* NewRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6C9EC1F1835F700FF66B6 /* NewRideViewController.swift */; };
-		B7B8220D1F36DF6E00CCE9F0 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B8220C1F36DF6E00CCE9F0 /* UIView+Animation.swift */; };
 		B7B822161F36E73800CCE9F0 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B7B822151F36E72700CCE9F0 /* GoogleSignIn.bundle */; };
 		B7B822231F379A6200CCE9F0 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B7B8221E1F379A6200CCE9F0 /* LICENSE.txt */; };
 		B7B822241F379A6200CCE9F0 /* RobotoSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B8221F1F379A6200CCE9F0 /* RobotoSlab-Bold.ttf */; };
@@ -40,6 +38,7 @@
 		B7CD51971F215CC100E4EE3A /* DetailedRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD51961F215CC100E4EE3A /* DetailedRideViewController.swift */; };
 		B7DD3F111F38E10D002AF3E1 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7DD3F101F38E10D002AF3E1 /* Settings.storyboard */; };
 		B7DD3F131F38E13E002AF3E1 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7DD3F121F38E13E002AF3E1 /* About.storyboard */; };
+		B7DD3F191F3912E8002AF3E1 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DD3F181F3912E8002AF3E1 /* SWRevealViewController.m */; };
 		EC625D12BFAE69A1CE1ADB05 /* Pods_WesRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,13 +61,10 @@
 		B7A6C9D71F156D8C00FF66B6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		B7A6C9DA1F169C5200FF66B6 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = Services/UserService.swift; sourceTree = "<group>"; };
 		B7A6C9DD1F16E96D00FF66B6 /* WesRides-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WesRides-Bridging-Header.h"; sourceTree = "<group>"; };
-		B7A6C9DE1F16E96D00FF66B6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = Extensions/SWRevealViewController.h; sourceTree = "<group>"; };
-		B7A6C9DF1F16E96D00FF66B6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = Extensions/SWRevealViewController.m; sourceTree = "<group>"; };
 		B7A6C9E21F17372D00FF66B6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Controllers/MenuViewController.swift; sourceTree = "<group>"; };
 		B7A6C9E81F18153600FF66B6 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ride.swift; path = Models/Ride.swift; sourceTree = "<group>"; };
 		B7A6C9EA1F1824B300FF66B6 /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostService.swift; path = Services/PostService.swift; sourceTree = "<group>"; };
 		B7A6C9EC1F1835F700FF66B6 /* NewRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewRideViewController.swift; path = Controllers/NewRideViewController.swift; sourceTree = "<group>"; };
-		B7B8220C1F36DF6E00CCE9F0 /* UIView+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Animation.swift"; path = "Extensions/UIView+Animation.swift"; sourceTree = "<group>"; };
 		B7B822101F36E72700CCE9F0 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		B7B822121F36E72700CCE9F0 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
 		B7B822131F36E72700CCE9F0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -86,6 +82,8 @@
 		B7CD51961F215CC100E4EE3A /* DetailedRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailedRideViewController.swift; path = Controllers/DetailedRideViewController.swift; sourceTree = "<group>"; };
 		B7DD3F101F38E10D002AF3E1 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = Storyboards/Settings.storyboard; sourceTree = "<group>"; };
 		B7DD3F121F38E13E002AF3E1 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		B7DD3F171F3912E8002AF3E1 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewControllers/SWRevealViewController.h; sourceTree = "<group>"; };
+		B7DD3F181F3912E8002AF3E1 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewControllers/SWRevealViewController.m; sourceTree = "<group>"; };
 		D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WesRides.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				B759B0AA1F2690250067A6BF /* NavbarHideHairline.swift */,
-				B7B8220C1F36DF6E00CCE9F0 /* UIView+Animation.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -204,8 +201,8 @@
 		B7A6C9E11F16E97500FF66B6 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				B7A6C9DE1F16E96D00FF66B6 /* SWRevealViewController.h */,
-				B7A6C9DF1F16E96D00FF66B6 /* SWRevealViewController.m */,
+				B7DD3F171F3912E8002AF3E1 /* SWRevealViewController.h */,
+				B7DD3F181F3912E8002AF3E1 /* SWRevealViewController.m */,
 				B7A6C9DD1F16E96D00FF66B6 /* WesRides-Bridging-Header.h */,
 			);
 			name = SideMenu;
@@ -462,12 +459,11 @@
 				B7A6C9E31F17372D00FF66B6 /* MenuViewController.swift in Sources */,
 				B7A6C9CB1F14228B00FF66B6 /* HomeViewController.swift in Sources */,
 				B7A6C9EB1F1824B300FF66B6 /* PostService.swift in Sources */,
-				B7B8220D1F36DF6E00CCE9F0 /* UIView+Animation.swift in Sources */,
+				B7DD3F191F3912E8002AF3E1 /* SWRevealViewController.m in Sources */,
 				B7B822331F381DCE00CCE9F0 /* AboutViewController.swift in Sources */,
 				B7B8222B1F379C1E00CCE9F0 /* SettingsViewController.swift in Sources */,
 				B7A6C9B31F10956B00FF66B6 /* AppDelegate.swift in Sources */,
 				B7CD51971F215CC100E4EE3A /* DetailedRideViewController.swift in Sources */,
-				B7A6C9E01F16E96D00FF66B6 /* SWRevealViewController.m in Sources */,
 				B7A6C9E91F18153600FF66B6 /* Ride.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
