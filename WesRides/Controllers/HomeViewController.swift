@@ -44,10 +44,8 @@ class HomeViewController: UIViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        DispatchQueue.main.async {
             self.reloadTimeline()
             self.tableView.reloadData()
-        }
     }
     
     func sideMenu() {

@@ -19,8 +19,6 @@ class SettingsViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sideMenu()
-        
         form +++ Section()
             <<< TextRow(){ row in
                 row.title = "Name"
@@ -54,16 +52,12 @@ class SettingsViewController: FormViewController {
                 
         }
     }
-    
+
         
-        func sideMenu() {
-            openMenu.target = self.revealViewController()
-            openMenu.action = #selector(SWRevealViewController.revealToggle(_:))
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
-        
-        
-        
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
         
         
     }

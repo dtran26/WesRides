@@ -491,7 +491,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.31461727620000002" green="0.10789559780000001" blue="0.092863738540000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="ntA-hD-TZx" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="KVJ-h6-DVj"/>
+                                            <segue destination="ntA-hD-TZx" kind="presentation" id="KVJ-h6-DVj"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="Pqz-v0-6ss">
@@ -870,7 +870,7 @@
             <objects>
                 <navigationController id="Vgp-s8-Db3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="z3P-1O-0sU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="z3P-1O-0sU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -895,7 +895,7 @@
             <objects>
                 <navigationController id="lFs-AG-dSb" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Eg-Bd-ufy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2Eg-Bd-ufy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -913,7 +913,7 @@
             <objects>
                 <navigationController id="z4G-wL-BeK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="WWZ-g9-MXG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="WWZ-g9-MXG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
