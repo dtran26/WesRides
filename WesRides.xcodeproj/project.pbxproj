@@ -577,7 +577,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dtran.WesRides;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "WesRides/WesRides-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "WesRides/SWRevealViewControllers/WesRides-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -596,7 +596,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dtran.WesRides;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "WesRides/WesRides-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "WesRides/SWRevealViewControllers/WesRides-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

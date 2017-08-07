@@ -700,6 +700,7 @@
                                             <outlet property="destinationLabel" destination="erm-cH-Bti" id="ziq-Lm-N7Q"/>
                                             <outlet property="fromLabel" destination="QDb-zX-Qda" id="ri1-Th-qUr"/>
                                             <outlet property="timeLabel" destination="WK9-O0-Arr" id="uxX-2T-nKT"/>
+                                            <segue destination="0HW-Hj-GzR" kind="presentation" identifier="myDetailedRide" id="hds-m8-8Ee"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -841,7 +842,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nF-3y-Hmk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="DpM-g0-63S" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3714" y="395"/>
+            <point key="canvasLocation" x="3898" y="394"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="jFS-fj-XZ2">
@@ -906,7 +907,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yp-Qi-Nt1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2865" y="395"/>
+            <point key="canvasLocation" x="3122" y="394"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kPL-QE-SgR">
@@ -959,6 +960,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="w3c-2z-XNo"/>
-        <segue reference="KIt-Gp-Ibt"/>
+        <segue reference="hds-m8-8Ee"/>
     </inferredMetricsTieBreakers>
 </document>

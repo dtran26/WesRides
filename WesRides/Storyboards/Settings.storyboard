@@ -23,12 +23,16 @@
                         <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="VBD-WT-LYP">
-                        <barButtonItem key="leftBarButtonItem" image="ic_menu" id="o30-3D-4B7">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="o30-3D-4B7">
                             <connections>
                                 <action selector="cancel:" destination="qio-4Q-awL" id="tkM-hJ-DFd"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" id="pOQ-fH-WtM"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="pOQ-fH-WtM">
+                            <connections>
+                                <action selector="saveSettings:" destination="qio-4Q-awL" id="3Eq-4R-5d2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="openMenu" destination="o30-3D-4B7" id="xwr-WB-6cT"/>
@@ -57,7 +61,4 @@
             <point key="canvasLocation" x="1089" y="-1763"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ic_menu" width="24" height="24"/>
-    </resources>
 </document>

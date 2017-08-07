@@ -76,7 +76,7 @@ extension LoginViewController : GIDSignInDelegate, GIDSignInUIDelegate {
                     
                     let userEmail = user.email!
                     let userFullName = user.displayName
-                    let riderAttrs = ["userEmail": userEmail, "fullName": userFullName!, "lastPostTime" : 10.0, "postCount" : 0] as [String : Any]
+                    let riderAttrs = ["userEmail": userEmail, "fullName": userFullName!, "lastPostTime" : 10.0, "postCount" : 0, "phoneNumber" : ""] as [String : Any]
                     userRef.setValue(riderAttrs)
                 }
             })

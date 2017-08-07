@@ -11,7 +11,7 @@ import FirebaseDatabase
 import DZNEmptyDataSet
 
 class MyRidesViewController: UIViewController {
-
+    
     let refreshControl = UIRefreshControl()
     var requestedRides = [Ride]()
     var offeredRides = [Ride]()
@@ -25,7 +25,7 @@ class MyRidesViewController: UIViewController {
         configureTableView()
         sideMenu()
     }
-
+    
     func sideMenu() {
         openMenu.target = self.revealViewController()
         openMenu.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -67,12 +67,35 @@ class MyRidesViewController: UIViewController {
             self.tableView.reloadData()
             self.tableView.emptyDataSetSource = self
             self.tableView.emptyDataSetDelegate = self
-
-
+            
+            
         })
         
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier{
+            if identifier == "myDetailedRide"{
+                if let cell = sender as? UITableViewCell{
+                    let index = tableView.indexPath(for: cell)
+                    let myDetailedRideVC = segue.destination as! DetailedRideViewController
+                    let section = index?.section
+                    
+                    switch section!{
+                    case 0:
+                        let ride = requestedRides[index!.row]
+                        myDetailedRideVC.detailedRide = ride
+                    case 1:
+                        let ride = offeredRides[index!.row]
+                        myDetailedRideVC.detailedRide = ride
+                    default:
+                        return
+                    }
+                }
+            }
+        }
+    }
+    
     
 }
 
@@ -87,7 +110,7 @@ extension MyRidesViewController: UITableViewDataSource{
         if section == 0 {
             return "Your requested rides"
         }
-        
+            
         else{
             return "Your offered rides"
         }

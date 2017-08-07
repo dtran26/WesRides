@@ -29,12 +29,14 @@ class User{
         guard let dict = snapshot.value as? [String : Any],
               let email = dict["userEmail"] as? String,
               let fullName = dict["fullName"] as? String,
-              let postCount = dict["postCount"] as? Int
+              let postCount = dict["postCount"] as? Int,
+              let phoneNumber = dict["phoneNumber"] as? String
             else{ return nil }
         self.uid = snapshot.key
         self.email = email
         self.fullName = fullName
         self.postCount = postCount
+        self.phoneNumber = phoneNumber
     }
     
 

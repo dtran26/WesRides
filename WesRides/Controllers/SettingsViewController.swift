@@ -9,15 +9,19 @@
 import UIKit
 import Eureka
 import FirebaseAuth
+import FirebaseDatabase
 
 class SettingsViewController: FormViewController {
     
     @IBOutlet weak var openMenu: UIBarButtonItem!
     
     let currentUser = Auth.auth().currentUser
+    let defaults : UserDefaults = UserDefaults.standard
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.register(defaults: ["phoneSwitchKey" : false])
         
         form +++ Section()
             <<< TextRow(){ row in
@@ -34,17 +38,22 @@ class SettingsViewController: FormViewController {
             
             +++ Section("How do you want to be contacted?")
             
-            <<< SwitchRow("switchRowTag2"){
+            <<< SwitchRow("switchRowEmail"){
                 $0.title = "Email"
+                $0.value = UserDefaults.bool(forKey: emailSwitchKey)
             }
             
-            <<< SwitchRow("switchRowTag"){
+            <<< SwitchRow("switchRowPhone"){
                 $0.title = "Text Message"
+                $0.value = UserDefaults.bool(forKey: phoneSwitchKey)
             }
+            .onChange({ (SwitchRow) in
+                UserDefaults.set(SwitchRow.value!, forKey: phoneSwitchKey)
+            })
             
-            <<< PhoneRow(){
-                $0.hidden = Condition.function(["switchRowTag"], { form in
-                    return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
+            <<< PhoneRow("PhoneNumberTag"){
+                $0.hidden = Condition.function(["switchRowPhone"], { form in
+                    return !((form.rowBy(tag: "switchRowPhone") as? SwitchRow)?.value ?? false)
                 })
                 $0.title = "Phone Number"
                 $0.placeholder = "Enter phone number here"
@@ -53,7 +62,14 @@ class SettingsViewController: FormViewController {
         }
     }
 
-        
+    
+    @IBAction func saveSettings(_ sender: UIBarButtonItem) {
+        let userRef = Database.database().reference().child("users").child((currentUser?.uid)!)
+        let row : PhoneRow? = form.rowBy(tag: "PhoneNumberTag")
+        let value = row?.value
+        userRef.updateChildValues(["phoneNumber" : value!])
+    }
+    
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
