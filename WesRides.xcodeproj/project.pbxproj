@@ -35,6 +35,7 @@
 		B7B822291F379AA500CCE9F0 /* WildernessTypeface-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B822281F379AA500CCE9F0 /* WildernessTypeface-Regular.ttf */; };
 		B7B8222B1F379C1E00CCE9F0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B8222A1F379C1E00CCE9F0 /* SettingsViewController.swift */; };
 		B7B822311F379FD100CCE9F0 /* BebasNeueWhatever.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B822301F379FD100CCE9F0 /* BebasNeueWhatever.ttf */; };
+		B7B822331F381DCE00CCE9F0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B822321F381DCE00CCE9F0 /* AboutViewController.swift */; };
 		B7CD51921F1EA6EC00E4EE3A /* RideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD51911F1EA6EC00E4EE3A /* RideCell.swift */; };
 		B7CD51971F215CC100E4EE3A /* DetailedRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CD51961F215CC100E4EE3A /* DetailedRideViewController.swift */; };
 		EC625D12BFAE69A1CE1ADB05 /* Pods_WesRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */; };
@@ -78,6 +79,7 @@
 		B7B822281F379AA500CCE9F0 /* WildernessTypeface-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "WildernessTypeface-Regular.ttf"; path = "Fonts/WildernessTypeface-Regular.ttf"; sourceTree = "<group>"; };
 		B7B8222A1F379C1E00CCE9F0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
 		B7B822301F379FD100CCE9F0 /* BebasNeueWhatever.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = BebasNeueWhatever.ttf; path = Fonts/BebasNeueWhatever.ttf; sourceTree = "<group>"; };
+		B7B822321F381DCE00CCE9F0 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = Controllers/AboutViewController.swift; sourceTree = "<group>"; };
 		B7CD51911F1EA6EC00E4EE3A /* RideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RideCell.swift; path = Views/RideCell.swift; sourceTree = "<group>"; };
 		B7CD51961F215CC100E4EE3A /* DetailedRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailedRideViewController.swift; path = Controllers/DetailedRideViewController.swift; sourceTree = "<group>"; };
 		D219AD074E302C35C0FD5DBB /* Pods_WesRides.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WesRides.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +153,7 @@
 				B7A6C9EC1F1835F700FF66B6 /* NewRideViewController.swift */,
 				B7CD51961F215CC100E4EE3A /* DetailedRideViewController.swift */,
 				B7B8222A1F379C1E00CCE9F0 /* SettingsViewController.swift */,
+				B7B822321F381DCE00CCE9F0 /* AboutViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -387,7 +390,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WesRides/Pods-WesRides-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -410,7 +413,6 @@
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
-				"${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -423,7 +425,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Floaty.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -454,6 +455,7 @@
 				B7A6C9CB1F14228B00FF66B6 /* HomeViewController.swift in Sources */,
 				B7A6C9EB1F1824B300FF66B6 /* PostService.swift in Sources */,
 				B7B8220D1F36DF6E00CCE9F0 /* UIView+Animation.swift in Sources */,
+				B7B822331F381DCE00CCE9F0 /* AboutViewController.swift in Sources */,
 				B7B8222B1F379C1E00CCE9F0 /* SettingsViewController.swift in Sources */,
 				B7A6C9B31F10956B00FF66B6 /* AppDelegate.swift in Sources */,
 				B7CD51971F215CC100E4EE3A /* DetailedRideViewController.swift in Sources */,
@@ -564,11 +566,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FZ25TXY3NX;
 				INFOPLIST_FILE = "$(SRCROOT)/WesRides/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dtran.WesRides;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WesRides/WesRides-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -581,11 +585,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FZ25TXY3NX;
 				INFOPLIST_FILE = "$(SRCROOT)/WesRides/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dtran.WesRides;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WesRides/WesRides-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

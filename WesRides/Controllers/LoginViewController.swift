@@ -11,9 +11,6 @@ import Firebase
 import GoogleSignIn
 
 class LoginViewController: UIViewController{
-    
-    
-    @IBOutlet weak var googleSignInButton: GIDSignInButton!
 
     
     override func viewDidLoad() {
@@ -22,6 +19,13 @@ class LoginViewController: UIViewController{
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
+        let colors : [UIColor] = [
+            UIColor.init(hexString: "a73737")!,
+            UIColor.init(hexString: "7a2828")!
+        ]
+        
+        self.view.backgroundColor = UIColor.init(gradientStyle: .topToBottom, withFrame: view.frame, andColors: colors)
+//        self.view.backgroundColor = UIColor(hexString: "98040D")
     }
     
     @IBAction func signInTapped(_ sender: UIButton) {
@@ -30,6 +34,10 @@ class LoginViewController: UIViewController{
     
     @IBAction func unwindToLoginVC(segue: UIStoryboardSegue) {
         GIDSignIn.sharedInstance().delegate = self
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 

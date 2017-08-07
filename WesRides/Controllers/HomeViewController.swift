@@ -33,6 +33,7 @@ class HomeViewController: UIViewController{
         configureTableView()
         reloadTimeline()
         toolBar.barTintColor = UIColor.flatWhite
+        
     }
     
 

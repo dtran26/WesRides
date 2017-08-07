@@ -1,5 +1,5 @@
 //
-//  SettingsViewController.swift
+//  AboutViewController.swift
 //  WesRides
 //
 //  Created by Dan on 8/6/17.
@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import Eureka
 
-class SettingsViewController: FormViewController {
+class AboutViewController: UIViewController {
 
     @IBOutlet weak var openMenu: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenu()
@@ -23,6 +23,4 @@ class SettingsViewController: FormViewController {
         openMenu.action = #selector(SWRevealViewController.revealToggle(_:))
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
-
-
 }

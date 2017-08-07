@@ -18,10 +18,16 @@ class MenuViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        userNameLabel.text = "Hey, \(currentUser?.displayName! ?? "awesome person")"
+
+        
+//        self.view.backgroundColor = UIColor.init(gradientStyle: .topToBottom, withFrame: view.frame, andColors: colors)
 
         tableView.tableFooterView = UIView()
         
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
