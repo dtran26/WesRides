@@ -34,9 +34,11 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Send nudes :D</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>BebasNeueWhatever.ttf</string>

@@ -16,6 +16,8 @@ class DetailedRideViewController: UIViewController {
     @IBOutlet weak var capacityOutlet: UILabel!
     @IBOutlet weak var seatRequiredOrAvailable: UILabel!
     @IBOutlet weak var creatorOutlet: UILabel!
+    @IBOutlet weak var notesOutlet: UILabel!
+    
     var detailedRide : Ride?
     
     override func viewDidLoad() {

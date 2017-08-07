@@ -16,6 +16,7 @@ class User{
     let uid : String
     var lastPostTime : Date?
     var postCount = 0
+    var phoneNumber : String?
     
     init(uid: String, email: String, fullName : String){
         self.uid = uid
