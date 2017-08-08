@@ -15,8 +15,10 @@ class User{
     let email : String
     let uid : String
     var lastPostTime : Date?
-    var postCount = 0
+    var postCount : Int = 0
     var phoneNumber : String?
+    var contactByPhone : Bool = false
+    var contactByEmail : Bool = false
     
     init(uid: String, email: String, fullName : String){
         self.uid = uid

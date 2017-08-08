@@ -10,6 +10,7 @@ import UIKit
 import Eureka
 import FirebaseAuth
 import FirebaseDatabase
+import SwiftMessages
 
 class SettingsViewController: FormViewController {
     
@@ -21,7 +22,7 @@ class SettingsViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserDefaults.standard.register(defaults: ["phoneSwitchKey" : false])
+        defaults.register(defaults: ["phoneSwitchKey" : false])
         
         form +++ Section()
             <<< TextRow(){ row in
@@ -40,16 +41,13 @@ class SettingsViewController: FormViewController {
             
             <<< SwitchRow("switchRowEmail"){
                 $0.title = "Email"
-                $0.value = UserDefaults.bool(forKey: emailSwitchKey)
+                $0.value = defaults.bool(forKey: "switchRowEmailSelection")
             }
             
             <<< SwitchRow("switchRowPhone"){
                 $0.title = "Text Message"
-                $0.value = UserDefaults.bool(forKey: phoneSwitchKey)
+                $0.value = defaults.bool(forKey: "switchRowPhoneSelection")
             }
-            .onChange({ (SwitchRow) in
-                UserDefaults.set(SwitchRow.value!, forKey: phoneSwitchKey)
-            })
             
             <<< PhoneRow("PhoneNumberTag"){
                 $0.hidden = Condition.function(["switchRowPhone"], { form in
@@ -64,10 +62,26 @@ class SettingsViewController: FormViewController {
 
     
     @IBAction func saveSettings(_ sender: UIBarButtonItem) {
+        // Persistence for switchPhone
+        let phoneSelectionRow : SwitchRow? = form.rowBy(tag: "switchRowPhone")
+        let phoneSelectionRowValue = phoneSelectionRow?.value
+        self.defaults.set(phoneSelectionRowValue, forKey: "switchRowPhoneSelection")
+        
+        // Persistence for switchEmail
+        
+        let emailSelectionRow : SwitchRow? = form.rowBy(tag: "switchRowEmail")
+        let emailSelectionRowValue = phoneSelectionRow?.value
+        self.defaults.set(phoneSelectionRowValue, forKey: "switchRowEmailSelection")
+        
+        // Save phone # to DB
+        
+        let phoneRow : PhoneRow? = form.rowBy(tag: "PhoneNumberTag")
+        let phoneRowValue = phoneRow?.value
+        guard phoneRowValue != nil else {
+            return
+        }
         let userRef = Database.database().reference().child("users").child((currentUser?.uid)!)
-        let row : PhoneRow? = form.rowBy(tag: "PhoneNumberTag")
-        let value = row?.value
-        userRef.updateChildValues(["phoneNumber" : value!])
+        userRef.updateChildValues(["phoneNumber" : phoneRowValue!])
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
