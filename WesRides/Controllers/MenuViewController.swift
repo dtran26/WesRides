@@ -51,15 +51,27 @@ class MenuViewController: UITableViewController {
     
     
     @IBAction func logout(_ sender: UITapGestureRecognizer) {
+
+        let alert = UIAlertController(title: "Are you sure?", message: "You will lose all settings", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { _ in
+            self.logOutUser()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    func logOutUser(){
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
             GIDSignIn.sharedInstance().signOut()
+            UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+            UserDefaults.standard.synchronize()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
         performSegue(withIdentifier: "logOut", sender: self)
-        
     }
-    
 }

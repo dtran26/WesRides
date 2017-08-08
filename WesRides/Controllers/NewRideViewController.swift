@@ -114,6 +114,17 @@ class NewRideViewController: UIViewController{
     }
     
     
+    func successNotification(){
+        let status = MessageView.viewFromNib(layout: .StatusLine)
+        status.backgroundView.backgroundColor = UIColor(red:0.29, green:0.71, blue:0.26, alpha:1.0)
+        status.bodyLabel?.textColor = UIColor.white
+        status.configureContent(body: "Ride Successfuly Created")
+        var statusConfig = SwiftMessages.defaultConfig
+        statusConfig.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
+        SwiftMessages.show(config: statusConfig, view: status)
+
+    }
+    
     @IBAction func saveNewRide(_ sender: UIBarButtonItem) {
         print(postCount!)
 
@@ -168,13 +179,7 @@ class NewRideViewController: UIViewController{
                     PostService.create(from: self.startLocationOutlet.text!, to: self.endLocationOutlet.text!, capacity: Int(self.capacity.text!)!, time: self.chosenTime, notes: self.notes.text!, isOffer: self.isRideOffer!)
                     SwiftMessages.hide()
                     self.performSegue(withIdentifier: "unwindToHome", sender: nil)
-                    let status = MessageView.viewFromNib(layout: .StatusLine)
-                    status.backgroundView.backgroundColor = UIColor(red:0.29, green:0.71, blue:0.26, alpha:1.0)
-                    status.bodyLabel?.textColor = UIColor.white
-                    status.configureContent(body: "Ride Successfuly Created")
-                    var statusConfig = SwiftMessages.defaultConfig
-                    statusConfig.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
-                    SwiftMessages.show(config: statusConfig, view: status)
+                    self.successNotification()
             })
             config.presentationStyle = .center
             config.duration = .forever
