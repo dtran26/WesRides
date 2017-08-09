@@ -57,8 +57,20 @@ class SettingsViewController: FormViewController {
                 $0.title = "Phone Number"
                 $0.placeholder = "Enter phone number here"
                 $0.value = defaults.string(forKey: "phoneNumber")
-                
-                
+            }
+            
+            <<< SwitchRow("switchRowMessenger"){
+                $0.title = "FB Messenger"
+                $0.value = defaults.bool(forKey: "switchRowMessengerSelection")
+            }
+        
+            <<< TextRow(){ row in
+                row.hidden = Condition.function(["switchRowMessenger"], { form in
+                    return !((form.rowBy(tag: "switchRowMessenger") as? SwitchRow)?.value ?? false)
+                })
+                row.title = "Messenger Username"
+                row.value = defaults.string(forKey: "MessengerUsername")
+                row.placeholder = "m.me/yourusername"
         }
     }
     

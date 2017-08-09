@@ -25,7 +25,6 @@ class LoginViewController: UIViewController{
         ]
         
         self.view.backgroundColor = UIColor.init(gradientStyle: .topToBottom, withFrame: view.frame, andColors: colors)
-//        self.view.backgroundColor = UIColor(hexString: "98040D")
     }
     
     @IBAction func signInTapped(_ sender: UIButton) {

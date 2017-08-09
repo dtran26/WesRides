@@ -17,6 +17,8 @@ class DetailedRideViewController: UIViewController {
     @IBOutlet weak var seatRequiredOrAvailable: UILabel!
     @IBOutlet weak var creatorOutlet: UILabel!
     @IBOutlet weak var notesOutlet: UILabel!
+
+    @IBOutlet weak var messengerOutlet: UILabel!
     
     var detailedRide : Ride?
     
@@ -33,12 +35,30 @@ class DetailedRideViewController: UIViewController {
         else if !(detailedRide?.offerNewRideBool)!{
             seatRequiredOrAvailable.text = "Required"
         }
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.onClicLabel(sender:)))
+        messengerOutlet.isUserInteractionEnabled = true
+        messengerOutlet.addGestureRecognizer(tap)
     }
     
     @IBAction func backToHome(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
  
+    
+    func onClicLabel(sender:UITapGestureRecognizer) {
+        openUrl(urlString: "http://www.m.me/davidliangg")
+    }
+    
+    
+    func openUrl(urlString:String!) {
+        let url = URL(string: urlString)!
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
 
 
     
