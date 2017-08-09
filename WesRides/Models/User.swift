@@ -17,8 +17,6 @@ class User{
     var lastPostTime : Date?
     var postCount : Int = 0
     var phoneNumber : String?
-    var contactByPhone : Bool = false
-    var contactByEmail : Bool = false
     
     init(uid: String, email: String, fullName : String){
         self.uid = uid

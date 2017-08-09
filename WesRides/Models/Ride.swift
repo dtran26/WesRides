@@ -44,6 +44,7 @@ class Ride {
             let pickUpTime = dict["pickUptime"] as? TimeInterval,
             let creationDate = dict["createdAt"] as? TimeInterval,
             let capacity = dict["capacity"] as? Int,
+            let notes = dict["notes"] as? String,
             let creatorUID = dict["creatorUID"] as? String,
             let creatorDisplayName = dict["creatorDisplayName"] as? String,
             let creatorEmail = dict["creatorEmail"] as? String,
@@ -55,6 +56,7 @@ class Ride {
         self.destination = destination
         self.creationDate = Date(timeIntervalSince1970: creationDate)
         self.pickUpTime = Date(timeIntervalSince1970: pickUpTime)
+        self.notes = notes
         self.creatorUID = creatorUID
         self.creatorDisplayName = creatorDisplayName
         self.offerNewRideBool = offerNewRideBool

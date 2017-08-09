@@ -35,10 +35,11 @@ class DetailedRideViewController: UIViewController {
         else if !(detailedRide?.offerNewRideBool)!{
             seatRequiredOrAvailable.text = "Required"
         }
+        notesOutlet.text = "Notes: \(detailedRide!.notes)"
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.onClicLabel(sender:)))
-        messengerOutlet.isUserInteractionEnabled = true
-        messengerOutlet.addGestureRecognizer(tap)
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(self.onClicLabel(sender:)))
+//        messengerOutlet.isUserInteractionEnabled = true
+//        messengerOutlet.addGestureRecognizer(tap)
     }
     
     @IBAction func backToHome(_ sender: UIButton) {
