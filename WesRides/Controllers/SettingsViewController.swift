@@ -22,8 +22,6 @@ class SettingsViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        defaults.register(defaults: ["phoneSwitchKey" : false])
-        defaults.register(defaults: ["phoneNumber" : ""])
         
         form +++ Section()
             <<< TextRow(){ row in
@@ -63,14 +61,24 @@ class SettingsViewController: FormViewController {
                 $0.title = "FB Messenger"
                 $0.value = defaults.bool(forKey: "switchRowMessengerSelection")
             }
-        
-            <<< TextRow(){ row in
+            
+            <<< TextRow("MessengerTag"){ row in
                 row.hidden = Condition.function(["switchRowMessenger"], { form in
                     return !((form.rowBy(tag: "switchRowMessenger") as? SwitchRow)?.value ?? false)
                 })
                 row.title = "Messenger Username"
-                row.value = defaults.string(forKey: "MessengerUsername")
-                row.placeholder = "m.me/yourusername"
+                row.value = defaults.string(forKey: "messengerUsername")
+                row.placeholder = "Enter username here"
+                
+            }
+            <<< ButtonRow(){ row in
+                row.hidden = Condition.function(["switchRowMessenger"], { form in
+                    return !((form.rowBy(tag: "switchRowMessenger") as? SwitchRow)?.value ?? false)
+                })
+                row.title = "How to find Messenger username"
+        }
+                .onCellSelection { [weak self] (cell, row) in
+                    self?.showMessengerAlert()
         }
     }
     
@@ -86,7 +94,7 @@ class SettingsViewController: FormViewController {
         let iconText = ["🤔", "😖", "🙄", "😶", "😔", "😰"].sm_random()!
         var warningConfig = SwiftMessages.defaultConfig
         warningConfig.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
-        warning.configureContent(title: "Invalid Phone Number", body: "Enter your number again", iconText: iconText)
+        
         
         // Persistence for switchPhone
         let phoneSelectionRow : SwitchRow? = form.rowBy(tag: "switchRowPhone")
@@ -104,33 +112,60 @@ class SettingsViewController: FormViewController {
         let phoneNumberValue = phoneNumber?.value
         self.defaults.set(phoneNumberValue, forKey: "phoneNumber")
         
+        // Persistence for switchMessenger
+        
+        let messengerSelectionRow : SwitchRow? = form.rowBy(tag: "switchRowMessenger")
+        let messengerSelectionRowValue = messengerSelectionRow?.value
+        self.defaults.set(messengerSelectionRowValue, forKey: "switchRowMessengerSelection")
+        
+        // Persistence for Messenger Username
+        let messengerUsername : TextRow? = form.rowBy(tag: "MessengerTag")
+        let messengerUsernameValue = messengerUsername?.value
+        self.defaults.set(messengerUsernameValue, forKey: "messengerUsername")
         
         // Save phone # to DB
-        
         
         switch phoneSelectionRowValue!{
         case true:
             guard let userPhoneNumber = phoneNumberValue,
                 userPhoneNumber.characters.count == 10
                 else {
+                    warning.configureContent(title: "Invalid Phone Number", body: "Enter your number again", iconText: iconText)
                     SwiftMessages.show(config: warningConfig, view: warning)
                     return
             }
             view.endEditing(true)
-            userRef.updateChildValues(["phoneNumber" : phoneNumberValue!, "contactByPhone" : true])
+            userRef.updateChildValues(["phoneNumber" : userPhoneNumber, "contactByPhone" : true])
         case false:
             userRef.updateChildValues(["contactByPhone" : false])
-
         }
+        
+        
+        // Save email to DB
         
         switch emailSelectionRowValue!{
         case true:
             userRef.updateChildValues(["contactByEmail" : true])
-            print("hello")
         case false:
             userRef.updateChildValues(["contactByEmail" : false])
-            print("goodbye")
         }
+        
+        //Save messenger to DB
+        
+        switch messengerSelectionRowValue!{
+        case true:
+            guard let userMessengerUsername = messengerUsernameValue
+                else{
+                warning.configureContent(title: "Invalid Messenger Username", body: "Enter your username again", iconText: iconText)
+                SwiftMessages.show(config: warningConfig, view: warning)
+                    return
+            }
+            view.endEditing(true)
+            userRef.updateChildValues(["messengerUsername" : userMessengerUsername, "contactByMessenger" : true])
+        case false:
+            userRef.updateChildValues(["contactByMessenger" : false])
+        }
+        
         
         successNotification()
         
@@ -152,8 +187,40 @@ class SettingsViewController: FormViewController {
 
     }
     
+    func showMessengerAlert(){
+        let info = MessageView.viewFromNib(layout: .MessageView)
+        info.configureTheme(.info)
+        info.configureContent(title: nil, body: "1. Open Messenger App \n2. From Home, tap your profile picture in the top left corner \n3. Your username will be beneath your name", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: "OK", buttonTapHandler: {_ in SwiftMessages.hide()})
+        var infoConfig = SwiftMessages.defaultConfig
+        infoConfig.duration = .forever
+        infoConfig.presentationStyle = .bottom
+        SwiftMessages.show(config: infoConfig, view: info)
+    }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
+        // phone switch
+        let phoneSelectionRow : SwitchRow? = form.rowBy(tag: "switchRowPhone")
+        let phoneSelectionRowValue = phoneSelectionRow?.value
+        // phone row
+        let phoneNumber : PhoneRow? = form.rowBy(tag: "PhoneNumberTag")
+        let phoneNumberValue = phoneNumber?.value
+        
+        if(phoneSelectionRowValue == true && phoneNumberValue == nil){
+            self.defaults.set(false, forKey: "switchRowPhoneSelection")
+        }
+        
+        // messenger switch
+        let messengerSelectionRow : SwitchRow? = form.rowBy(tag: "switchRowMessenger")
+        let messengerSelectionRowValue = messengerSelectionRow?.value
+        // messenger row
+        let messengerUsername : TextRow? = form.rowBy(tag: "MessengerTag")
+        let messengerUsernameValue = messengerUsername?.value
+        
+        if(messengerSelectionRowValue == true && messengerUsernameValue == nil){
+            self.defaults.set(false, forKey: "switchRowMessengerSelection")
+        }
+        view.endEditing(true)
+        
         self.dismiss(animated: true, completion: nil)
     }
     

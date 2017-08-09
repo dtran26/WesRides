@@ -12,17 +12,14 @@ import GoogleSignIn
 
 class MenuViewController: UITableViewController {
 
-    @IBOutlet weak var userNameLabel: UILabel!
-    
+    var coverView: UIView?
     let currentUser = Auth.auth().currentUser
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-//        self.view.backgroundColor = UIColor.init(gradientStyle: .topToBottom, withFrame: view.frame, andColors: colors)
-
         tableView.tableFooterView = UIView()
+//        coverView = UIView(frame: UIScreen.main.bounds)
+//        coverView?.backgroundColor = UIColor.lightGray.withAlphaComponent(0.25)
         
     }
     
@@ -40,6 +37,7 @@ class MenuViewController: UITableViewController {
         self.revealViewController().view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.revealViewController().frontViewController.revealViewController().tapGestureRecognizer()
         self.revealViewController().frontViewController.view.isUserInteractionEnabled = false
+//        self.revealViewController().frontViewController.view.addSubview(coverView!)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -47,6 +45,7 @@ class MenuViewController: UITableViewController {
         
         self.revealViewController().frontViewController.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.revealViewController().frontViewController.view.isUserInteractionEnabled = true
+//        self.coverView?.removeFromSuperview()
     }
     
     
