@@ -76,7 +76,7 @@ class SettingsViewController: FormViewController {
                     return !((form.rowBy(tag: "switchRowMessenger") as? SwitchRow)?.value ?? false)
                 })
                 row.title = "How to find Messenger username"
-        }
+                }
                 .onCellSelection { [weak self] (cell, row) in
                     self?.showMessengerAlert()
         }
@@ -96,79 +96,102 @@ class SettingsViewController: FormViewController {
         warningConfig.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
         
         
-        // Persistence for switchPhone
+        
+        
+        // Get value for switchPhone
         let phoneSelectionRow : SwitchRow? = form.rowBy(tag: "switchRowPhone")
         let phoneSelectionRowValue = phoneSelectionRow?.value
-        self.defaults.set(phoneSelectionRowValue, forKey: "switchRowPhoneSelection")
         
-        // Persistence for switchEmail
+        
+        // Get value for switchEmail
         
         let emailSelectionRow : SwitchRow? = form.rowBy(tag: "switchRowEmail")
         let emailSelectionRowValue = emailSelectionRow?.value
-        self.defaults.set(emailSelectionRowValue, forKey: "switchRowEmailSelection")
         
-        // Persistence for Phone #
+        
+        // Get value for Phone #
         let phoneNumber : PhoneRow? = form.rowBy(tag: "PhoneNumberTag")
         let phoneNumberValue = phoneNumber?.value
-        self.defaults.set(phoneNumberValue, forKey: "phoneNumber")
         
-        // Persistence for switchMessenger
+        
+        // Get value for switchMessenger
         
         let messengerSelectionRow : SwitchRow? = form.rowBy(tag: "switchRowMessenger")
         let messengerSelectionRowValue = messengerSelectionRow?.value
-        self.defaults.set(messengerSelectionRowValue, forKey: "switchRowMessengerSelection")
         
-        // Persistence for Messenger Username
+        
+        // Get value for Messenger Username
         let messengerUsername : TextRow? = form.rowBy(tag: "MessengerTag")
         let messengerUsernameValue = messengerUsername?.value
-        self.defaults.set(messengerUsernameValue, forKey: "messengerUsername")
         
-        // Save phone # to DB
         
-        switch phoneSelectionRowValue!{
-        case true:
-            guard let userPhoneNumber = phoneNumberValue,
-                userPhoneNumber.characters.count == 10
-                else {
-                    warning.configureContent(title: "Invalid Phone Number", body: "Enter your number again", iconText: iconText)
-                    SwiftMessages.show(config: warningConfig, view: warning)
-                    return
+        
+        // Warning for at least one medium of communication
+        if !phoneSelectionRowValue! && !emailSelectionRowValue! && !messengerSelectionRowValue!{
+            
+            warning.configureContent(title: "", body: "You need to have at least one medium of communication", iconText: iconText)
+            SwiftMessages.show(config: warningConfig, view: warning)
+            
+        }
+           
+            
+        // Proceed with saving data
+        else{
+            
+            // Persistence using Userdefaults
+            self.defaults.set(phoneSelectionRowValue, forKey: "switchRowPhoneSelection")
+            self.defaults.set(emailSelectionRowValue, forKey: "switchRowEmailSelection")
+            self.defaults.set(phoneNumberValue, forKey: "phoneNumber")
+            self.defaults.set(messengerSelectionRowValue, forKey: "switchRowMessengerSelection")
+            self.defaults.set(messengerUsernameValue, forKey: "messengerUsername")
+            
+            
+            // Save phone # to DB
+            
+            switch phoneSelectionRowValue!{
+            case true:
+                guard let userPhoneNumber = phoneNumberValue,
+                    userPhoneNumber.characters.count == 10
+                    else {
+                        warning.configureContent(title: "Invalid Phone Number", body: "Enter your number again", iconText: iconText)
+                        SwiftMessages.show(config: warningConfig, view: warning)
+                        return
+                }
+                view.endEditing(true)
+                userRef.updateChildValues(["phoneNumber" : userPhoneNumber, "contactByPhone" : true])
+            case false:
+                userRef.updateChildValues(["contactByPhone" : false])
             }
-            view.endEditing(true)
-            userRef.updateChildValues(["phoneNumber" : userPhoneNumber, "contactByPhone" : true])
-        case false:
-            userRef.updateChildValues(["contactByPhone" : false])
-        }
-        
-        
-        // Save email to DB
-        
-        switch emailSelectionRowValue!{
-        case true:
-            userRef.updateChildValues(["contactByEmail" : true])
-        case false:
-            userRef.updateChildValues(["contactByEmail" : false])
-        }
-        
-        //Save messenger to DB
-        
-        switch messengerSelectionRowValue!{
-        case true:
-            guard let userMessengerUsername = messengerUsernameValue
-                else{
-                warning.configureContent(title: "Invalid Messenger Username", body: "Enter your username again", iconText: iconText)
-                SwiftMessages.show(config: warningConfig, view: warning)
-                    return
+            
+            
+            // Save email to DB
+            
+            switch emailSelectionRowValue!{
+            case true:
+                userRef.updateChildValues(["contactByEmail" : true])
+            case false:
+                userRef.updateChildValues(["contactByEmail" : false])
             }
-            view.endEditing(true)
-            userRef.updateChildValues(["messengerUsername" : userMessengerUsername, "contactByMessenger" : true])
-        case false:
-            userRef.updateChildValues(["contactByMessenger" : false])
+            
+            //Save messenger to DB
+            
+            switch messengerSelectionRowValue!{
+            case true:
+                guard let userMessengerUsername = messengerUsernameValue
+                    else{
+                        warning.configureContent(title: "Invalid Messenger Username", body: "Enter your username again", iconText: iconText)
+                        SwiftMessages.show(config: warningConfig, view: warning)
+                        return
+                }
+                view.endEditing(true)
+                userRef.updateChildValues(["messengerUsername" : userMessengerUsername, "contactByMessenger" : true])
+            case false:
+                userRef.updateChildValues(["contactByMessenger" : false])
+            }
+            
+            
+            successNotification()
         }
-        
-        
-        successNotification()
-        
     }
     
     
@@ -184,7 +207,7 @@ class SettingsViewController: FormViewController {
         var statusConfig = SwiftMessages.defaultConfig
         statusConfig.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
         SwiftMessages.show(config: statusConfig, view: status)
-
+        
     }
     
     func showMessengerAlert(){

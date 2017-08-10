@@ -273,7 +273,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01m-I5-qBS">
-                                <rect key="frame" x="16" y="28" width="34" height="34"/>
+                                <rect key="frame" x="15" y="28" width="34" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="34" id="NAP-f9-RSt"/>
                                     <constraint firstAttribute="height" constant="34" id="lN3-rH-lgO"/>
@@ -400,6 +400,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2a-4j-MOY">
+                                <rect key="frame" x="157" y="578.5" width="61" height="32"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Contact"/>
+                                <connections>
+                                    <action selector="contactButton:" destination="0HW-Hj-GzR" eventType="touchUpInside" id="ksK-gt-Uma"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -407,8 +415,10 @@
                             <constraint firstItem="FBR-w6-4fH" firstAttribute="top" secondItem="lMi-cF-PA6" secondAttribute="bottom" constant="30" id="17z-TL-9Jl"/>
                             <constraint firstItem="lMi-cF-PA6" firstAttribute="top" secondItem="4pl-qb-WV5" secondAttribute="bottom" constant="15" id="1MS-We-hc7"/>
                             <constraint firstItem="iHv-S6-mEu" firstAttribute="centerX" secondItem="9VT-be-Gey" secondAttribute="centerX" id="3Yx-FO-FSJ"/>
+                            <constraint firstItem="e2a-4j-MOY" firstAttribute="top" secondItem="5bp-LH-JxF" secondAttribute="bottom" constant="140" id="4Bf-LA-dbc"/>
+                            <constraint firstItem="e2a-4j-MOY" firstAttribute="centerX" secondItem="9VT-be-Gey" secondAttribute="centerX" id="556-fy-uA1"/>
                             <constraint firstItem="AfT-wR-27J" firstAttribute="leading" secondItem="9VT-be-Gey" secondAttribute="leadingMargin" constant="14" id="6yn-f7-z2g"/>
-                            <constraint firstItem="01m-I5-qBS" firstAttribute="leading" secondItem="9VT-be-Gey" secondAttribute="leading" constant="16" id="7IU-yw-77n"/>
+                            <constraint firstItem="01m-I5-qBS" firstAttribute="leading" secondItem="9VT-be-Gey" secondAttribute="leading" constant="15" id="7IU-yw-77n"/>
                             <constraint firstItem="pMm-A2-Glr" firstAttribute="centerY" secondItem="4jS-vA-Y0T" secondAttribute="centerY" id="7hl-kq-Jp7"/>
                             <constraint firstItem="kyh-b3-iVM" firstAttribute="top" secondItem="iHv-S6-mEu" secondAttribute="bottom" constant="40" id="9mk-jJ-bS4"/>
                             <constraint firstItem="AgE-nC-QDw" firstAttribute="centerY" secondItem="lMi-cF-PA6" secondAttribute="centerY" id="Ax0-2n-vPp"/>
@@ -578,7 +588,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.31461727620000002" green="0.10789559780000001" blue="0.092863738540000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="5hN-Mh-lxr" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="soG-TS-Idp"/>
+                                            <segue destination="5hN-Mh-lxr" kind="presentation" id="soG-TS-Idp"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="yVw-no-9Fe">
@@ -965,7 +975,7 @@
             <objects>
                 <navigationController id="Vgp-s8-Db3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="z3P-1O-0sU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="z3P-1O-0sU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -990,7 +1000,7 @@
             <objects>
                 <navigationController id="lFs-AG-dSb" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Eg-Bd-ufy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2Eg-Bd-ufy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1008,7 +1018,7 @@
             <objects>
                 <navigationController id="z4G-wL-BeK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="WWZ-g9-MXG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="WWZ-g9-MXG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">

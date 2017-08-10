@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3FZ-c7-jFM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,11 +32,12 @@
                         <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="BtG-s4-hcE">
-                        <barButtonItem key="leftBarButtonItem" image="ic_menu" id="d3r-nF-PYt"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="d3r-nF-PYt">
+                            <connections>
+                                <action selector="cancelTapped:" destination="NfV-Oo-dQo" id="gJb-un-SMZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="openMenu" destination="d3r-nF-PYt" id="sEV-5u-HAr"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jl0-1C-zRZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,7 +48,6 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3FZ-c7-jFM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4_7.fullscreen"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4dL-Sv-xpK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -58,7 +62,4 @@
             <point key="canvasLocation" x="1982" y="-338"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ic_menu" width="24" height="24"/>
-    </resources>
 </document>

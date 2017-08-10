@@ -21,10 +21,7 @@ class NewRideViewController: UIViewController{
     var isRideOffer : Bool?
     var phoneNumber : String?
     var messengerUsername : String?
-//    var contactByPhone : Bool?
-//    var contactByEmail : Bool?
-//    var contactByMessenger : Bool?
-//    
+
     @IBOutlet weak var requestOrOfferRide: UISegmentedControl!
     @IBOutlet weak var timeOutlet: UITextField!
     @IBOutlet weak var startLocationOutlet: UITextField!
@@ -38,8 +35,7 @@ class NewRideViewController: UIViewController{
         super.viewDidLoad()
         setTextFieldDelegates()
         stepperSetUp()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(NewRideViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
+        tapTopDismissKeyboard()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
@@ -51,16 +47,8 @@ class NewRideViewController: UIViewController{
         userRef.observeSingleEvent(of: .value, with: { (snapshot) in
             let userDict = snapshot.value as? [String : Any] ?? [:]
             self.postCount = userDict["postCount"] as? Int
-        })
-        
-        userRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            let userDict = snapshot.value as? [String : Any] ?? [:]
-            self.postCount = userDict["postCount"] as? Int
             self.messengerUsername = userDict["messengerUsername"] as? String
             self.phoneNumber = userDict["phoneNumber"] as? String
-//            self.contactByEmail = userDict["contactByEmail"] as? Bool
-//            self.contactByPhone = userDict["contactByPhone"] as? Bool
-//            self.contactByMessenger = userDict["contactByMessenger"] as? Bool
         })
     }
     
@@ -68,11 +56,17 @@ class NewRideViewController: UIViewController{
         view.endEditing(true)
     }
     
+    func tapTopDismissKeyboard(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(NewRideViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
     func setTextFieldDelegates(){
         self.startLocationOutlet.delegate = self
         self.endLocationOutlet.delegate = self
         self.timeOutlet.delegate = self
         self.capacity.delegate = self
+        self.notes.delegate = self
     }
     
     func stepperSetUp(){
@@ -211,7 +205,9 @@ class NewRideViewController: UIViewController{
             view.configureContent(title: "Confirm Ride Details", body: "From: \(startLocationOutlet.text!) \nTo: \(endLocationOutlet.text!) \nWhen: \(timeOutlet.text!)", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: "OK 👌"
                 , buttonTapHandler: { _ in
                     PostService.create(from: self.startLocationOutlet.text!, to: self.endLocationOutlet.text!, capacity: Int(self.capacity.text!)!, time: self.chosenTime, notes: self.notes.text!, isOffer: self.isRideOffer!, phoneNumber: self.phoneNumber!, messengerUsername: self.messengerUsername!)
+                    
                     SwiftMessages.hide()
+                    
                     self.performSegue(withIdentifier: "unwindToHome", sender: nil)
                     self.successNotification()
             })
@@ -251,6 +247,10 @@ extension NewRideViewController: UITextFieldDelegate {
 }
 
 extension NewRideViewController: UITextViewDelegate{
-    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+        let numberOfChars = newText.characters.count
+        return numberOfChars < 120
+    }
     
 }

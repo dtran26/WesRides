@@ -10,17 +10,13 @@ import UIKit
 
 class AboutViewController: UIViewController {
 
-    @IBOutlet weak var openMenu: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sideMenu()
-        
     }
 
-    func sideMenu() {
-        openMenu.target = self.revealViewController()
-        openMenu.action = #selector(SWRevealViewController.revealToggle(_:))
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
+
 }
