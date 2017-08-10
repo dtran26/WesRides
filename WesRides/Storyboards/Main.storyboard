@@ -43,7 +43,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goe-6q-knR" customClass="CardView" customModule="WesRides" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="8" width="304" height="124"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="124"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5R-Mg-sIj">
                                                             <rect key="frame" x="40" y="7.5" width="44.5" height="23"/>
@@ -64,7 +64,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-user_male_circle_filled" translatesAutoresizingMaskIntoConstraints="NO" id="qwq-mh-CdN">
-                                                            <rect key="frame" x="130" y="7" width="24" height="24"/>
+                                                            <rect key="frame" x="185" y="7" width="24" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="24" id="NyY-tS-BKE"/>
                                                                 <constraint firstAttribute="height" constant="24" id="YZg-4V-N4g"/>
@@ -92,7 +92,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3e-fE-Yev">
-                                                            <rect key="frame" x="160" y="7.5" width="130" height="22"/>
+                                                            <rect key="frame" x="215" y="7.5" width="130" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="130" id="gbG-ef-xPT"/>
                                                             </constraints>
@@ -659,7 +659,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4G2-We-W5P" customClass="CardView" customModule="WesRides" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="8" width="304" height="122.5"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="122.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDb-zX-Qda">
                                                             <rect key="frame" x="40" y="7.5" width="44.5" height="23"/>
@@ -680,7 +680,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-user_male_circle_filled" translatesAutoresizingMaskIntoConstraints="NO" id="hvc-vw-6GD">
-                                                            <rect key="frame" x="130" y="7" width="24" height="24"/>
+                                                            <rect key="frame" x="185" y="7" width="24" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="24" id="I5I-8G-R91"/>
                                                                 <constraint firstAttribute="height" constant="24" id="mpg-fz-ltn"/>
@@ -708,7 +708,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ZyN-Xf-EGy">
-                                                            <rect key="frame" x="162" y="7.5" width="47" height="23"/>
+                                                            <rect key="frame" x="217" y="7.5" width="47" height="23"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -941,7 +941,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="jFS-fj-XZ2">
             <objects>
-                <viewController storyboardIdentifier="Home" id="G7d-QV-S4T" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="G7d-QV-S4T" customClass="RevealViewController" customModule="WesRides" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cbp-34-r5c"/>
                         <viewControllerLayoutGuide type="bottom" id="cJk-qO-LMV"/>

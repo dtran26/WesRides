@@ -19,6 +19,12 @@ class NewRideViewController: UIViewController{
     var chosenTime = Date()
     var postCount : Int?
     var isRideOffer : Bool?
+    var phoneNumber : String?
+    var messengerUsername : String?
+//    var contactByPhone : Bool?
+//    var contactByEmail : Bool?
+//    var contactByMessenger : Bool?
+//    
     @IBOutlet weak var requestOrOfferRide: UISegmentedControl!
     @IBOutlet weak var timeOutlet: UITextField!
     @IBOutlet weak var startLocationOutlet: UITextField!
@@ -34,9 +40,9 @@ class NewRideViewController: UIViewController{
         stepperSetUp()
         let tap = UITapGestureRecognizer(target: self, action: #selector(NewRideViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
-
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +51,16 @@ class NewRideViewController: UIViewController{
         userRef.observeSingleEvent(of: .value, with: { (snapshot) in
             let userDict = snapshot.value as? [String : Any] ?? [:]
             self.postCount = userDict["postCount"] as? Int
+        })
+        
+        userRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            let userDict = snapshot.value as? [String : Any] ?? [:]
+            self.postCount = userDict["postCount"] as? Int
+            self.messengerUsername = userDict["messengerUsername"] as? String
+            self.phoneNumber = userDict["phoneNumber"] as? String
+//            self.contactByEmail = userDict["contactByEmail"] as? Bool
+//            self.contactByPhone = userDict["contactByPhone"] as? Bool
+//            self.contactByMessenger = userDict["contactByMessenger"] as? Bool
         })
     }
     
@@ -125,6 +141,24 @@ class NewRideViewController: UIViewController{
 
     }
     
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
     @IBAction func saveNewRide(_ sender: UIBarButtonItem) {
         print(postCount!)
 
@@ -176,7 +210,7 @@ class NewRideViewController: UIViewController{
             view.configureDropShadow()
             view.configureContent(title: "Confirm Ride Details", body: "From: \(startLocationOutlet.text!) \nTo: \(endLocationOutlet.text!) \nWhen: \(timeOutlet.text!)", iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: "OK 👌"
                 , buttonTapHandler: { _ in
-                    PostService.create(from: self.startLocationOutlet.text!, to: self.endLocationOutlet.text!, capacity: Int(self.capacity.text!)!, time: self.chosenTime, notes: self.notes.text!, isOffer: self.isRideOffer!)
+                    PostService.create(from: self.startLocationOutlet.text!, to: self.endLocationOutlet.text!, capacity: Int(self.capacity.text!)!, time: self.chosenTime, notes: self.notes.text!, isOffer: self.isRideOffer!, phoneNumber: self.phoneNumber!, messengerUsername: self.messengerUsername!)
                     SwiftMessages.hide()
                     self.performSegue(withIdentifier: "unwindToHome", sender: nil)
                     self.successNotification()

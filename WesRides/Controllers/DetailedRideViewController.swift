@@ -18,7 +18,6 @@ class DetailedRideViewController: UIViewController {
     @IBOutlet weak var creatorOutlet: UILabel!
     @IBOutlet weak var notesOutlet: UILabel!
 
-    @IBOutlet weak var messengerOutlet: UILabel!
     
     var detailedRide : Ride?
     

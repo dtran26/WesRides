@@ -17,10 +17,12 @@ class PostService{
     private static let postRef = Database.database().reference().child("posts")
     
     
-    static func create(from startLocation: String, to endLocation: String, capacity: Int, time: Date, notes: String, isOffer: Bool) {
+    static func create(from startLocation: String, to endLocation: String, capacity: Int, time: Date, notes: String, isOffer: Bool, phoneNumber: String, messengerUsername: String) {
+        
         // create new post in database
+        
         let name = currentUser?.displayName
-        let post = Ride(from: startLocation, destination: endLocation, pickUpTime: time, notes: notes, capacity: capacity, creatorUID: (currentUser?.uid)!, creatorDisplayName: name!, offerNewRideBool: isOffer, creatorEmail: (currentUser?.email!)!)
+        let post = Ride(from: startLocation, destination: endLocation, pickUpTime: time, notes: notes, capacity: capacity, creatorUID: (currentUser?.uid)!, creatorDisplayName: name!, offerNewRideBool: isOffer, creatorEmail: (currentUser?.email!)!, creatorPhoneNumber: phoneNumber, creatorMessengerUsername: messengerUsername)
         
         let dict = post.dictValue
 
@@ -28,7 +30,6 @@ class PostService{
             let userDict = snapshot.value as? [String : Any] ?? [:]
             let currentPostCount = userDict["postCount"] as! Int
             postCount = currentPostCount + 1
-            print("User's current postCount: \(postCount)")
             userRef.updateChildValues(["postCount" : postCount])
         })
         

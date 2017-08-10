@@ -46,6 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         }
         // [END user persistence]
         
+        
+        UserDefaults.standard.register(defaults: ["switchRowEmailSelection" : false])
+        UserDefaults.standard.register(defaults: ["switchRowPhoneSelection" : false])
+        UserDefaults.standard.register(defaults: ["switchRowMessengerSelection" : false])
+        
         return true
     }
     
