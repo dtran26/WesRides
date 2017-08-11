@@ -37,7 +37,7 @@ class MenuViewController: UITableViewController {
         self.revealViewController().view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.revealViewController().frontViewController.revealViewController().tapGestureRecognizer()
         self.revealViewController().frontViewController.view.isUserInteractionEnabled = false
-//        self.revealViewController().frontViewController.view.addSubview(coverView!)
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -59,6 +59,8 @@ class MenuViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
         
     }
+    
+    
     
     
     func logOutUser(){

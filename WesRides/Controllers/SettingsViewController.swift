@@ -79,7 +79,15 @@ class SettingsViewController: FormViewController {
                 }
                 .onCellSelection { [weak self] (cell, row) in
                     self?.showMessengerAlert()
-        }
+            }
+            
+            +++ Section()
+            <<< ButtonRow() { (row: ButtonRow) -> Void in
+                row.title = "About"
+                row.presentationMode = .segueName(segueName: "SettingsToAbout", onDismiss:{  vc in vc.dismiss(animated: true) })
+                }
+        
+        
     }
     
     
@@ -133,9 +141,9 @@ class SettingsViewController: FormViewController {
             SwiftMessages.show(config: warningConfig, view: warning)
             
         }
-           
             
-        // Proceed with saving data
+            
+            // Proceed with saving data
         else{
             
             // Persistence using Userdefaults

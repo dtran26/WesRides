@@ -142,7 +142,6 @@ extension DetailedRideViewController : MFMessageComposeViewControllerDelegate{
     func sendSMS(){
         
         if MFMessageComposeViewController.canSendText() == true{
-            print(detailedRide?.creatorPhoneNumber)
             let recipients:[String] = [(detailedRide?.creatorPhoneNumber)!]
             let messageController = MFMessageComposeViewController()
             messageController.messageComposeDelegate  = self // implement delegate if you want

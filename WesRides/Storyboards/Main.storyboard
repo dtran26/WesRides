@@ -401,7 +401,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2a-4j-MOY">
-                                <rect key="frame" x="157" y="578.5" width="61" height="32"/>
+                                <rect key="frame" x="157" y="518.5" width="61" height="32"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Contact"/>
                                 <connections>
@@ -415,7 +415,7 @@
                             <constraint firstItem="FBR-w6-4fH" firstAttribute="top" secondItem="lMi-cF-PA6" secondAttribute="bottom" constant="30" id="17z-TL-9Jl"/>
                             <constraint firstItem="lMi-cF-PA6" firstAttribute="top" secondItem="4pl-qb-WV5" secondAttribute="bottom" constant="15" id="1MS-We-hc7"/>
                             <constraint firstItem="iHv-S6-mEu" firstAttribute="centerX" secondItem="9VT-be-Gey" secondAttribute="centerX" id="3Yx-FO-FSJ"/>
-                            <constraint firstItem="e2a-4j-MOY" firstAttribute="top" secondItem="5bp-LH-JxF" secondAttribute="bottom" constant="140" id="4Bf-LA-dbc"/>
+                            <constraint firstItem="e2a-4j-MOY" firstAttribute="top" secondItem="5bp-LH-JxF" secondAttribute="bottom" constant="80" id="4Bf-LA-dbc"/>
                             <constraint firstItem="e2a-4j-MOY" firstAttribute="centerX" secondItem="9VT-be-Gey" secondAttribute="centerX" id="556-fy-uA1"/>
                             <constraint firstItem="AfT-wR-27J" firstAttribute="leading" secondItem="9VT-be-Gey" secondAttribute="leadingMargin" constant="14" id="6yn-f7-z2g"/>
                             <constraint firstItem="01m-I5-qBS" firstAttribute="leading" secondItem="9VT-be-Gey" secondAttribute="leading" constant="15" id="7IU-yw-77n"/>
@@ -577,18 +577,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABOUT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxF-xy-fdf">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABOUT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEh-Fd-5aX">
                                                     <rect key="frame" x="45" y="8" width="87" height="53"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="BebasNeueWhatever" family="Bebas Neue Whatever" pointSize="44"/>
-                                                    <color key="textColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.31461727620000002" green="0.10789559780000001" blue="0.092863738540000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="5hN-Mh-lxr" kind="presentation" id="soG-TS-Idp"/>
+                                            <segue destination="DJ7-5i-0ST" kind="modal" id="Wr4-vU-qS7"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="yVw-no-9Fe">
@@ -1043,12 +1043,12 @@
             <point key="canvasLocation" x="1322" y="-1037"/>
         </scene>
         <!--About-->
-        <scene sceneID="Rzy-bG-HAP">
+        <scene sceneID="Mml-nU-jsa">
             <objects>
-                <viewControllerPlaceholder storyboardName="About" id="5hN-Mh-lxr" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Itx-6G-Pw4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="About" id="DJ7-5i-0ST" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XpB-7d-HEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="845" y="-1037"/>
+            <point key="canvasLocation" x="845" y="-1038"/>
         </scene>
     </scenes>
     <resources>
@@ -1063,7 +1063,7 @@
         <image name="icons8-user_male_circle_filled" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="w3c-2z-XNo"/>
         <segue reference="vwg-Tp-QCR"/>
+        <segue reference="c0e-c2-PR4"/>
     </inferredMetricsTieBreakers>
 </document>
