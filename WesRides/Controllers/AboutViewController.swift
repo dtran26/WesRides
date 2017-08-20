@@ -10,14 +10,13 @@ import UIKit
 import MessageUI
 
 class AboutViewController: UIViewController {
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "About"
-
+        
     }
-
+    
     @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -27,23 +26,20 @@ class AboutViewController: UIViewController {
     
     
     @IBAction func rateTheApp(_ sender: UIButton) {
-        rateApp(appId: "id1268451024") { success in
-            print("success")
-
+        let appID = "1268451024"
+        if let checkURL = URL(string: "http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=\(appID)&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8") {
+            open(url: checkURL)
+        } else {
+            print("invalid url")
         }
     }
-
-    func rateApp(appId: String, completion: @escaping ((_ success: Bool)->())) {
-        guard let url = URL(string : "itms-apps://itunes.apple.com/app/" + appId) else {
-            completion(false)
-            return
-        }
-        guard #available(iOS 10, *) else {
-            completion(UIApplication.shared.openURL(url))
-            return
-        }
-        UIApplication.shared.open(url, options: [:], completionHandler: completion)
+    
+    func open(url: URL) {
+        UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
+            print("Open \(url): \(success)")
+            })
     }
+    
 }
 
 extension AboutViewController : MFMailComposeViewControllerDelegate{
