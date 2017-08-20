@@ -19,4 +19,6 @@ target 'WesRides' do
   pod 'SwiftMessages'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'Eureka'
+  pod 'MBProgressHUD', '~> 1.0.0'
+  pod 'ReachabilitySwift', '~> 3'
 end

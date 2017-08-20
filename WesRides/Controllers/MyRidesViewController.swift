@@ -26,6 +26,12 @@ class MyRidesViewController: UIViewController {
         sideMenu()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        self.reloadTimeline()
+        self.tableView.reloadData()
+    }
+    
     func sideMenu() {
         openMenu.target = self.revealViewController()
         openMenu.action = #selector(SWRevealViewController.revealToggle(_:))

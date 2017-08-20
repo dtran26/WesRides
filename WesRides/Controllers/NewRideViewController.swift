@@ -12,6 +12,7 @@ import SwiftDate
 import FirebaseAuth
 import FirebaseDatabase
 import SwiftMessages
+import ReachabilitySwift
 
 class NewRideViewController: UIViewController{
     
@@ -21,6 +22,17 @@ class NewRideViewController: UIViewController{
     var isRideOffer : Bool?
     var phoneNumber : String?
     var messengerUsername : String?
+    var hasInternet: Bool {
+        if let reachability = Reachability() {
+            if reachability.currentReachabilityStatus == .notReachable {
+                return false
+            } else {
+                return true
+            }
+        } else {
+            return false
+        }
+    }
 
     @IBOutlet weak var requestOrOfferRide: UISegmentedControl!
     @IBOutlet weak var timeOutlet: UITextField!
@@ -29,19 +41,21 @@ class NewRideViewController: UIViewController{
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var capacity: UITextField!
     @IBOutlet weak var notes: UITextView!
+    @IBOutlet weak var notesCharactersCount: UILabel!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTextFieldDelegates()
         stepperSetUp()
-        tapTopDismissKeyboard()
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-
+        keyboardSetup()
+        noInternet()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        ReachabilityManager.shared.addListener(listener: self)
         let currentUser = Auth.auth().currentUser
         let userRef = Database.database().reference().child("users").child((currentUser?.uid)!)
         userRef.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -52,13 +66,37 @@ class NewRideViewController: UIViewController{
         })
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        ReachabilityManager.shared.addListener(listener: self)
+    }
+    
     func dismissKeyboard() {
         view.endEditing(true)
     }
     
-    func tapTopDismissKeyboard(){
+    func noInternet(){
+        if !hasInternet {
+            saveButton.isEnabled = false
+            let warning = MessageView.viewFromNib(layout: .CardView)
+            warning.configureTheme(.warning)
+            warning.configureDropShadow()
+            warning.button?.isHidden = true
+            let iconText = ["🤔", "😖", "🙄", "😶", "😔", "😰"].sm_random()!
+            var warningConfig = SwiftMessages.defaultConfig
+            warningConfig.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
+            warningConfig.duration = .seconds(seconds: 3.0)
+            warning.configureContent(title: "Internet is not available", body: "Cannot create post", iconText: iconText)
+            SwiftMessages.show(config: warningConfig, view: warning)
+        }
+        
+    }
+    
+    func keyboardSetup(){
         let tap = UITapGestureRecognizer(target: self, action: #selector(NewRideViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     func setTextFieldDelegates(){
@@ -154,7 +192,6 @@ class NewRideViewController: UIViewController{
     }
     
     @IBAction func saveNewRide(_ sender: UIBarButtonItem) {
-        print(postCount!)
 
         // WARNING SET UP
         let warning = MessageView.viewFromNib(layout: .CardView)
@@ -250,7 +287,26 @@ extension NewRideViewController: UITextViewDelegate{
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
         let numberOfChars = newText.characters.count
+        notesCharactersCount.text = String(120 - numberOfChars)
         return numberOfChars < 120
     }
     
+}
+
+
+extension NewRideViewController: NetworkStatusListener {
+    
+    func networkStatusDidChange(status: Reachability.NetworkStatus) {
+        
+        switch status {
+        case .notReachable:
+            debugPrint("NewRideViewController: Network became unreachable")
+        case .reachableViaWiFi:
+            debugPrint("NewRideViewController: Network reachable through WiFi")
+        case .reachableViaWWAN:
+            debugPrint("NewRideViewController: Network reachable through Cellular Data")
+        }
+        saveButton.isEnabled = !(status == .notReachable)
+
+    }
 }

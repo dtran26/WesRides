@@ -12,40 +12,77 @@ import GoogleSignIn
 import ActionSheetPicker_3_0
 import DZNEmptyDataSet
 import ChameleonFramework
-
+import MBProgressHUD
+import ReachabilitySwift
+import SwiftMessages
 
 class HomeViewController: UIViewController{
     @IBOutlet weak var toolBar: UIToolbar!
-    @IBOutlet weak var rideView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var openMenu: UIBarButtonItem!
     @IBOutlet weak var rideSegmentedControl: UISegmentedControl!
+    let refreshControl = UIRefreshControl()
     var filteredPicker: ActionSheetMultipleStringPicker!
     var requestedRides = [Ride]()
     var offeredRides = [Ride]()
-    let refreshControl = UIRefreshControl()
-    
+    var hasInternet: Bool {
+        if let reachability = Reachability() {
+            if reachability.currentReachabilityStatus == .notReachable {
+                return false
+            } else {
+                return true
+            }
+        } else {
+            return false
+        }
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenu()
         configureTableView()
+        DispatchQueue.once(token: "com.dtran.WesRides") {
+            loadingIndicator()
+        }
         reloadTimeline()
         toolBar.barTintColor = UIColor.flatWhite
-        
+        noInternet()
     }
     
-
+    
     
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTimeline), name: NSNotification.Name(rawValue: "upload"), object: nil)
-
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-            self.reloadTimeline()
-            self.tableView.reloadData()
+        super.viewDidAppear(true)
+        self.reloadTimeline()
+        self.tableView.reloadData()
+    }
+    
+    func loadingIndicator(){
+        let loadingNotification = MBProgressHUD.showAdded(to: self.view, animated: true)
+        loadingNotification.mode = .indeterminate
+        loadingNotification.label.text = "Loading..."
+    }
+    
+    func noInternet(){
+        if !hasInternet {
+            let warning = MessageView.viewFromNib(layout: .CardView)
+            warning.configureTheme(.warning)
+            warning.configureDropShadow()
+            warning.button?.isHidden = true
+            let iconText = ["🤔", "😖", "🙄", "😶", "😔", "😰"].sm_random()!
+            var warningConfig = SwiftMessages.defaultConfig
+            warningConfig.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
+            warningConfig.duration = .seconds(seconds: 2.0)
+            warning.configureContent(title: "", body: "The Internet connection appears to be offline", iconText: iconText)
+            SwiftMessages.show(config: warningConfig, view: warning)
+        }
+        
     }
     
     func sideMenu() {
@@ -62,6 +99,7 @@ class HomeViewController: UIViewController{
     func reloadTimeline() {
         let delayTime = DispatchTime.now() + Double(Int64(1.25 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         
+        
         UserService.posts(own: false, completion: { (requestrides, offerrides) in
             self.requestedRides = requestrides
             self.offeredRides = offerrides
@@ -73,7 +111,7 @@ class HomeViewController: UIViewController{
             self.tableView.reloadData()
             self.tableView.emptyDataSetSource = self
             self.tableView.emptyDataSetDelegate = self
-            
+            MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
         })
         
     }
@@ -192,7 +230,7 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var post : Ride?
         let rideCell = tableView.dequeueReusableCell(withIdentifier: "RideCell", for: indexPath) as! RideCell
-
+        
         switch rideSegmentedControl.selectedSegmentIndex {
         case 0:  // requests
             post = requestedRides[indexPath.row]

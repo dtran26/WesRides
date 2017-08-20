@@ -59,6 +59,8 @@ PODS:
   - GTMSessionFetcher/Core (1.1.10)
   - GTMSessionFetcher/Full (1.1.10):
     - GTMSessionFetcher/Core (= 1.1.10)
+  - MBProgressHUD (1.0.0)
+  - ReachabilitySwift (3)
   - SwiftDate (4.1.2)
   - SwiftMessages (3.4.0)
 
@@ -73,6 +75,8 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseUI/Auth
   - GoogleSignIn
+  - MBProgressHUD (~> 1.0.0)
+  - ReachabilitySwift (~> 3)
   - SwiftDate (~> 4.0)
   - SwiftMessages
 
@@ -102,9 +106,11 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   SwiftDate: 2dfdebd4f67ae71c9c3e2413ee3c56947f302858
   SwiftMessages: e20aa1557fde1525ea369361bec4943cc0d08e7c
 
-PODFILE CHECKSUM: 1e9d1b42e1d62661d4e92135e84ed732ba0692ff
+PODFILE CHECKSUM: 7bce403b08775aaf39df1d29988fd9bc289fea52
 
 COCOAPODS: 1.3.0
