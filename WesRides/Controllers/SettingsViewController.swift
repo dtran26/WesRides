@@ -83,8 +83,14 @@ class SettingsViewController: FormViewController {
             
             +++ Section()
             <<< ButtonRow() { (row: ButtonRow) -> Void in
+                row.title = "Schedule"
+                row.presentationMode = .segueName(segueName: "settingsToSchedule", onDismiss: nil)
+            }
+            
+            +++ Section()
+            <<< ButtonRow() { (row: ButtonRow) -> Void in
                 row.title = "About"
-                row.presentationMode = .segueName(segueName: "SettingsToAbout", onDismiss:{  vc in vc.dismiss(animated: true) })
+                row.presentationMode = .segueName(segueName: "settingsToAbout", onDismiss:nil)
                 }
         
         

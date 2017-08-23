@@ -17,9 +17,6 @@ class AboutViewController: UIViewController {
         
     }
     
-    @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
-    }
     @IBAction func feedbackButtonTapped(_ sender: UIButton) {
         sendFeedback()
     }

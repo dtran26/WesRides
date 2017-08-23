@@ -41,12 +41,91 @@
                     </navigationItem>
                     <connections>
                         <outlet property="openMenu" destination="o30-3D-4B7" id="xwr-WB-6cT"/>
-                        <segue destination="DXP-Lg-AeN" kind="show" identifier="SettingsToAbout" id="mRo-GK-1AT"/>
+                        <segue destination="DXP-Lg-AeN" kind="show" identifier="settingsToAbout" id="mRo-GK-1AT"/>
+                        <segue destination="PBI-3K-eg1" kind="show" identifier="settingsToSchedule" id="PIR-Jh-aNh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EQc-D3-pdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1918" y="-1764"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="Hlm-Bm-wFc">
+            <objects>
+                <viewController id="PBI-3K-eg1" customClass="ScheduleSelectionViewController" customModule="WesRides" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QAg-f8-PoK"/>
+                        <viewControllerLayoutGuide type="bottom" id="vEK-oK-6eB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F4w-sa-bgk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KCY-rV-edY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassCell" rowHeight="65" id="PCu-AG-nUb" customClass="ClassCell" customModule="WesRides" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PCu-AG-nUb" id="6Yg-OR-wTD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Ery-DU-0pL" kind="presentation" id="OuU-dn-AE1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PBI-3K-eg1" id="eOs-QE-8PV"/>
+                                    <outlet property="delegate" destination="PBI-3K-eg1" id="dU1-1g-i8r"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Schedule" id="tWl-xv-HOG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zY0-hp-Hgh"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="KCY-rV-edY" id="uXS-Wl-YhI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GRp-8s-4TR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1917.5999999999999" y="-1003.4482758620691"/>
+        </scene>
+        <!--Detailed Class View Controller-->
+        <scene sceneID="ru7-PZ-A7S">
+            <objects>
+                <viewController id="Ery-DU-0pL" customClass="DetailedClassViewController" customModule="WesRides" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x2s-MK-PDX"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Tv-mX-ebe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EYz-9V-sAZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qib-m6-LVQ">
+                                <rect key="frame" x="16" y="20" width="34" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="ic_close_48pt"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="Ery-DU-0pL" eventType="touchUpInside" id="SfT-bw-05h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y3y-as-WVj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2838" y="-1003"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="hkG-vC-Jrc">
@@ -128,4 +207,7 @@
             <point key="canvasLocation" x="1089" y="-1763"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_close_48pt" width="48" height="48"/>
+    </resources>
 </document>
