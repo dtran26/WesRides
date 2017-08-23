@@ -7,28 +7,33 @@
 //
 
 import UIKit
-
+import DZNEmptyDataSet
 
 class ScheduleSelectionViewController: UIViewController {
 
     var myClasses = [Class]()
     
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configureTableView()
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
     }
-
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func configureTableView() {
+        tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor.flatWhite
     }
-    */
+    
+    @IBAction func addClass(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "addClass", sender: sender)
+
+    }
+    
+    
 }
 
 extension ScheduleSelectionViewController: UITableViewDataSource {
@@ -41,4 +46,21 @@ extension ScheduleSelectionViewController: UITableViewDataSource {
         
         return myClassCell
     }
+}
+
+
+extension ScheduleSelectionViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
+    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        
+        let str = "No Classes"
+        let attrs = [NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.flatWhite
+    }
+
 }

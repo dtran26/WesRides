@@ -17,9 +17,11 @@ class DetailedClassViewController: UIViewController {
     }
 
 
-    @IBAction func dismiss(_ sender: UIButton) {
+    @IBAction func dismiss(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
     
     /*
     // MARK: - Navigation

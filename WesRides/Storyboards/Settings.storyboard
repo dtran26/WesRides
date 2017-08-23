@@ -74,7 +74,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Ery-DU-0pL" kind="presentation" id="OuU-dn-AE1"/>
+                                            <segue destination="2aL-Ei-Deb" kind="presentation" identifier="addClass" id="OuU-dn-AE1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -88,7 +88,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Schedule" id="tWl-xv-HOG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zY0-hp-Hgh"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zY0-hp-Hgh">
+                            <connections>
+                                <action selector="addClass:" destination="PBI-3K-eg1" id="ts9-wR-vHO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -99,7 +103,7 @@
             </objects>
             <point key="canvasLocation" x="1917.5999999999999" y="-1003.4482758620691"/>
         </scene>
-        <!--Detailed Class View Controller-->
+        <!--Add New Class-->
         <scene sceneID="ru7-PZ-A7S">
             <objects>
                 <viewController id="Ery-DU-0pL" customClass="DetailedClassViewController" customModule="WesRides" customModuleProvider="target" sceneMemberID="viewController">
@@ -110,22 +114,20 @@
                     <view key="view" contentMode="scaleToFill" id="EYz-9V-sAZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qib-m6-LVQ">
-                                <rect key="frame" x="16" y="20" width="34" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="ic_close_48pt"/>
-                                <connections>
-                                    <action selector="dismiss:" destination="Ery-DU-0pL" eventType="touchUpInside" id="SfT-bw-05h"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add New Class" id="gtJ-NC-TPN">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Mj0-io-fFG">
+                            <connections>
+                                <action selector="dismiss:" destination="Ery-DU-0pL" id="PmF-dg-Vvm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="QCa-RZ-DaT"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3y-as-WVj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2838" y="-1003"/>
+            <point key="canvasLocation" x="3776.8000000000002" y="-1003.4482758620691"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="hkG-vC-Jrc">
@@ -153,7 +155,7 @@
                                     <action selector="feedbackButtonTapped:" destination="DXP-Lg-AeN" eventType="touchUpInside" id="Hax-en-P02"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhe-Bs-wD3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhe-Bs-wD3">
                                 <rect key="frame" x="145" y="281" width="85" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -167,6 +169,13 @@
                                     <action selector="rateTheApp:" destination="DXP-Lg-AeN" eventType="touchUpInside" id="LpA-0I-uhJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="If you found this app userful, my venmo is @dtran26 ;)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcb-rn-A0i">
+                                <rect key="frame" x="106" y="383" width="163" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -206,8 +215,23 @@
             </objects>
             <point key="canvasLocation" x="1089" y="-1763"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EGV-CJ-WaS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2aL-Ei-Deb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="IOs-YH-VYv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ery-DU-0pL" kind="relationship" relationship="rootViewController" id="mkU-IY-aOH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SdT-6T-N92" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2837.5999999999999" y="-1003.4482758620691"/>
+        </scene>
     </scenes>
-    <resources>
-        <image name="ic_close_48pt" width="48" height="48"/>
-    </resources>
 </document>
